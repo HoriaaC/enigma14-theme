@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * ENIGMA 14 Theme Functions and Definitions
  *
@@ -104,14 +104,14 @@ add_action('wp_enqueue_scripts', 'enigma14_scripts');
 /**
  * Backward compatibility helpers for legacy templates during transition.
  */
-if (!function_exists('html5blank_nav')) {
-    function html5blank_nav() {
+if (!function_exists('enigma14_nav')) {
+    function enigma14_nav() {
         wp_nav_menu(array('container' => false, 'fallback_cb' => 'wp_page_menu'));
     }
 }
 
-if (!function_exists('html5wp_pagination')) {
-    function html5wp_pagination() {
+if (!function_exists('enigma14_pagination')) {
+    function enigma14_pagination() {
         the_posts_pagination(array(
             'mid_size'  => 2,
             'prev_text' => __('&laquo; Previous', 'enigma14'),
@@ -120,14 +120,14 @@ if (!function_exists('html5wp_pagination')) {
     }
 }
 
-if (!function_exists('html5wp_excerpt')) {
-    function html5wp_excerpt($length_callback = '', $more_callback = '') {
+if (!function_exists('enigma14_excerpt')) {
+    function enigma14_excerpt($length_callback = '', $more_callback = '') {
         the_excerpt();
     }
 }
 
-if (!function_exists('html5blankcomments')) {
-    function html5blankcomments($comment, $args, $depth) {
+if (!function_exists('enigma14_comments')) {
+    function enigma14_comments($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
         ?>
         <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">

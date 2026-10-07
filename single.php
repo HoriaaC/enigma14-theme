@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 	
 	<!-- Section -->
 	<section>
@@ -24,19 +24,19 @@
 			
 			<!-- Post Details -->
 			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+			<span class="author"><?php _e( 'Published by', 'enigma14' ); ?> <?php the_author_posts_link(); ?></span>
+			<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'enigma14' ), __( '1 Comment', 'enigma14' ), __( '% Comments', 'enigma14' )); ?></span>
 			<!-- /Post Details -->
 			
 			<?php the_content(); // Dynamic Content ?>
 			
 			<br class="clear">
 			
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+			<?php the_tags( __( 'Tags: ', 'enigma14' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 			
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+			<p><?php _e( 'Categorised in: ', 'enigma14' ); the_category(', '); // Separated by commas ?></p>
 			
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+			<p><?php _e( 'This post was written by ', 'enigma14' ); the_author(); ?></p>
 			
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 			
@@ -52,7 +52,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+			<h1><?php _e( 'Sorry, nothing to display.', 'enigma14' ); ?></h1>
 			
 		</article>
 		<!-- /Article -->

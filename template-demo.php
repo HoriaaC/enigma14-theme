@@ -1,4 +1,4 @@
-<?php /* Template Name: Demo Page Template */ ?>
+﻿<?php /* Template Name: Demo Page Template */ ?>
 
 <?php get_header(); ?>
 	
@@ -30,7 +30,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+			<h2><?php _e( 'Sorry, nothing to display.', 'enigma14' ); ?></h2>
 			
 		</article>
 		<!-- /Article -->

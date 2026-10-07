@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 	
 	<!-- Section -->
 	<section>
@@ -28,7 +28,7 @@
 		<!-- Article -->
 		<article>
 			
-			<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+			<h2><?php _e( 'Sorry, nothing to display.', 'enigma14' ); ?></h2>
 			
 		</article>
 		<!-- /Article -->

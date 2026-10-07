@@ -1,15 +1,15 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 	
 	<!-- Section -->
 	<section>
 	
-		<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+		<h1><?php _e( 'Archives', 'enigma14' ); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		
 		<!-- Pagination -->
 		<div id="pagination">
-			<?php html5wp_pagination(); ?>
+			<?php enigma14_pagination(); ?>
 		</div>
 		<!-- /Pagination -->
 	

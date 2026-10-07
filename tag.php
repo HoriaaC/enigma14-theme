@@ -1,15 +1,15 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 	
 	<!-- Section -->
 	<section>
 	
-		<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
+		<h1><?php _e( 'Tag Archive: ', 'enigma14' ); echo single_tag_title('', false); ?></h1>
 	
 		<?php get_template_part('loop'); ?>
 		
 		<!-- Pagination -->
 		<div id="pagination">
-			<?php html5wp_pagination(); ?>
+			<?php enigma14_pagination(); ?>
 		</div>
 		<!-- /Pagination -->
 	

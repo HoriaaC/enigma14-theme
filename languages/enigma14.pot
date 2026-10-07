@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: HTML5Blank\n"
+"Project-Id-Version: ENIGMA 14 Theme\n"
 "POT-Creation-Date: 2012-11-28 18:04+0100\n"
 "PO-Revision-Date: 2012-11-28 18:05+0100\n"
 "Last-Translator: FxB <fx@fxbenard.com>\n"
