@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * ENIGMA 14 Theme Functions and Definitions
  *

@@ -1,4 +1,4 @@
-﻿<?php /* Template Name: Demo Page Template */ ?>
+<?php /* Template Name: Demo Page Template */ ?>
 
 <?php get_header(); ?>
 	

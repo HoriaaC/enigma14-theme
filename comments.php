@@ -1,4 +1,4 @@
-﻿<div id="comments">
+<div id="comments">
 	<?php if (post_password_required()) : ?>
 	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'enigma14' ); ?></p>
 </div> <!-- END: comments if password protected -->
