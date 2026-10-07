@@ -521,6 +521,134 @@ jQuery(document).ready(function($) {
             toggleMobileMenu(false);
         }
     });
+
+    // ====================================================
+    // ENIGMA 14 Contact Page Form & Photo Upload
+    // ====================================================
+    var $contactForm = $('#enigma-contact-page-form');
+    var $keyUploadInput = $('#key-upload-input');
+    var $contactDropZone = $('#drop-zone');
+    var $contactUploadStatus = $('#upload-status');
+
+    if ($contactDropZone.length && $keyUploadInput.length) {
+        $contactDropZone.on('click', function(e) {
+            $keyUploadInput.trigger('click');
+        });
+
+        // Drag & drop visual states
+        $contactDropZone.on('dragover dragenter', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $contactDropZone.addClass('border-primary-container bg-surface-container-high');
+        });
+
+        $contactDropZone.on('dragleave dragend drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $contactDropZone.removeClass('border-primary-container bg-surface-container-high');
+        });
+
+        $contactDropZone.on('drop', function(e) {
+            var dt = e.originalEvent.dataTransfer;
+            if (dt && dt.files && dt.files.length) {
+                $keyUploadInput[0].files = dt.files;
+                handleContactFile(dt.files[0]);
+            }
+        });
+
+        function handleContactFile(file) {
+            if (!file) return;
+            if (!file.type.match('image.*')) {
+                alert('Te rugăm să selectezi un fișier de tip imagine (JPG, PNG, WEBP, HEIC).');
+                return;
+            }
+            $contactUploadStatus.html('<span class="text-secondary font-semibold">Selectat: ' + file.name + '</span>');
+            var uploadPromise = uploadQuickPhoto(file, $keyUploadInput, $contactUploadStatus);
+            if (uploadPromise) {
+                uploadPromise.done(function(res) {
+                    if (res.success && res.data && res.data.url) {
+                        $('#uploaded-photo-url').val(res.data.url);
+                    }
+                });
+            }
+        }
+
+        $keyUploadInput.on('change', function() {
+            if (this.files && this.files[0]) {
+                handleContactFile(this.files[0]);
+            }
+        });
+    }
+
+    if ($contactForm.length) {
+        $contactForm.on('submit', function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            var $submitBtn = $form.find('button[type="submit"]');
+            var originalBtnHtml = $submitBtn.html();
+            var $feedback = $('#form-feedback');
+            var $feedbackError = $('#form-feedback-error');
+
+            $feedback.addClass('hidden');
+            $feedbackError.addClass('hidden').empty();
+
+            var formData = new FormData(this);
+            formData.append('action', 'enigma14_submit_contact_form');
+            var cNonce = (typeof enigma14_ajax !== 'undefined' && enigma14_ajax.contact_nonce) ? enigma14_ajax.contact_nonce : ($form.find('input[name="contact_nonce"]').val() || '');
+            formData.append('contact_nonce', cNonce);
+
+            // Check if photo is still uploading
+            var uploadPromise = $keyUploadInput.data('upload-promise');
+            function executeSubmit() {
+                // Ensure uploaded url is attached if available
+                var uploadedUrl = $keyUploadInput.attr('data-uploaded-url') || $keyUploadInput.data('uploaded-url') || $('#uploaded-photo-url').val();
+                if (uploadedUrl) {
+                    formData.set('uploaded_photo_url', uploadedUrl);
+                }
+
+                $submitBtn.prop('disabled', true).addClass('opacity-80 cursor-wait');
+                $submitBtn.html('<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Se transmite solicitarea...</span>');
+
+                var ajaxUrl = (typeof enigma14_ajax !== 'undefined') ? enigma14_ajax.ajax_url : '/wp-admin/admin-ajax.php';
+
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    success: function(res) {
+                        if (res.success) {
+                            $form.slideUp(300, function() {
+                                $feedback.removeClass('hidden');
+                                if (res.data.whatsapp_url) {
+                                    $('#contact-success-wa-link').attr('href', res.data.whatsapp_url);
+                                }
+                            });
+                        } else {
+                            $submitBtn.prop('disabled', false).removeClass('opacity-80 cursor-wait').html(originalBtnHtml);
+                            $feedbackError.removeClass('hidden').text(res.data.message || 'A apărut o eroare. Te rugăm să încerci din nou.');
+                        }
+                    },
+                    error: function() {
+                        $submitBtn.prop('disabled', false).removeClass('opacity-80 cursor-wait').html(originalBtnHtml);
+                        $feedbackError.removeClass('hidden').text('Eroare de comunicare cu serverul. Te rugăm să ne apelezi la 0722 000 114.');
+                    }
+                });
+            }
+
+            if (uploadPromise && uploadPromise.state() === 'pending') {
+                $submitBtn.prop('disabled', true).addClass('opacity-80 cursor-wait');
+                $submitBtn.html('<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Se finalizează încărcarea pozei...</span>');
+                uploadPromise.always(function() {
+                    executeSubmit();
+                });
+            } else {
+                executeSubmit();
+            }
+        });
+    }
 });
 
 

@@ -94,9 +94,10 @@ function enigma14_scripts()
     wp_enqueue_script('enigma14-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true);
 
     wp_localize_script('enigma14-scripts', 'enigma14_ajax', array(
-        'ajax_url'     => admin_url('admin-ajax.php'),
-        'nonce'        => wp_create_nonce('enigma14_assessment_action'),
-        'upload_nonce' => wp_create_nonce('enigma14_photo_upload_action'),
+        'ajax_url'      => admin_url('admin-ajax.php'),
+        'nonce'         => wp_create_nonce('enigma14_assessment_action'),
+        'upload_nonce'  => wp_create_nonce('enigma14_photo_upload_action'),
+        'contact_nonce' => wp_create_nonce('enigma14_contact_action'),
     ));
 }
 add_action('wp_enqueue_scripts', 'enigma14_scripts');
@@ -157,6 +158,7 @@ require_once get_template_directory() . '/inc/acf-site-identity.php';
  */
 require_once get_template_directory() . '/inc/cpt-servicii.php';
 require_once get_template_directory() . '/inc/ajax-assessment.php';
+require_once get_template_directory() . '/inc/ajax-contact.php';
 require_once get_template_directory() . '/inc/modal-booking.php';
 
 

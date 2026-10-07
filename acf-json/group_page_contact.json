@@ -1,0 +1,291 @@
+{
+    "key": "group_page_contact",
+    "title": "Setări Pagină Contact & Localizare",
+    "fields": [
+        {
+            "key": "field_tab_contact_hero",
+            "label": "Antet & Breadcrumb",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_contact_live_badge",
+            "label": "Text Ribbon Live Status (Dreapta sus)",
+            "name": "contact_live_badge",
+            "type": "text",
+            "default_value": "Punct Fizic Atelier București Sector 1 • Deschise Comenzile Rapide"
+        },
+        {
+            "key": "field_contact_hero_badge",
+            "label": "Badge Mic Titlu",
+            "name": "contact_hero_badge",
+            "type": "text",
+            "default_value": "Consolă Diagnostic & Recepție Tehnică",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_hero_title",
+            "label": "Titlu Principal Pagină",
+            "name": "contact_hero_title",
+            "type": "text",
+            "default_value": "CONTACT & LOCALIZARE ATELIER",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_hero_desc",
+            "label": "Descriere Subtitlu",
+            "name": "contact_hero_desc",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Vino direct la centrul nostru tehnic din Sectorul 1 sau trimite-ne o fotografie a cheii tale pentru confirmare pe loc, identificare de profil CNC și estimare de tarif în câteva minute."
+        },
+        {
+            "key": "field_tab_contact_info",
+            "label": "Detalii Atelier & Vitrină",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_contact_address_hint",
+            "label": "Reper / Indicații Acces Clădire",
+            "name": "contact_address_hint",
+            "type": "text",
+            "default_value": "Sector 1, București • Reper: Zonă centrală, acces direct din bulevard cu parcare dedicată clienților."
+        },
+        {
+            "key": "field_contact_sunday_note",
+            "label": "Text Notă Duminică (Program)",
+            "name": "contact_sunday_note",
+            "type": "text",
+            "default_value": "Urgențe Deblocări Non-Stop"
+        },
+        {
+            "key": "field_contact_facade_image",
+            "label": "Poză Fațadă / Vitrină Atelier",
+            "name": "contact_facade_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_contact_facade_caption",
+            "label": "Legendă / Notă Poză Fațadă",
+            "name": "contact_facade_caption",
+            "type": "text",
+            "default_value": "Căutați caseta luminoasă portocalie ENIGMA 14 la intrare."
+        },
+        {
+            "key": "field_tab_contact_form",
+            "label": "Formular Diagnostic & Ofertă",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_contact_form_badge",
+            "label": "Badge Formular",
+            "name": "contact_form_badge",
+            "type": "text",
+            "default_value": "Răspuns Tehnic Garantat < 5 Minute",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_form_title",
+            "label": "Titlu Formular",
+            "name": "contact_form_title",
+            "type": "text",
+            "default_value": "CERE O OFERTĂ SAU TRIMITE FOTOGRAFIA CHEII",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_form_desc",
+            "label": "Descriere Formular",
+            "name": "contact_form_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Fotografiază ambele fețe ale cheii sau carcasei și îți răspundem prompt cu disponibilitatea profilului brut, compatibilitatea cipului și tariful exact."
+        },
+        {
+            "key": "field_contact_form_services",
+            "label": "Opțiuni Dropdown Servicii (câte una pe rând)",
+            "name": "contact_form_services",
+            "type": "textarea",
+            "rows": 5,
+            "default_value": "Chei Auto & Moto (Duplicare, Cip Transponder, Carcasă)\nChei Rezidențiale / Amprentă / Yale de Înaltă Siguranță\nCartele Interfon & Telecomenzi Porți / Garaj\nReparații Butuci Uși, Carcase Sparte sau Urgențe Deblocări\nÎnlocuire Baterie Cheie Auto & Testare Frecvență RF"
+        },
+        {
+            "key": "field_tab_contact_map",
+            "label": "Hartă & Ghid Traseu GPS",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_contact_map_title",
+            "label": "Titlu Secțiune Hartă",
+            "name": "contact_map_title",
+            "type": "text",
+            "default_value": "HARTA INTERACTIVĂ & GHID TRASEU GPS",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_map_desc",
+            "label": "Descriere Secțiune Hartă",
+            "name": "contact_map_desc",
+            "type": "text",
+            "default_value": "Punct central în Sectorul 1, conectat rapid prin marile artere rutiere și la doar 4 minute de mers pe jos de la stațiile principale.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_google_maps_url",
+            "label": "Link Buton Google Maps",
+            "name": "contact_google_maps_url",
+            "type": "url",
+            "default_value": "https://maps.google.com/?q=Calea+Victoriei+14+Bucuresti",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_waze_url",
+            "label": "Link Buton Waze",
+            "name": "contact_waze_url",
+            "type": "url",
+            "default_value": "https://waze.com/ul?q=Calea+Victoriei+14+Bucuresti",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_map_embed",
+            "label": "Iframe Embed Google Maps (Opțional)",
+            "name": "contact_map_embed",
+            "type": "textarea",
+            "instructions": "Lipește codul de embed <iframe> din Google Maps sau lasă gol pentru a folosi imaginea de hartă.",
+            "rows": 3
+        },
+        {
+            "key": "field_contact_map_image",
+            "label": "Imagine Statică Hartă (Fallback)",
+            "name": "contact_map_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_contact_hud_title",
+            "label": "Titlu Pin GPS (HUD)",
+            "name": "contact_hud_title",
+            "type": "text",
+            "default_value": "ENIGMA 14 SECTOR 1",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_hud_coords",
+            "label": "Coordonate Afișate",
+            "name": "contact_hud_coords",
+            "type": "text",
+            "default_value": "Coordonate: 44.4323° N, 26.0969° E",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_tab_contact_emergency",
+            "label": "Banner Urgențe 24/7",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_contact_em_badge",
+            "label": "Badge Urgențe",
+            "name": "contact_em_badge",
+            "type": "text",
+            "default_value": "SERVICIU DEBLOCĂRI NON-STOP 24/7",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_em_title",
+            "label": "Titlu Urgențe",
+            "name": "contact_em_title",
+            "type": "text",
+            "default_value": "AI RĂMAS BLOCAT AFARĂ SAU AI PIERDUT SINGURA CHEIE?",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_em_desc",
+            "label": "Descriere Urgențe",
+            "name": "contact_em_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Echipa mobilă ENIGMA 14 intervine prompt în Sectorul 1 și împrejurimi pentru deschideri nedistructive de uși rezidențiale sau deblocare mașină cu generare cip pe loc."
+        },
+        {
+            "key": "field_contact_em_phone",
+            "label": "Telefon Apel Urgență (Opțional, preia Telefon 1 dacă e gol)",
+            "name": "contact_em_phone",
+            "type": "text",
+            "default_value": "0722 000 114",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_em_note",
+            "label": "Notă Timp Sosire Urgențe",
+            "name": "contact_em_note",
+            "type": "text",
+            "default_value": "Disponibil 24/7 • Sosire medie în 20-30 minute",
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Câmpuri specifice pentru șablonul paginii de Contact & Localizare Atelier.",
+    "modified": 1728328000
+}
+
