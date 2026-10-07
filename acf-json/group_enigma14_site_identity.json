@@ -1,0 +1,713 @@
+{
+    "key": "group_enigma14_site_identity",
+    "title": "Identitate și Contact Site",
+    "fields": [
+        {
+            "key": "field_tab_branding",
+            "label": "Branding & Logo",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_site_logo",
+            "label": "Logo Site",
+            "name": "site_logo",
+            "type": "image",
+            "instructions": "Logo-ul principal al site-ului (recomandat SVG sau PNG transparent).",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_site_logo_dark",
+            "label": "Logo Site (Variantă Întunecată)",
+            "name": "site_logo_dark",
+            "type": "image",
+            "instructions": "Versiunea logo-ului pentru fundaluri deschise (opțional).",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_tab_contact",
+            "label": "Date de Contact",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_address",
+            "label": "Adresă Atelier",
+            "name": "address",
+            "type": "textarea",
+            "default_value": "Str. Atelierului 14 / Calea Victoriei 14, Sector 1, București",
+            "rows": 3
+        },
+        {
+            "key": "field_phone_1",
+            "label": "Telefon Principal",
+            "name": "phone_1",
+            "type": "text",
+            "instructions": "Numărul principal de contact și apeluri. Folosit automat pe tot site-ul și pentru WhatsApp dacă numărul de WhatsApp este lăsat gol.",
+            "default_value": "0722 000 114"
+        },
+        {
+            "key": "field_phone_2",
+            "label": "Telefon Secundar",
+            "name": "phone_2",
+            "type": "text",
+            "default_value": "021 9988"
+        },
+        {
+            "key": "field_email",
+            "label": "Adresă de Email Notificări",
+            "name": "email",
+            "type": "email",
+            "instructions": "Adresa oficială unde ajung notificările și cererile transmise prin formularele din site.",
+            "default_value": "contact@enigma14.ro"
+        },
+        {
+            "key": "field_whatsapp_number",
+            "label": "Număr WhatsApp",
+            "name": "whatsapp_number",
+            "type": "text",
+            "instructions": "Format internațional, fără + (ex: 40722000114)",
+            "default_value": "40722000114"
+        },
+        {
+            "key": "field_whatsapp_message",
+            "label": "Mesaj Predefinit WhatsApp",
+            "name": "whatsapp_message",
+            "type": "text",
+            "default_value": "Buna ziua, doresc o verificare pentru copiere cheie auto"
+        },
+        {
+            "key": "field_tab_schedule",
+            "label": "Program de Lucru",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_schedule_weekdays",
+            "label": "Luni - Vineri",
+            "name": "schedule_weekdays",
+            "type": "text",
+            "default_value": "08:30 - 19:30"
+        },
+        {
+            "key": "field_schedule_saturday",
+            "label": "Sâmbătă",
+            "name": "schedule_saturday",
+            "type": "text",
+            "default_value": "09:00 - 15:00"
+        },
+        {
+            "key": "field_schedule_sunday",
+            "label": "Duminică / Urgențe",
+            "name": "schedule_sunday",
+            "type": "text",
+            "default_value": "Urgențe non-stop la apel"
+        },
+        {
+            "key": "field_response_time",
+            "label": "Timp mediu de răspuns/execuție",
+            "name": "response_time",
+            "type": "text",
+            "default_value": "< 15 min"
+        },
+        {
+            "key": "field_tab_partners",
+            "label": "Securitate & Parteneri",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_partner_name",
+            "label": "Nume Partener Securitate",
+            "name": "partner_name",
+            "type": "text",
+            "default_value": "Carpat Guard Securitate"
+        },
+        {
+            "key": "field_partner_desc",
+            "label": "Descriere Partener",
+            "name": "partner_desc",
+            "type": "text",
+            "default_value": "Partener Oficial Sisteme & Monitorizare Intervenții"
+        },
+        {
+            "key": "field_tab_footer",
+            "label": "Footer Site",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_footer_about_icon",
+            "label": "Coloana 1: Iconiță Despre Noi",
+            "name": "footer_about_icon",
+            "type": "select",
+            "choices": {
+                "verified": "verified (Verificat / Original)",
+                "store": "store (Atelier / Magazin)",
+                "category": "category (Categorii)",
+                "precision_manufacturing": "precision_manufacturing (CNC / Tehnologie)",
+                "speed": "speed (Serviciu rapid)",
+                "verified_user": "verified_user (Calitate garantată)",
+                "shield": "shield (Scut securitate)",
+                "key": "key (Cheie)",
+                "lock": "lock (Lacăt)"
+            },
+            "default_value": "verified",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_footer_about_title",
+            "label": "Coloana 1: Titlu Despre Noi",
+            "name": "footer_about_title",
+            "type": "text",
+            "default_value": "Despre Noi",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_footer_about_text",
+            "label": "Coloana 1: Descriere Despre Noi",
+            "name": "footer_about_text",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Atelier specializat de copiere chei de înaltă precizie, programare transpondere auto, cartele de interfon și mentenanță sisteme de securitate mecanică. Standarde industriale de calibrare micrometrică."
+        },
+        {
+            "key": "field_footer_badge1_text",
+            "label": "Coloana 1: Badge 1 (Portocaliu)",
+            "name": "footer_badge1_text",
+            "type": "text",
+            "default_value": "SERVICIU RAPID",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_footer_badge2_text",
+            "label": "Coloana 1: Badge 2 (Gri)",
+            "name": "footer_badge2_text",
+            "type": "text",
+            "default_value": "CALITATE GARANTATĂ",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_footer_contact_icon",
+            "label": "Coloana 2: Iconiță Contact & Atelier",
+            "name": "footer_contact_icon",
+            "type": "select",
+            "choices": {
+                "store": "store (Atelier / Magazin)",
+                "pin_drop": "pin_drop (Locație atelier)",
+                "call": "call (Telefon)",
+                "schedule": "schedule (Program)",
+                "lock_reset": "lock_reset (Urgențe 24/7)"
+            },
+            "default_value": "store",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_footer_contact_title",
+            "label": "Coloana 2: Titlu Contact & Atelier",
+            "name": "footer_contact_title",
+            "type": "text",
+            "default_value": "Contact & Atelier",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_footer_address",
+            "label": "Coloana 2: Adresă Atelier (Opțional suprascriere)",
+            "name": "footer_address",
+            "type": "text",
+            "instructions": "Dacă lași gol, se folosește automat adresa din tabul Date de Contact.",
+            "default_value": "Str. Atelierului 14 / Calea Victoriei 14, București"
+        },
+        {
+            "key": "field_footer_phone",
+            "label": "Coloana 2: Telefon Atelier (Opțional suprascriere)",
+            "name": "footer_phone",
+            "type": "text",
+            "instructions": "Dacă lași gol, se folosește telefonul principal din tabul Date de Contact.",
+            "default_value": "+40 720 000 014",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_footer_schedule",
+            "label": "Coloana 2: Program de Lucru",
+            "name": "footer_schedule",
+            "type": "text",
+            "default_value": "Luni - Vineri: 08:30 - 19:30 | Sâmbătă: 09:00 - 15:00",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_footer_emergency_text",
+            "label": "Coloana 2: Notificare Urgențe 24/7",
+            "name": "footer_emergency_text",
+            "type": "text",
+            "default_value": "Urgențe Deblocări 24/7 Disponibil"
+        },
+        {
+            "key": "field_footer_cats_icon",
+            "label": "Coloana 3: Iconiță Meniu Categorii",
+            "name": "footer_cats_icon",
+            "type": "select",
+            "choices": {
+                "category": "category (Categorii)",
+                "grid_view": "grid_view (Grilă divizii)",
+                "key": "key (Cheie)",
+                "lock": "lock (Lacăt)",
+                "precision_manufacturing": "precision_manufacturing (CNC)",
+                "shield": "shield (Securitate)"
+            },
+            "default_value": "category",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_footer_cats_title",
+            "label": "Coloana 3: Titlu Meniu Categorii",
+            "name": "footer_cats_title",
+            "type": "text",
+            "default_value": "Categorii Servicii",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_footer_cats_note",
+            "label": "Coloana 3: Notă Tehnică Sub Meniu",
+            "name": "footer_cats_note",
+            "type": "text",
+            "default_value": "Sisteme agreate conform normelor europene de securitate fizică EN 1303."
+        },
+        {
+            "key": "field_footer_copyright",
+            "label": "Subsol: Text Drepturi de Autor",
+            "name": "footer_copyright",
+            "type": "text",
+            "instructions": "Folosește {year} pentru afișarea automată a anului curent.",
+            "default_value": "© {year} ENIGMA 14 CENTRUL DE COPIERE CHEI. Toate drepturile rezervate."
+        },
+        {
+            "key": "field_footer_legal_links",
+            "label": "Subsol: Linkuri Legale",
+            "name": "footer_legal_links",
+            "type": "repeater",
+            "instructions": "Adaugă paginile legale selectându-le direct din lista derulantă a paginilor din site.",
+            "layout": "table",
+            "button_label": "Adaugă Pagină Legală",
+            "sub_fields": [
+                {
+                    "key": "field_legal_page",
+                    "label": "Selectează Pagina (Dropdown)",
+                    "name": "legal_page",
+                    "type": "post_object",
+                    "instructions": "Alege pagina din site",
+                    "required": 1,
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_legal_custom_title",
+                    "label": "Titlu Personalizat (Opțional)",
+                    "name": "custom_title",
+                    "type": "text",
+                    "instructions": "Lasă gol pentru a folosi automat titlul paginii selectate."
+                }
+            ]
+        },
+        {
+            "key": "field_tab_header_cta",
+            "label": "Buton Header (Top Bar)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_header_cta_enable",
+            "label": "Afișează Butonul în Header",
+            "name": "header_cta_enable",
+            "type": "true_false",
+            "instructions": "Dezactivează dacă dorești să ascunzi complet butonul din bara superioară a antetului.",
+            "default_value": 1,
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_header_cta_action",
+            "label": "Tip Acțiune Buton",
+            "name": "header_cta_action",
+            "type": "select",
+            "instructions": "Alege ce se întâmplă la apăsarea butonului din antet.",
+            "choices": {
+                "popup": "Deschide Pop-up Modal (Upload Foto & Programare)",
+                "phone": "Apel Telefonic Direct (tel:0722000114)",
+                "whatsapp": "Chat WhatsApp Direct (wa.me/...)",
+                "custom_link": "Link Personalizat (URL sau Ancoră internă)"
+            },
+            "default_value": "popup",
+            "ui": 1,
+            "wrapper": {
+                "width": "40"
+            }
+        },
+        {
+            "key": "field_header_cta_icon",
+            "label": "Iconiță Buton (Material Symbols)",
+            "name": "header_cta_icon",
+            "type": "select",
+            "choices": {
+                "calendar_month": "calendar_month (Calendar / Programare)",
+                "photo_camera": "photo_camera (Cameră Foto)",
+                "call": "call (Telefon / Apel)",
+                "chat": "chat (WhatsApp / Mesaj)",
+                "speed": "speed (Serviciu Rapid)",
+                "verified": "verified (Verificat)",
+                "build": "build (Mecanic)",
+                "bolt": "bolt (Urgență)"
+            },
+            "default_value": "calendar_month",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_header_cta_text",
+            "label": "Text Buton Header",
+            "name": "header_cta_text",
+            "type": "text",
+            "default_value": "PROGRAMARE ACUM",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_header_cta_custom_url",
+            "label": "Link Personalizat (dacă este selectat)",
+            "name": "header_cta_custom_url",
+            "type": "text",
+            "instructions": "Folosit doar dacă 'Tip Acțiune Buton' este setat pe 'Link Personalizat'.",
+            "default_value": "#solicita-oferta",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_tab_popup_modal",
+            "label": "Fereastră Popup (Diagnoză & Programare)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_modal_badge_text",
+            "label": "Text Badge Superior",
+            "name": "modal_badge_text",
+            "type": "text",
+            "default_value": "DIAGNOZĂ OPTICĂ & PROGRAMARE RAPIDĂ",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_modal_badge_icon",
+            "label": "Iconiță Badge",
+            "name": "modal_badge_icon",
+            "type": "text",
+            "default_value": "precision_manufacturing",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_modal_title",
+            "label": "Titlu Modal",
+            "name": "modal_title",
+            "type": "text",
+            "default_value": "Trimite Poza Cheii sau Solicită Asistență"
+        },
+        {
+            "key": "field_modal_subtitle",
+            "label": "Subtitlu / Descriere Modal",
+            "name": "modal_subtitle",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Încarcă o poză clară cu cheia sau butucul tău și alege când dorești să ajungi la atelier. Tehnicienii noștri îți confirmă pe loc disponibilitatea și timpul de execuție."
+        },
+        {
+            "key": "field_modal_dropzone_title",
+            "label": "Titlu Zonă Upload Foto",
+            "name": "modal_dropzone_title",
+            "type": "text",
+            "default_value": "Încarcă sau Fotografiază Cheia (Opțional)",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_dropzone_subtitle",
+            "label": "Subtitlu Zonă Upload Foto",
+            "name": "modal_dropzone_subtitle",
+            "type": "text",
+            "default_value": "Apasă aici sau trage poza direct (JPG, PNG, WEBP, HEIC)",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_label_name",
+            "label": "Etichetă Câmp Nume",
+            "name": "modal_label_name",
+            "type": "text",
+            "default_value": "Numele Tău (Opțional)",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_label_phone",
+            "label": "Etichetă Câmp Telefon",
+            "name": "modal_label_phone",
+            "type": "text",
+            "default_value": "Număr de Telefon *",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_label_service",
+            "label": "Etichetă Tip Serviciu",
+            "name": "modal_label_service",
+            "type": "text",
+            "default_value": "Tip Serviciu Solicitat",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_label_time",
+            "label": "Etichetă Interval Orar",
+            "name": "modal_label_time",
+            "type": "text",
+            "default_value": "Interval Orar / Când dorești să vii?",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_services_options",
+            "label": "Opțiuni Servicii (una pe linie)",
+            "name": "modal_services_options",
+            "type": "textarea",
+            "rows": 6,
+            "instructions": "Introdu fiecare opțiune de serviciu pe un rând nou.",
+            "default_value": "Copiere / Programare Cheie Auto cu Cip\nCopiere Cheie Rezidențială / Amprentă / Yală\nDuplicare Cartelă Interfon / Tag RFID\nÎnlocuire / Recalibrare Butuc Ușă Blindată\nReparație Carcasă / Lamă Cheie\nDeblocare / Urgență Lăcătușerie",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_time_options",
+            "label": "Opțiuni Intervale Orare (una pe linie)",
+            "name": "modal_time_options",
+            "type": "textarea",
+            "rows": 6,
+            "instructions": "Introdu fiecare interval orar pe un rând nou.",
+            "default_value": "Azi - În timpul programului atelierului\nAzi - Urgență la apel\nMâine - Dimineață (08:30 - 13:00)\nMâine - După-amiază (13:00 - 19:30)\nÎn weekend (Sâmbătă 09:00 - 15:00)\nAltă zi / Nu sunt sigur (specifică în detalii)",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_label_notes",
+            "label": "Etichetă Câmp Note",
+            "name": "modal_label_notes",
+            "type": "text",
+            "default_value": "Detalii Adiționale / Marcă & Model Mașină sau Producător Yală (Opțional)"
+        },
+        {
+            "key": "field_modal_submit_btn_text",
+            "label": "Text Buton Trimitere",
+            "name": "modal_submit_btn_text",
+            "type": "text",
+            "default_value": "Trimite Solicitarea de Programare",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_whatsapp_btn_text",
+            "label": "Text Buton WhatsApp",
+            "name": "modal_whatsapp_btn_text",
+            "type": "text",
+            "default_value": "Sau Trimite Direct pe WhatsApp",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_privacy_note",
+            "label": "Notă Confidențialitate (Sub butoane)",
+            "name": "modal_privacy_note",
+            "type": "text",
+            "default_value": "Datele și fotografiile transmise sunt confidențiale și utilizate exclusiv pentru diagnoza tehnică."
+        },
+        {
+            "key": "field_modal_success_title",
+            "label": "Titlu Mesaj Succes",
+            "name": "modal_success_title",
+            "type": "text",
+            "default_value": "Solicitare Înregistrată cu Succes!",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_modal_success_message",
+            "label": "Mesaj Succes (Text)",
+            "name": "modal_success_message",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Un tehnician ENIGMA 14 a recepționat detaliile tale și te va contacta în cel mai scurt timp pentru confirmare.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_tab_under_construction",
+            "label": "Under Construction / Mentenanță",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_under_construction_enabled",
+            "label": "Activează Mod Mentenanță (Under Construction)",
+            "name": "under_construction_enabled",
+            "type": "true_false",
+            "instructions": "Dacă este bifat, vizitatorii vor vedea doar pagina de mentenanță cu imaginea centrată. Administratorii conectați pot naviga normal pe site.",
+            "ui": 1,
+            "ui_on_text": "Activ",
+            "ui_off_text": "Inactiv",
+            "default_value": 0
+        },
+        {
+            "key": "field_under_construction_image",
+            "label": "Imagine Centrată (Banner / Poster)",
+            "name": "under_construction_image",
+            "type": "image",
+            "instructions": "Încarcă imaginea dorită (afiș 'În Lucru', banner grafic etc.). Va fi afișată perfect centrată pe ecran.",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_under_construction_max_width",
+            "label": "Lățime Maximă Imagine",
+            "name": "under_construction_max_width",
+            "type": "text",
+            "instructions": "Dimensiunea maximă pe ecran desktop (ex: 640px, 800px, 1000px, 100%).",
+            "default_value": "680px",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_under_construction_bg_color",
+            "label": "Culoare Fundal Pagină",
+            "name": "under_construction_bg_color",
+            "type": "color_picker",
+            "instructions": "Culoarea de fundal a paginii de mentenanță.",
+            "default_value": "#0b0c10",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_under_construction_title",
+            "label": "Titlu Opțional",
+            "name": "under_construction_title",
+            "type": "text",
+            "instructions": "Titlu afișat sub imagine (opțional - lăsați gol pentru a afișa doar imaginea centrată).",
+            "default_value": ""
+        },
+        {
+            "key": "field_under_construction_message",
+            "label": "Mesaj Text Opțional",
+            "name": "under_construction_message",
+            "type": "textarea",
+            "instructions": "Text sau detalii suplimentare afișate sub imagine (opțional - lăsați gol pentru a afișa doar imaginea).",
+            "rows": 3,
+            "default_value": ""
+        },
+        {
+            "key": "field_under_construction_show_contact",
+            "label": "Afișează Butoane de Contact Rapide (Telefon & WhatsApp)",
+            "name": "under_construction_show_contact",
+            "type": "true_false",
+            "instructions": "Permite clienților să vă contacteze direct chiar dacă site-ul este în mentenanță.",
+            "ui": 1,
+            "default_value": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "enigma14-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Datele generale de identitate și contact ale site-ului ENIGMA 14.",
+    "modified": 1728293500
+}

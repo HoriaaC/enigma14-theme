@@ -1,0 +1,270 @@
+{
+    "key": "group_block_assessment",
+    "title": "Block: Evaluare Rapidă & Diagnoză Tehnică",
+    "fields": [
+        {
+            "key": "field_tab_qa_mode",
+            "label": "Configurare Domeniu Formular",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_qa_form_mode",
+            "label": "Tip Domeniu / Mod Formular",
+            "name": "qa_form_mode",
+            "type": "select",
+            "instructions": "Alege specificul tehnic al formularului: Auto & Moto vs. Rezidențial (Yale / Butuci / Uși) sau Ghid Foto cu 3 pași.",
+            "choices": {
+                "auto": "Auto & Moto (Marca/Model, An Fabricație, Tip Servicii Auto)",
+                "residential": "Rezidențial & Uși (Tip Cheie / Yală, Cartelă Securitate, Tip Servicii Rezidențiale)",
+                "photo_instructions": "Ghid Foto 3 Pași (Instrucțiuni fotografiere cheie + Butoane WhatsApp)"
+            },
+            "default_value": "auto",
+            "ui": 1,
+            "wrapper": {
+                "width": "40"
+            }
+        },
+        {
+            "key": "field_qa_recipient_email",
+            "label": "Email Destinatar Notificări (Opțional)",
+            "name": "qa_recipient_email",
+            "type": "text",
+            "instructions": "Dacă lași gol, formularul trimite emailul la adresa atelierului configurată în Setări Site.",
+            "placeholder": "ex: contact@enigma14.ro",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_qa_whatsapp_number",
+            "label": "Număr WhatsApp (Opțional)",
+            "name": "qa_whatsapp_number",
+            "type": "text",
+            "instructions": "Format internațional fără + (ex: 40722000114). Dacă lași gol, folosește numărul din Setări Site.",
+            "placeholder": "40722000114",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_tab_qa_left",
+            "label": "Conținut Stânga (Text & Butoane)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_qa_badge_icon",
+            "label": "Iconiță Badge Superior",
+            "name": "qa_badge_icon",
+            "type": "select",
+            "choices": {
+                "help": "help (Ajutor / Evaluare)",
+                "photo_camera": "photo_camera (Foto / Identificare)",
+                "verified": "verified (Verificat)",
+                "speed": "speed (Serviciu rapid)",
+                "timer": "timer (Timp execuție)",
+                "build": "build (Unelte mecatronice)",
+                "key": "key (Cheie)",
+                "lock_reset": "lock_reset (Resetare / Urgențe)",
+                "precision_manufacturing": "precision_manufacturing (CNC)"
+            },
+            "default_value": "help",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_qa_badge_text",
+            "label": "Text Badge Superior",
+            "name": "qa_badge_text",
+            "type": "text",
+            "default_value": "EVALUARE RAPIDĂ FĂRĂ COSTURI",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_qa_title",
+            "label": "Titlu Principal (H3/H2)",
+            "name": "qa_title",
+            "type": "text",
+            "default_value": "Ai pierdut cheia sau ai nevoie de o dublură auto?"
+        },
+        {
+            "key": "field_qa_description",
+            "label": "Descriere Text",
+            "name": "qa_description",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Nu ești sigur ce tip de cip sau lamă folosește mașina ta? Trimite-ne o poză clară cu cheia existentă sau certificatul mașinii. Echipa noastră de tehnicieni îți confirmă modelul și disponibilitatea exactă pe loc."
+        },
+        {
+            "key": "field_qa_btn_whatsapp_text",
+            "label": "Text Buton WhatsApp",
+            "name": "qa_btn_whatsapp_text",
+            "type": "text",
+            "default_value": "TRIMITE PE WHATSAPP",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_btn_secondary_text",
+            "label": "Text Buton Secundar (Gri)",
+            "name": "qa_btn_secondary_text",
+            "type": "text",
+            "default_value": "MERGI LA CONTACT & IDENTIFICARE FOTO",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_qa_btn_secondary_url",
+            "label": "Link Buton Secundar",
+            "name": "qa_btn_secondary_url",
+            "type": "text",
+            "default_value": "#solicita-oferta",
+            "wrapper": {
+                "width": "20"
+            }
+        },
+        {
+            "key": "field_tab_qa_right",
+            "label": "Formular Dreapta (Etichete)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_qa_form_card_title",
+            "label": "Titlu Antet Card Formular",
+            "name": "qa_form_card_title",
+            "type": "text",
+            "default_value": "Solicită Asistență Rapidă",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_form_response_time",
+            "label": "Text Timp Răspuns (Dreapta sus)",
+            "name": "qa_form_response_time",
+            "type": "text",
+            "default_value": "Timp răspuns: < 15 min",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_submit_button_text",
+            "label": "Text Buton Trimitere",
+            "name": "qa_submit_button_text",
+            "type": "text",
+            "default_value": "Trimite Spre Verificare"
+        },
+        {
+            "key": "field_tab_qa_photo",
+            "label": "Card Ghid Foto (Dreapta)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_qa_photo_card_title",
+            "label": "Titlu Card Foto",
+            "name": "qa_photo_card_title",
+            "type": "text",
+            "default_value": "Instrucțiuni Foto",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_photo_badge_time",
+            "label": "Badge Timp Confirmare",
+            "name": "qa_photo_badge_time",
+            "type": "text",
+            "default_value": "Confirmare: < 5 min",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_photo_heading",
+            "label": "Titlu Secțiune Pași",
+            "name": "qa_photo_heading",
+            "type": "text",
+            "default_value": "CUM SĂ FOTOGRAFIEZI CHEIA:"
+        },
+        {
+            "key": "field_qa_photo_step_1",
+            "label": "Pasul 1 - Suprafață plană",
+            "name": "qa_photo_step_1",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Așază cheia pe o suprafață plană, bine iluminată."
+        },
+        {
+            "key": "field_qa_photo_step_2",
+            "label": "Pasul 2 - Focalizare zimți/amprentă",
+            "name": "qa_photo_step_2",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Asigură-te că profilul zimților sau amprentelor este focalizat clar."
+        },
+        {
+            "key": "field_qa_photo_step_3",
+            "label": "Pasul 3 - Cartelă securitate / cod",
+            "name": "qa_photo_step_3",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Dacă deții cartela de securitate, trimite și codul alfanumeric."
+        },
+        {
+            "key": "field_qa_photo_security_note",
+            "label": "Notă Securitate Date",
+            "name": "qa_photo_security_note",
+            "type": "text",
+            "default_value": "Datele tale sunt confidențiale și protejate",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_photo_btn_text",
+            "label": "Text Buton WhatsApp",
+            "name": "qa_photo_btn_text",
+            "type": "text",
+            "default_value": "Trimite Poza pe WhatsApp",
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/enigma-quick-assessment"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Bloc Gutenberg pentru caseta de evaluare rapidă și diagnoză mecatronică cu formular AJAX și legătură WhatsApp.",
+    "modified": 1728294200
+}

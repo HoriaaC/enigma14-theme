@@ -1,0 +1,638 @@
+{
+    "key": "group_service_details",
+    "title": "Detalii Serviciu: Hero & Catalog Modele",
+    "fields": [
+        {
+            "key": "field_srv_tab_hero_general",
+            "label": "Hero: Conținut & Texte",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_srv_status_left",
+            "label": "Text Panglică Status (Stânga)",
+            "name": "service_status_band_left",
+            "type": "text",
+            "default_value": "STAND MECATRONIC ACTIV • DECODARE LA MICRON",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_status_right",
+            "label": "Text Panglică Status (Dreapta)",
+            "name": "service_status_band_right",
+            "type": "text",
+            "default_value": "BUCUREȘTI SECTOR 1",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_badge_icon",
+            "label": "Icon Badge Titlu (Material Symbols)",
+            "name": "service_hero_badge_icon",
+            "type": "text",
+            "default_value": "verified_user",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_badge_text",
+            "label": "Text Badge Titlu",
+            "name": "service_hero_badge_text",
+            "type": "text",
+            "default_value": "SISTEME DE BLOCARE DE ÎNALTĂ SECURITATE",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_srv_title",
+            "label": "Titlu Hero Personalizat",
+            "name": "service_hero_title",
+            "type": "text",
+            "instructions": "Lasă gol pentru a folosi automat titlul serviciului. Poți include taguri HTML (ex: <span class=\"text-primary-container\">...</span>).",
+            "default_value": ""
+        },
+        {
+            "key": "field_srv_description",
+            "label": "Descriere Hero Serviciu",
+            "name": "service_hero_description",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Securitate maximă și duplicare computerizată pe mașini CNC de înaltă finețe. Asigurăm multiplicare fidelă pentru chei cu amprentă (dimple keys), profile reversibile patentate, tăiere laser de precizie și duplicare exclusiv pe baza cartelei de proprietate codificate pentru uși blindate și locuințe rezidențiale."
+        },
+        {
+            "key": "field_srv_tab_hero_actions_specs",
+            "label": "Hero: Butoane & Specificații",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_srv_btn1_text",
+            "label": "Buton Principal (CTA 1) - Text",
+            "name": "service_btn1_text",
+            "type": "text",
+            "default_value": "SOLICITĂ DUPLICARE PE COD",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_btn1_url",
+            "label": "Buton Principal (CTA 1) - Link",
+            "name": "service_btn1_url",
+            "type": "text",
+            "default_value": "#solicita-duplicare",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_btn2_text",
+            "label": "Buton Secundar (CTA 2) - Text",
+            "name": "service_btn2_text",
+            "type": "text",
+            "default_value": "0722 000 114 — SUPORT DIRECT",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_btn2_url",
+            "label": "Buton Secundar (CTA 2) - Link",
+            "name": "service_btn2_url",
+            "type": "text",
+            "default_value": "tel:0722000114",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_spec1_icon",
+            "label": "Specificație 1 - Icon",
+            "name": "service_spec1_icon",
+            "type": "text",
+            "default_value": "precision_manufacturing",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_spec1_label",
+            "label": "Specificație 1 - Etichetă",
+            "name": "service_spec1_label",
+            "type": "text",
+            "default_value": "Toleranță Mecanică",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec1_val",
+            "label": "Specificație 1 - Valoare",
+            "name": "service_spec1_val",
+            "type": "text",
+            "default_value": "±0.01 mm (Frezare Laser Silca)",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec2_icon",
+            "label": "Specificație 2 - Icon",
+            "name": "service_spec2_icon",
+            "type": "text",
+            "default_value": "badge",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_spec2_label",
+            "label": "Specificație 2 - Etichetă",
+            "name": "service_spec2_label",
+            "type": "text",
+            "default_value": "Duplicare pe Card",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec2_val",
+            "label": "Specificație 2 - Valoare",
+            "name": "service_spec2_val",
+            "type": "text",
+            "default_value": "Cod Bitting Original",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec3_icon",
+            "label": "Specificație 3 - Icon",
+            "name": "service_spec3_icon",
+            "type": "text",
+            "default_value": "timer",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_spec3_label",
+            "label": "Specificație 3 - Etichetă",
+            "name": "service_spec3_label",
+            "type": "text",
+            "default_value": "Execuție Rapidă",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec3_val",
+            "label": "Specificație 3 - Valoare",
+            "name": "service_spec3_val",
+            "type": "text",
+            "default_value": "3 - 10 Min (Direct la Ghișeu)",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec4_icon",
+            "label": "Specificație 4 - Icon",
+            "name": "service_spec4_icon",
+            "type": "text",
+            "default_value": "task_alt",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_spec4_label",
+            "label": "Specificație 4 - Etichetă",
+            "name": "service_spec4_label",
+            "type": "text",
+            "default_value": "Matrițe Originale",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_spec4_val",
+            "label": "Specificație 4 - Valoare",
+            "name": "service_spec4_val",
+            "type": "text",
+            "default_value": "100% Compatibilitate Miez",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_tab_hero_visual",
+            "label": "Hero: Imagine & Stand (Dreapta)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_srv_image",
+            "label": "Imagine Prezentare (Card Dreapta)",
+            "name": "service_hero_image",
+            "type": "image",
+            "return_format": "url",
+            "preview_size": "medium",
+            "instructions": "Dacă este lăsată goală se va folosi imaginea reprezentativă (Featured Image) sau imaginea macro mecatronică implicită.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_floating_badge",
+            "label": "Insignă Plutitoare Dreapta-Sus",
+            "name": "service_hero_floating_badge",
+            "type": "text",
+            "default_value": "CILINDRU CALIBRAT • ISO 9001",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_panel_title",
+            "label": "Titlu Casetă Calibrare Jos",
+            "name": "service_hero_panel_title",
+            "type": "text",
+            "default_value": "STAND MECATRONIC",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_panel_code",
+            "label": "Cod Calibrare Jos",
+            "name": "service_hero_panel_code",
+            "type": "text",
+            "default_value": "CALIBRATION ID: #EN-9942",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_panel_desc",
+            "label": "Descriere Echipamente Active",
+            "name": "service_hero_panel_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Echipamente active: Silca Futura Pro (frezare adâncime laser), decodare optică profil, toleranță 0.01mm."
+        },
+        {
+            "key": "field_srv_guarantee_text",
+            "label": "Text Garanție (Bandă Jos)",
+            "name": "service_guarantee_text",
+            "type": "text",
+            "default_value": "Garanție Execuție 24 Luni",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_partner_text",
+            "label": "Text Partener / Profile (Bandă Jos)",
+            "name": "service_partner_text",
+            "type": "text",
+            "default_value": "Profile Protejate Silca",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_tab_products",
+            "label": "Catalog: Modele & Profile (Produse)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_srv_prod_badge_icon",
+            "label": "Icon Badge Secțiune",
+            "name": "service_products_badge_icon",
+            "type": "text",
+            "default_value": "lock_open",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_srv_prod_badge_text",
+            "label": "Text Badge Secțiune",
+            "name": "service_products_badge_text",
+            "type": "text",
+            "default_value": "CATALOG PROFILE DE SECURITATE",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_srv_prod_title",
+            "label": "Titlu Secțiune Modele",
+            "name": "service_products_title",
+            "type": "text",
+            "default_value": "MODELE ȘI PROFILE DISPONIBILE"
+        },
+        {
+            "key": "field_srv_prod_desc",
+            "label": "Descriere Secțiune Modele",
+            "name": "service_products_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Catalog informativ de profile uzuale prelucrate în atelierul mecatronic ENIGMA 14. Prețurile variază în funcție de complexitatea frezării, prezența pinilor activi și autorizarea pe baza cardului de proprietate."
+        },
+        {
+            "key": "field_srv_products",
+            "label": "Modele & Profile Disponibile (Produse)",
+            "name": "service_products",
+            "type": "repeater",
+            "instructions": "Adaugă modelele sau profilele de chei / produse pentru acest serviciu. Dacă este lăsat gol, se vor afișa modelele standard mecatronice.",
+            "button_label": "Adaugă Model / Profil Nou",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_srv_p_image",
+                    "label": "Imagine Produs / Profil",
+                    "name": "image",
+                    "type": "image",
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "wrapper": {
+                        "width": "30"
+                    }
+                },
+                {
+                    "key": "field_srv_p_badge",
+                    "label": "Badge (ex: PIN TELESCOPIC)",
+                    "name": "badge",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "35"
+                    }
+                },
+                {
+                    "key": "field_srv_p_icon",
+                    "label": "Icon Material Symbols (ex: vpn_key)",
+                    "name": "icon",
+                    "type": "select",
+                    "instructions": "Alege iconița grafică pentru acest model sau profil.",
+                    "required": 0,
+                    "choices": {
+                        "vpn_key": "vpn_key (Cheie / Pin telescopic)",
+                        "key": "key (Cheie clasică)",
+                        "key_visualizer": "key_visualizer (Canelură undă / Cartelă)",
+                        "lock": "lock (Lacăt / Dublă amprentă)",
+                        "door_front": "door_front (Uși blindate / Barbă dublă)",
+                        "security": "security (Securitate / Reversibilă)",
+                        "engineering": "engineering (Inginerie / Profil canelat)",
+                        "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                        "shield": "shield (Scut de protecție)",
+                        "verified": "verified (Verificat / Original)",
+                        "verified_user": "verified_user (Card securizat / Brevetat)",
+                        "badge": "badge (Cartelă de proprietate)",
+                        "lock_open": "lock_open (Cilindru deschis)",
+                        "lock_reset": "lock_reset (Resetare / Virginizare)",
+                        "password": "password (Cod bitting / PIN)",
+                        "fingerprint": "fingerprint (Amprentă biometrică)",
+                        "contactless": "contactless (Cartelă RFID / Proximitate)",
+                        "memory": "memory (Cip transponder / Electronică)",
+                        "timer": "timer (Execuție rapidă)",
+                        "bolt": "bolt (Viteză / Pe loc)",
+                        "home_repair_service": "home_repair_service (Atelier mecatronic)",
+                        "two_wheeler": "two_wheeler (Moto / Scuter)",
+                        "directions_car": "directions_car (Cheie auto)",
+                        "settings": "settings (Reglaj mecanic)",
+                        "build": "build (Unelte de precizie)"
+                    },
+                    "default_value": "vpn_key",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "wrapper": {
+                        "width": "35"
+                    }
+                },
+                {
+                    "key": "field_srv_p_title",
+                    "label": "Titlu Produs / Model",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_srv_p_series",
+                    "label": "Serie / Subtitlu (ex: Seria Interactive+ / Classic / MT5+)",
+                    "name": "series",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_srv_p_description",
+                    "label": "Descriere Produs",
+                    "name": "description",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_srv_p_tags",
+                    "label": "Etichete / Caracteristici (separate prin virgulă)",
+                    "name": "tags",
+                    "type": "text",
+                    "placeholder": "ex: Amprentă 3D, Protecție Bumping, Cod Securizat",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_srv_p_price",
+                    "label": "Cost Estimativ (ex: 60 - 120 RON)",
+                    "name": "price",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_srv_p_btn_text",
+                    "label": "Text Buton Acțiune",
+                    "name": "button_text",
+                    "type": "text",
+                    "default_value": "",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_srv_p_btn_url",
+                    "label": "Link Buton Acțiune",
+                    "name": "button_url",
+                    "type": "text",
+                    "default_value": "",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "field_srv_tab_card_display",
+            "label": "Card Afișare în Catalog Categorie",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_srv_card_icon",
+            "label": "Iconiță Serviciu (Material Symbols)",
+            "name": "service_card_icon",
+            "type": "select",
+            "instructions": "Alege simbolul grafic pentru acest serviciu în catalogul categoriei.",
+            "choices": {
+                "memory": "memory (Cip transponder / Mecatronică)",
+                "two_wheeler": "two_wheeler (Moto / Scuter)",
+                "vpn_key": "vpn_key (Cheie mecanică / Lamă)",
+                "restart_alt": "restart_alt (Virginizare / Resetare)",
+                "lock": "lock (Lacăt / Închidere)",
+                "lock_open": "lock_open (Cilindru / Deblocare)",
+                "door_front": "door_front (Uși blindate / Seif)",
+                "security": "security (Securitate înaltă)",
+                "shield": "shield (Scut de protecție)",
+                "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                "engineering": "engineering (Inginerie / Mecatronică)",
+                "key": "key (Cheie clasică)",
+                "key_visualizer": "key_visualizer (Canelură undă / Cartelă)",
+                "badge": "badge (Cartelă de proprietate)",
+                "password": "password (Cod bitting / PIN)",
+                "fingerprint": "fingerprint (Amprentă biometrică)",
+                "contactless": "contactless (Cartelă RFID / Interfon)",
+                "timer": "timer (Execuție rapidă)",
+                "bolt": "bolt (Pe loc / Fulger)",
+                "verified": "verified (Verificat / Original)",
+                "verified_user": "verified_user (Card securizat)",
+                "home_repair_service": "home_repair_service (Atelier mecanic)",
+                "directions_car": "directions_car (Cheie auto)",
+                "settings": "settings (Reglaj / Calibrare)",
+                "build": "build (Unelte mecatronice)",
+                "build_circle": "build_circle (Serviciu specializat)"
+            },
+            "default_value": "memory",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_card_badge",
+            "label": "Badge Card (ex: 15-25 MIN • TEST PE STAND)",
+            "name": "service_card_badge",
+            "type": "text",
+            "default_value": "15-25 MIN • TEST PE STAND",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_srv_card_desc",
+            "label": "Text Descriere Card în Categorie",
+            "name": "service_card_desc",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "Acest text va fi afișat în cardul acestui serviciu din pagina de categorie.",
+            "default_value": "Oferim servicii de decodare optico-laser și programare transponder pe banc pentru orice cheie auto. Timp de execuție rapid (15 minute) folosind echipamente de precizie Silca și Keyline."
+        },
+        {
+            "key": "field_srv_card_bullets",
+            "label": "Puncte Forte cu Bifă (Listă Card Categorie)",
+            "name": "service_card_bullets",
+            "type": "repeater",
+            "instructions": "Adaugă punctele tehnice forte ce vor fi afișate cu bifă verde (check_circle) în cardul din categoria de servicii.",
+            "button_label": "Adaugă Punct Forte",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_srv_card_bullet_text",
+                    "label": "Text Punct Forte",
+                    "name": "bullet_text",
+                    "type": "text",
+                    "placeholder": "ex: Generare cheie completă chiar și în caz de pierdere totală"
+                }
+            ]
+        },
+        {
+            "key": "field_srv_card_footer_note",
+            "label": "Notă Subsol Stânga (ex: Verificare instant atelier)",
+            "name": "service_card_footer_note",
+            "type": "text",
+            "default_value": "Verificare instant atelier",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_card_btn_text",
+            "label": "Text Buton Acțiune (ex: Verifică Compatibilitate Cip)",
+            "name": "service_card_btn_text",
+            "type": "text",
+            "default_value": "Verifică Compatibilitate Cip",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_srv_card_btn_url",
+            "label": "Link Buton Acțiune",
+            "name": "service_card_btn_url",
+            "type": "text",
+            "instructions": "Dacă lași gol, butonul va direcționa automat către pagina individuală a acestui serviciu.",
+            "default_value": "",
+            "wrapper": {
+                "width": "30"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "serviciu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Câmpuri pentru pagina individuală a fiecărui serviciu (Hero + Produse/Profile)",
+    "show_in_rest": 0,
+    "modified": 1727703000
+}

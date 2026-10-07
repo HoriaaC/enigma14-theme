@@ -1,0 +1,562 @@
+{
+    "key": "group_taxonomy_categorie_serviciu",
+    "title": "Setări Categorie Serviciu & Hero Banner",
+    "fields": [
+        {
+            "key": "field_cat_tab_general",
+            "label": "Date Generale",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_icon",
+            "label": "Iconiță Categorie (Material Symbols)",
+            "name": "category_icon",
+            "type": "select",
+            "instructions": "Alege simbolul grafic pentru această divizie / categorie de servicii.",
+            "required": 0,
+            "choices": {
+                "directions_car": "directions_car (Chei Auto / Moto)",
+                "switch_account": "switch_account (Rezidențial / Uși / Yale)",
+                "rss_feed": "rss_feed (Telecomenzi / Frecvență)",
+                "home_repair_service": "home_repair_service (Reparații / Urgențe)",
+                "key": "key (Cheie)",
+                "lock": "lock (Lacăt)",
+                "lock_reset": "lock_reset (Decodare / Resetare)",
+                "shield": "shield (Securitate / Blindate)",
+                "precision_manufacturing": "precision_manufacturing (CNC / Echipament)",
+                "timer": "timer (Rapid / Viteză)",
+                "bolt": "bolt (Electric / Fulger)",
+                "verified": "verified (Verificat / Original)"
+            },
+            "default_value": "directions_car",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_cat_time_badge",
+            "label": "Timp Execuție / Badge",
+            "name": "category_time_badge",
+            "type": "text",
+            "instructions": "Exemplu: 10-20 min, 2-5 min pe loc, 30 secunde, Diagnostic Gratuit",
+            "default_value": "10-20 min",
+            "placeholder": "ex: 10-20 min",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_cat_price_from",
+            "label": "Preț de pornire (De la)",
+            "name": "category_price_from",
+            "type": "text",
+            "instructions": "Exemplu: de la 50 lei, de la 150 lei",
+            "default_value": "",
+            "placeholder": "ex: de la 150 lei",
+            "wrapper": {
+                "width": "34"
+            }
+        },
+        {
+            "key": "field_cat_tab_hero",
+            "label": "Hero: Fundal & Texte",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_hero_bg_image",
+            "label": "Imagine Fundal Hero (Macro / Atelier)",
+            "name": "cat_hero_bg_image",
+            "type": "image",
+            "instructions": "Imagine de fundal pentru banner-ul categoriei.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_status_ribbon_text",
+            "label": "Text Panglică Status (Sub Breadcrumbs)",
+            "name": "cat_status_ribbon_text",
+            "type": "text",
+            "default_value": "DIAGNOZĂ OBD & DECODARE PE LOC",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_hero_badge_icon",
+            "label": "Icon Badge Titlu",
+            "name": "cat_hero_badge_icon",
+            "type": "text",
+            "default_value": "key",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_hero_badge_text",
+            "label": "Text Badge Titlu",
+            "name": "cat_hero_badge_text",
+            "type": "text",
+            "default_value": "ATELIER MECATRONIC SECTOR 1",
+            "wrapper": {
+                "width": "75"
+            }
+        },
+        {
+            "key": "field_cat_hero_title",
+            "label": "Titlu Principal Hero (H1)",
+            "name": "cat_hero_title",
+            "type": "text",
+            "instructions": "Lasă gol pentru a genera automat 'Servicii ' + Nume Categorie.",
+            "placeholder": "ex: Servicii Chei Auto & Moto",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_cat_hero_description",
+            "label": "Descriere Hero",
+            "name": "cat_hero_description",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "Lasă gol pentru a folosi descrierea categoriei.",
+            "placeholder": "Programare cip, scutere și intervenții rapide. Multiplicare de precizie, decodare transponder crypto și tăiere laser CNC direct în atelier.",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_cat_tab_ctas",
+            "label": "Hero: Butoane Acțiune",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_hero_btn1_text",
+            "label": "Text Buton 1 (Portocaliu)",
+            "name": "cat_hero_btn1_text",
+            "type": "text",
+            "default_value": "CERE O EVALUARE ACUM",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_hero_btn1_url",
+            "label": "Link Buton 1",
+            "name": "cat_hero_btn1_url",
+            "type": "text",
+            "default_value": "#solicita-evaluare",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_hero_btn2_text",
+            "label": "Text Buton 2 (Secundar)",
+            "name": "cat_hero_btn2_text",
+            "type": "text",
+            "default_value": "0722 000 114 — SUPORT DIRECT",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_hero_btn2_url",
+            "label": "Link Buton 2",
+            "name": "cat_hero_btn2_url",
+            "type": "text",
+            "default_value": "tel:0722000114",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_tab_specs",
+            "label": "Hero: 4 Căsuțe Specificații",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_spec1_label",
+            "label": "Căsuța 1 - Etichetă",
+            "name": "cat_spec1_label",
+            "type": "text",
+            "default_value": "TOLERANȚĂ CNC",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec1_val",
+            "label": "Căsuța 1 - Valoare",
+            "name": "cat_spec1_val",
+            "type": "text",
+            "default_value": "±0.02 mm",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec2_label",
+            "label": "Căsuța 2 - Etichetă",
+            "name": "cat_spec2_label",
+            "type": "text",
+            "default_value": "DECODARE CIP",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec2_val",
+            "label": "Căsuța 2 - Valoare",
+            "name": "cat_spec2_val",
+            "type": "text",
+            "default_value": "ID46 / MQB",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec3_label",
+            "label": "Căsuța 3 - Etichetă",
+            "name": "cat_spec3_label",
+            "type": "text",
+            "default_value": "EXECUȚIE RAPIDĂ",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec3_val",
+            "label": "Căsuța 3 - Valoare",
+            "name": "cat_spec3_val",
+            "type": "text",
+            "default_value": "10 - 25 min",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec4_label",
+            "label": "Căsuța 4 - Etichetă",
+            "name": "cat_spec4_label",
+            "type": "text",
+            "default_value": "FRECVENȚĂ RF",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_spec4_val",
+            "label": "Căsuța 4 - Valoare",
+            "name": "cat_spec4_val",
+            "type": "text",
+            "default_value": "433 / 868 MHz",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_tab_console",
+            "label": "Hero: Consolă Stand Mecatronic (Dreapta)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_console_icon",
+            "label": "Icon Consolă",
+            "name": "cat_console_icon",
+            "type": "text",
+            "default_value": "precision_manufacturing",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_console_title",
+            "label": "Titlu Consolă",
+            "name": "cat_console_title",
+            "type": "text",
+            "default_value": "Stand Mecatronic Atelier",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_badge",
+            "label": "Badge Consolă",
+            "name": "cat_console_badge",
+            "type": "text",
+            "default_value": "ONLINE",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_cat_console_eq1_name",
+            "label": "Echipament 1 - Nume",
+            "name": "cat_console_eq1_name",
+            "type": "text",
+            "default_value": "Silca Futura Edge CNC",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq1_tag",
+            "label": "Echipament 1 - Etichetă",
+            "name": "cat_console_eq1_tag",
+            "type": "text",
+            "default_value": "LAME LASER / AMPRENTĂ",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq2_name",
+            "label": "Echipament 2 - Nume",
+            "name": "cat_console_eq2_name",
+            "type": "text",
+            "default_value": "Keyline Gymkana 994",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq2_tag",
+            "label": "Echipament 2 - Etichetă",
+            "name": "cat_console_eq2_tag",
+            "type": "text",
+            "default_value": "DECODARE AUTOMATĂ",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq3_name",
+            "label": "Echipament 3 - Nume",
+            "name": "cat_console_eq3_name",
+            "type": "text",
+            "default_value": "Tango Programmer & VVDI",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq3_tag",
+            "label": "Echipament 3 - Etichetă",
+            "name": "cat_console_eq3_tag",
+            "type": "text",
+            "default_value": "TRANSPONDER EEPROM",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq4_name",
+            "label": "Echipament 4 - Nume",
+            "name": "cat_console_eq4_name",
+            "type": "text",
+            "default_value": "Tester Frecvență RF / LF",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_console_eq4_tag",
+            "label": "Echipament 4 - Etichetă",
+            "name": "cat_console_eq4_tag",
+            "type": "text",
+            "default_value": "SMART KEYLESS GO",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_guarantee_title",
+            "label": "Titlu Garanție Consolă",
+            "name": "cat_guarantee_title",
+            "type": "text",
+            "default_value": "Garanție Mecatronică 24 Luni",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_guarantee_subtitle",
+            "label": "Descriere Garanție Consolă",
+            "name": "cat_guarantee_subtitle",
+            "type": "text",
+            "default_value": "Testare pornire motor și telecomandă pe stand direct la predare",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_cat_tab_services_catalog",
+            "label": "Catalog: Servicii Specializate",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_cat_services_badge_icon",
+            "label": "Icon Badge Catalog (Material Symbols)",
+            "name": "cat_services_badge_icon",
+            "type": "select",
+            "choices": {
+                "build_circle": "build_circle (Serviciu specializat)",
+                "precision_manufacturing": "precision_manufacturing (CNC / Echipament)",
+                "memory": "memory (Mecatronică / Cip)",
+                "key": "key (Cheie)",
+                "vpn_key": "vpn_key (Cheie auto/mecanică)",
+                "lock": "lock (Lacăt)",
+                "shield": "shield (Securitate)",
+                "verified": "verified (Verificat)",
+                "bolt": "bolt (Rapid)"
+            },
+            "default_value": "build_circle",
+            "ui": 1,
+            "return_format": "value",
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_cat_services_badge_text",
+            "label": "Text Badge Catalog",
+            "name": "cat_services_badge_text",
+            "type": "text",
+            "default_value": "SERVICII SPECIALIZATE",
+            "wrapper": {
+                "width": "70"
+            }
+        },
+        {
+            "key": "field_cat_services_title",
+            "label": "Titlu Secțiune Catalog",
+            "name": "cat_services_title",
+            "type": "text",
+            "instructions": "Dacă lași gol se va afișa automat 'Soluții Complete - [Nume Categorie]'.",
+            "default_value": ""
+        },
+        {
+            "key": "field_cat_services_desc",
+            "label": "Descriere Secțiune Catalog",
+            "name": "cat_services_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Catalog tehnic dedicat multiplicării și programării electronice pentru toate mărcile. Fără coș de cumpărături — execuție pe stand în atelier sau asistență rapidă."
+        },
+        {
+            "key": "field_cat_services_list",
+            "label": "Servicii de Afișat în Categorie (cu Iconiță lângă Titlu)",
+            "name": "cat_services_list",
+            "type": "repeater",
+            "instructions": "Adaugă serviciile din această categorie care să apară în grilă. Pentru fiecare serviciu poți alege direct iconița dorită (lângă titlu). Dacă lași această listă goală, se vor afișa automat toate serviciile asociate categoriei.",
+            "button_label": "Adaugă Serviciu în Grilă",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_cat_srv_item_post",
+                    "label": "Serviciu",
+                    "name": "service",
+                    "type": "post_object",
+                    "instructions": "Alege serviciul din catalog.",
+                    "required": 1,
+                    "post_type": [
+                        "serviciu"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_cat_srv_item_icon",
+                    "label": "Iconiță Card (Material Symbols)",
+                    "name": "icon",
+                    "type": "select",
+                    "instructions": "Iconița care va apărea în stânga titlului (în caseta de 28px).",
+                    "required": 0,
+                    "choices": {
+                        "memory": "memory (Cip transponder / Mecatronică)",
+                        "two_wheeler": "two_wheeler (Moto / Scuter)",
+                        "vpn_key": "vpn_key (Cheie mecanică / Lamă)",
+                        "restart_alt": "restart_alt (Virginizare / Resetare)",
+                        "lock": "lock (Lacăt / Închidere)",
+                        "lock_open": "lock_open (Cilindru / Deblocare)",
+                        "door_front": "door_front (Uși blindate / Seif)",
+                        "security": "security (Securitate înaltă)",
+                        "shield": "shield (Scut de protecție)",
+                        "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                        "engineering": "engineering (Inginerie / Mecatronică)",
+                        "key": "key (Cheie clasică)",
+                        "key_visualizer": "key_visualizer (Canelură undă / Cartelă)",
+                        "badge": "badge (Cartelă de proprietate)",
+                        "password": "password (Cod bitting / PIN)",
+                        "fingerprint": "fingerprint (Amprentă biometrică)",
+                        "contactless": "contactless (Cartelă RFID / Interfon)",
+                        "timer": "timer (Execuție rapidă)",
+                        "bolt": "bolt (Pe loc / Fulger)",
+                        "verified": "verified (Verificat / Original)",
+                        "verified_user": "verified_user (Card securizat)",
+                        "home_repair_service": "home_repair_service (Atelier mecanic)",
+                        "directions_car": "directions_car (Cheie auto)",
+                        "settings": "settings (Reglaj / Calibrare)",
+                        "build": "build (Unelte mecatronice)",
+                        "build_circle": "build_circle (Serviciu specializat)"
+                    },
+                    "default_value": "memory",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "wrapper": {
+                        "width": "50"
+                    }
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "categorie_serviciu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1727703000
+}

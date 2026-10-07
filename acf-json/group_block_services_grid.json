@@ -1,0 +1,226 @@
+{
+    "key": "group_block_services_grid",
+    "title": "Block: Divizii Mecatronice & Servicii",
+    "fields": [
+        {
+            "key": "field_tab_sg_header",
+            "label": "Antet Secțiune",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_sg_badge",
+            "label": "Badge Superior",
+            "name": "section_badge",
+            "type": "text",
+            "default_value": "DIVIZII MECATRONICE"
+        },
+        {
+            "key": "field_sg_title",
+            "label": "Titlu Secțiune",
+            "name": "section_title",
+            "type": "text",
+            "default_value": "Alege un Serviciu"
+        },
+        {
+            "key": "field_sg_desc",
+            "label": "Descriere Secțiune",
+            "name": "section_desc",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Catalog tehnic de multiplicare, decodare computerizată CNC și asistență de urgență disponibil în atelierul nostru din București."
+        },
+        {
+            "key": "field_sg_note",
+            "label": "Notă Tehnică Dreapta",
+            "name": "section_note",
+            "type": "text",
+            "default_value": "Toate operațiunile se realizează cu verificare electronică a profilului."
+        },
+        {
+            "key": "field_tab_sg_cards",
+            "label": "Carduri Divizii (Categorii)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_sg_cards",
+            "label": "Divizii Afișate (Grilă Carduri)",
+            "name": "division_cards",
+            "type": "repeater",
+            "instructions": "Adaugă diviziile / categoriile pe care dorești să le afișezi în această grilă.",
+            "required": 0,
+            "min": 0,
+            "max": 8,
+            "layout": "block",
+            "button_label": "Adaugă Divizie / Categorie",
+            "sub_fields": [
+                {
+                    "key": "field_sg_cat_term",
+                    "label": "Selectează Categoria din CPT",
+                    "name": "category_term",
+                    "type": "taxonomy",
+                    "instructions": "Alege categoria de servicii asociată acestui card.",
+                    "taxonomy": "categorie_serviciu",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_sg_custom_title",
+                    "label": "Titlu Personalizat (Opțional)",
+                    "name": "custom_title",
+                    "type": "text",
+                    "instructions": "Lasă gol pentru a folosi numele categoriei din CPT."
+                },
+                {
+                    "key": "field_sg_custom_desc",
+                    "label": "Descriere Personalizată (Opțional)",
+                    "name": "custom_desc",
+                    "type": "textarea",
+                    "rows": 2,
+                    "instructions": "Lasă gol pentru a folosi descrierea categoriei din CPT."
+                },
+                {
+                    "key": "field_sg_custom_icon",
+                    "label": "Iconiță Personalizată (Opțional)",
+                    "name": "custom_icon",
+                    "type": "select",
+                    "instructions": "Dacă este lăsat pe 'Implicit', va prelua iconița setată în categorie.",
+                    "choices": {
+                        "": "— Folosește iconița din categorie —",
+                        "directions_car": "directions_car (Chei Auto / Moto)",
+                        "switch_account": "switch_account (Rezidențial / Uși / Yale)",
+                        "rss_feed": "rss_feed (Telecomenzi / Frecvență)",
+                        "home_repair_service": "home_repair_service (Reparații / Urgențe)",
+                        "key": "key (Cheie)",
+                        "lock": "lock (Lacăt)",
+                        "lock_reset": "lock_reset (Decodare / Resetare)",
+                        "shield": "shield (Securitate / Blindate)",
+                        "precision_manufacturing": "precision_manufacturing (CNC / Echipament)",
+                        "timer": "timer (Rapid / Viteză)",
+                        "bolt": "bolt (Electric / Fulger)",
+                        "verified": "verified (Verificat / Original)"
+                    },
+                    "default_value": "",
+                    "allow_null": 1,
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_sg_custom_badge",
+                    "label": "Timp Execuție / Badge (Opțional)",
+                    "name": "custom_time_badge",
+                    "type": "text",
+                    "instructions": "Lasă gol pentru a folosi valoarea setată în categorie (ex: 10-20 min)."
+                },
+                {
+                    "key": "field_sg_custom_price",
+                    "label": "Preț 'De la' (Opțional)",
+                    "name": "custom_price_from",
+                    "type": "text",
+                    "instructions": "Lasă gol pentru a folosi valoarea din categorie (ex: de la 150 lei)."
+                },
+                {
+                    "key": "field_sg_services",
+                    "label": "Servicii Specifice Afișate (Lista cu bifă)",
+                    "name": "selected_services",
+                    "type": "post_object",
+                    "instructions": "Alege ce servicii din această categorie dorești să apară în lista cu bifă (recomandat 3-4 servicii). Dacă lași gol, se vor afișa automat ultimele servicii din categorie.",
+                    "post_type": [
+                        "serviciu"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 1,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_sg_btn_text",
+                    "label": "Text Buton / Link",
+                    "name": "button_text",
+                    "type": "text",
+                    "default_value": "Vezi detalii & compatibilitate"
+                },
+                {
+                    "key": "field_sg_btn_url",
+                    "label": "Link Buton Personalizat (Opțional)",
+                    "name": "button_url",
+                    "type": "url",
+                    "instructions": "Lasă gol pentru a trimite automat către arhiva categoriei."
+                }
+            ]
+        },
+        {
+            "key": "field_tab_sg_strip",
+            "label": "Banda Inferioară (Compatibilitate & Garanție)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_sg_strip_image",
+            "label": "Imagine Bandă",
+            "name": "showcase_image",
+            "type": "image",
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "default_value": "https://lh3.googleusercontent.com/aida-public/AB6AXuDDiobZAUdIpP-RTBmJ-Bddy4CL_5t8roFn4b2pVj8jUJfo1Yk-V5-0UC3m_hqnpr02g11VRL9198u7AAYGUTyOs7Iho98_j9VQ5OYP1Gbc-x_4e_cxBFmWcShIKgE3yy0SskNE7yv4yocM1Sa1OOocv6c0R6SrXdCINuui92WlynOlbkUO7qrx_EGJ8kNSTBC-6b9Lw31IxLC7nhtalP5wcwmtJDbXaGCeGEN9TZcW0BodiYvk9dx7"
+        },
+        {
+            "key": "field_sg_strip_title",
+            "label": "Titlu Bandă",
+            "name": "showcase_title",
+            "type": "text",
+            "default_value": "Compatibilitate cu Peste 98% din Modelele Rulate în România"
+        },
+        {
+            "key": "field_sg_strip_desc",
+            "label": "Descriere Bandă",
+            "name": "showcase_desc",
+            "type": "text",
+            "default_value": "Dacia, Volkswagen Group, BMW, Mercedes-Benz, Renault, Ford, Toyota, Hyundai, Kia și utilitare."
+        },
+        {
+            "key": "field_sg_strip_b1",
+            "label": "Badge Stânga",
+            "name": "showcase_badge_1",
+            "type": "text",
+            "default_value": "GARANȚIE SCRISĂ 24 LUNI"
+        },
+        {
+            "key": "field_sg_strip_b2",
+            "label": "Badge Dreapta",
+            "name": "showcase_badge_2",
+            "type": "text",
+            "default_value": "TESTABILĂ PE LOC"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/enigma-services-grid"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1727697200
+}

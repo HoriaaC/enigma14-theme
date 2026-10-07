@@ -1,0 +1,402 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "ENIGMA 14",
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "1280px",
+      "wideSize": "1440px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "custom": true,
+      "link": true,
+      "palette": [
+        {
+          "name": "Primary (Peach)",
+          "slug": "primary",
+          "color": "#ffb68d"
+        },
+        {
+          "name": "Primary Container (Brand Orange)",
+          "slug": "primary-container",
+          "color": "#ff7700"
+        },
+        {
+          "name": "On Primary",
+          "slug": "on-primary",
+          "color": "#532200"
+        },
+        {
+          "name": "On Primary Container",
+          "slug": "on-primary-container",
+          "color": "#5b2600"
+        },
+        {
+          "name": "Primary Fixed",
+          "slug": "primary-fixed",
+          "color": "#ffdbc9"
+        },
+        {
+          "name": "Inverse Primary",
+          "slug": "inverse-primary",
+          "color": "#9b4600"
+        },
+        {
+          "name": "Secondary (Warm Gold)",
+          "slug": "secondary",
+          "color": "#ffcb8d"
+        },
+        {
+          "name": "Secondary Container (Gold Amber)",
+          "slug": "secondary-container",
+          "color": "#ffa504"
+        },
+        {
+          "name": "On Secondary",
+          "slug": "on-secondary",
+          "color": "#462a00"
+        },
+        {
+          "name": "On Secondary Container",
+          "slug": "on-secondary-container",
+          "color": "#684100"
+        },
+        {
+          "name": "Secondary Fixed",
+          "slug": "secondary-fixed",
+          "color": "#ffddb7"
+        },
+        {
+          "name": "Secondary Fixed Dim",
+          "slug": "secondary-fixed-dim",
+          "color": "#ffb95c"
+        },
+        {
+          "name": "Tertiary (Coral Rose)",
+          "slug": "tertiary",
+          "color": "#ffb3b1"
+        },
+        {
+          "name": "Tertiary Container (Coral Red)",
+          "slug": "tertiary-container",
+          "color": "#ff7273"
+        },
+        {
+          "name": "On Tertiary",
+          "slug": "on-tertiary",
+          "color": "#680011"
+        },
+        {
+          "name": "On Tertiary Container",
+          "slug": "on-tertiary-container",
+          "color": "#730014"
+        },
+        {
+          "name": "Background",
+          "slug": "background",
+          "color": "#11131a"
+        },
+        {
+          "name": "On Background",
+          "slug": "on-background",
+          "color": "#e2e2ec"
+        },
+        {
+          "name": "Surface",
+          "slug": "surface",
+          "color": "#11131a"
+        },
+        {
+          "name": "Surface Dim",
+          "slug": "surface-dim",
+          "color": "#11131a"
+        },
+        {
+          "name": "Surface Bright",
+          "slug": "surface-bright",
+          "color": "#373941"
+        },
+        {
+          "name": "Surface Container Lowest (Pitch Navy)",
+          "slug": "surface-container-lowest",
+          "color": "#0c0e15"
+        },
+        {
+          "name": "Surface Container Low",
+          "slug": "surface-container-low",
+          "color": "#191b22"
+        },
+        {
+          "name": "Surface Container",
+          "slug": "surface-container",
+          "color": "#1d1f27"
+        },
+        {
+          "name": "Surface Container High",
+          "slug": "surface-container-high",
+          "color": "#282a31"
+        },
+        {
+          "name": "Surface Container Highest",
+          "slug": "surface-container-highest",
+          "color": "#33343c"
+        },
+        {
+          "name": "Surface Variant",
+          "slug": "surface-variant",
+          "color": "#33343c"
+        },
+        {
+          "name": "On Surface (Soft Light)",
+          "slug": "on-surface",
+          "color": "#e2e2ec"
+        },
+        {
+          "name": "On Surface Variant (Muted Peach)",
+          "slug": "on-surface-variant",
+          "color": "#e0c0b0"
+        },
+        {
+          "name": "Inverse Surface",
+          "slug": "inverse-surface",
+          "color": "#e2e2ec"
+        },
+        {
+          "name": "Inverse On Surface",
+          "slug": "inverse-on-surface",
+          "color": "#2e3038"
+        },
+        {
+          "name": "Outline",
+          "slug": "outline",
+          "color": "#a78b7c"
+        },
+        {
+          "name": "Outline Variant",
+          "slug": "outline-variant",
+          "color": "#584235"
+        },
+        {
+          "name": "Error",
+          "slug": "error",
+          "color": "#ffb4ab"
+        },
+        {
+          "name": "Error Container",
+          "slug": "error-container",
+          "color": "#93000a"
+        },
+        {
+          "name": "On Error",
+          "slug": "on-error",
+          "color": "#690005"
+        },
+        {
+          "name": "Success (Emerald Status)",
+          "slug": "success",
+          "color": "#10b981"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Pure Black",
+          "slug": "black",
+          "color": "#000000"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "dropCap": false,
+      "fluid": true,
+      "fontStyle": true,
+      "fontWeight": true,
+      "letterSpacing": true,
+      "lineHeight": true,
+      "textColumns": true,
+      "textDecoration": true,
+      "textTransform": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Montserrat\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "name": "Montserrat",
+          "slug": "montserrat",
+          "fontFace": [
+            {
+              "fontFamily": "Montserrat",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "100 900",
+              "src": [
+                "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+              ]
+            }
+          ]
+        },
+        {
+          "fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "name": "Inter",
+          "slug": "inter",
+          "fontFace": [
+            {
+              "fontFamily": "Inter",
+              "fontStretch": "normal",
+              "fontStyle": "normal",
+              "fontWeight": "100 900",
+              "src": [
+                "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Small (12px)",
+          "slug": "small",
+          "size": "12px"
+        },
+        {
+          "name": "Action / Sub (13px)",
+          "slug": "action",
+          "size": "13px"
+        },
+        {
+          "name": "Medium (14px)",
+          "slug": "medium",
+          "size": "14px"
+        },
+        {
+          "name": "Body Large (16px)",
+          "slug": "large",
+          "size": "16px"
+        },
+        {
+          "name": "Headline Small (18px)",
+          "slug": "x-large",
+          "size": "18px"
+        },
+        {
+          "name": "Headline Medium (22px)",
+          "slug": "xx-large",
+          "size": "22px"
+        },
+        {
+          "name": "Headline XL (36px)",
+          "slug": "xxx-large",
+          "size": "36px"
+        },
+        {
+          "name": "Display Large (48px)",
+          "slug": "huge",
+          "size": "48px"
+        }
+      ]
+    },
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true,
+      "units": ["px", "em", "rem", "vh", "vw", "%"]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--background)",
+      "text": "var(--wp--preset--color--on-surface)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--montserrat)",
+      "fontSize": "var(--wp--preset--font-size--large)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontSize": "var(--wp--preset--font-size--huge)",
+          "fontWeight": "800",
+          "lineHeight": "1.15",
+          "textTransform": "uppercase"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--on-surface)"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontSize": "var(--wp--preset--font-size--xxx-large)",
+          "fontWeight": "700",
+          "lineHeight": "1.25",
+          "textTransform": "uppercase"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--on-surface)"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontSize": "var(--wp--preset--font-size--xx-large)",
+          "fontWeight": "700",
+          "lineHeight": "1.3"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--on-surface)"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontSize": "var(--wp--preset--font-size--x-large)",
+          "fontWeight": "600",
+          "lineHeight": "1.4"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--on-surface)"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--primary)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--secondary-container)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--primary-container)",
+          "text": "var(--wp--preset--color--on-primary-container)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontSize": "var(--wp--preset--font-size--action)",
+          "fontWeight": "700",
+          "letterSpacing": "0.05em",
+          "textTransform": "uppercase"
+        },
+        "border": {
+          "radius": "4px"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.75rem",
+            "bottom": "0.75rem",
+            "left": "1.5rem",
+            "right": "1.5rem"
+          }
+        }
+      }
+    }
+  }
+}

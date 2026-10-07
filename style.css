@@ -1,0 +1,83 @@
+/*
+Theme Name: ENIGMA 14
+Theme URI: https://centruldechei.ro
+Description: A modern Full Site Editing (FSE) Gutenberg block theme tailored for ENIGMA 14 - Centrul Tehnic Specializat de Duplicare și Decodare Chei București. Optimized for speed, local SEO, mechatronic precision branding, and full Gutenberg block workflow.
+Author: ENIGMA 14
+Author URI: https://centruldechei.ro
+Version: 1.0.0
+Requires at least: 6.2
+Tested up to: 6.7
+Requires PHP: 7.4
+Text Domain: enigma14
+*/
+
+/**
+ * Modern Gutenberg Base Styles
+ * Designed to work seamlessly alongside theme.json
+ */
+
+:root {
+    --enigma-font-display: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif);
+    --enigma-font-body: var(--wp--preset--font-family--inter, 'Inter', sans-serif);
+}
+
+/* Base selection styling */
+::selection {
+    background-color: var(--wp--preset--color--primary-container, #ff7700);
+    color: var(--wp--preset--color--on-primary-container, #5b2600);
+}
+
+/* Material Symbols & Icon Support */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Brand glow and ambient accents */
+.enigma-glow-primary {
+    filter: drop-shadow(0 0 20px rgba(255, 119, 0, 0.4));
+}
+
+.enigma-glow-secondary {
+    filter: drop-shadow(0 0 20px rgba(255, 165, 4, 0.4));
+}
+
+/* Responsive Image handling without layout shift */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gutenberg block alignment & smooth rendering */
+.wp-site-blocks {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Material Symbols Outlined Font Support */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,422 @@
+{
+    "key": "group_homepage_hero",
+    "title": "Homepage Hero Banner",
+    "fields": [
+        {
+            "key": "field_tab_hero_general",
+            "label": "Setari Generale & Fundal",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_hero_bg_desktop",
+            "label": "Background Image (Desktop)",
+            "name": "hero_bg_desktop",
+            "type": "image",
+            "instructions": "Imagine de fundal pentru ecrane desktop \/ tablete",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_bg_mobile",
+            "label": "Background Image (Mobile)",
+            "name": "hero_bg_mobile",
+            "type": "image",
+            "instructions": "Imagine de fundal optimizata pentru ecrane mobile",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_badge",
+            "label": "Badge Text (Top Left)",
+            "name": "hero_badge",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "default_value": "ATELIER MECATRONIC ACTIV • CNC SILCA & KEYLINE ONLINE",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_loc",
+            "label": "Location Text",
+            "name": "hero_location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "default_value": "BUCUREȘTI SECTOR 1",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_time",
+            "label": "Execution Time Text",
+            "name": "hero_time",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "default_value": "EXECUȚIE MEDIE 8 MIN",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_pre_title",
+            "label": "Pre Headline (Badge)",
+            "name": "hero_pre_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "default_value": "CENTRUL TEHNIC SPECIALIZAT DE DUPLICARE ȘI DECODARE",
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_title",
+            "label": "Main Headline",
+            "name": "hero_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "default_value": "CENTRU DE MECATRONICĂ ȘI COPIERE CHEI",
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_subtitle",
+            "label": "Sub Headline",
+            "name": "hero_subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "default_value": "Peste 14 ani de excelență în securitate auto și rezidențială. Echipamente CNC de ultimă generație.",
+            "rows": 3,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_tab_hero_boxes",
+            "label": "Specificații Tehnice (3 Box-uri)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_hero_box1_icon",
+            "label": "Box 1 - Icon (Material Symbols)",
+            "name": "hero_box1_icon",
+            "type": "select",
+            "instructions": "Alege iconița pentru prima casetă",
+            "required": 0,
+            "choices": {
+                "straighten": "straighten (Ruler \/ Toleranță)",
+                "bolt": "bolt (Fulgere \/ Viteză)",
+                "inventory_2": "inventory_2 (Cutie \/ Depozit)",
+                "precision_manufacturing": "precision_manufacturing (CNC \/ Echipament)",
+                "verified": "verified (Verificat \/ Calitate)",
+                "timer": "timer (Cronometru)",
+                "lock_reset": "lock_reset (Lacăt \/ Decodare)",
+                "shield": "shield (Scut \/ Securitate)",
+                "directions_car": "directions_car (Mașină \/ Auto)",
+                "home_repair_service": "home_repair_service (Service \/ Reparații)"
+            },
+            "default_value": "straighten",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box1_title",
+            "label": "Box 1 - Titlu",
+            "name": "hero_box1_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Toleranță CNC",
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box1_subtitle",
+            "label": "Box 1 - Subtitlu \/ Precizie",
+            "name": "hero_box1_subtitle",
+            "type": "text",
+            "required": 0,
+            "default_value": "±0.02 mm Precizie",
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box2_icon",
+            "label": "Box 2 - Icon (Material Symbols)",
+            "name": "hero_box2_icon",
+            "type": "select",
+            "instructions": "Alege iconița pentru a doua casetă",
+            "required": 0,
+            "choices": {
+                "straighten": "straighten (Ruler \/ Toleranță)",
+                "bolt": "bolt (Fulgere \/ Viteză)",
+                "inventory_2": "inventory_2 (Cutie \/ Depozit)",
+                "precision_manufacturing": "precision_manufacturing (CNC \/ Echipament)",
+                "verified": "verified (Verificat \/ Calitate)",
+                "timer": "timer (Cronometru)",
+                "lock_reset": "lock_reset (Lacăt \/ Decodare)",
+                "shield": "shield (Scut \/ Securitate)",
+                "directions_car": "directions_car (Mașină \/ Auto)",
+                "home_repair_service": "home_repair_service (Service \/ Reparații)"
+            },
+            "default_value": "bolt",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box2_title",
+            "label": "Box 2 - Titlu",
+            "name": "hero_box2_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Execuție Rapidă",
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box2_subtitle",
+            "label": "Box 2 - Subtitlu \/ Timp",
+            "name": "hero_box2_subtitle",
+            "type": "text",
+            "required": 0,
+            "default_value": "5 – 15 min pe loc",
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box3_icon",
+            "label": "Box 3 - Icon (Material Symbols)",
+            "name": "hero_box3_icon",
+            "type": "select",
+            "instructions": "Alege iconița pentru a treia casetă",
+            "required": 0,
+            "choices": {
+                "straighten": "straighten (Ruler \/ Toleranță)",
+                "bolt": "bolt (Fulgere \/ Viteză)",
+                "inventory_2": "inventory_2 (Cutie \/ Depozit)",
+                "precision_manufacturing": "precision_manufacturing (CNC \/ Echipament)",
+                "verified": "verified (Verificat \/ Calitate)",
+                "timer": "timer (Cronometru)",
+                "lock_reset": "lock_reset (Lacăt \/ Decodare)",
+                "shield": "shield (Scut \/ Securitate)",
+                "directions_car": "directions_car (Mașină \/ Auto)",
+                "home_repair_service": "home_repair_service (Service \/ Reparații)"
+            },
+            "default_value": "inventory_2",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box3_title",
+            "label": "Box 3 - Titlu",
+            "name": "hero_box3_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Depozit Matrițe",
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_box3_subtitle",
+            "label": "Box 3 - Subtitlu \/ Stoc",
+            "name": "hero_box3_subtitle",
+            "type": "text",
+            "required": 0,
+            "default_value": "5.000+ Blank-uri",
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_tab_hero_buttons",
+            "label": "Butoane Acțiune (CTA)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_hero_btn1",
+            "label": "Primary Button (Servicii)",
+            "name": "hero_button_primary",
+            "type": "link",
+            "required": 0,
+            "return_format": "array",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_btn2",
+            "label": "Secondary Button (Urgențe)",
+            "name": "hero_button_secondary",
+            "type": "link",
+            "required": 0,
+            "return_format": "array",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_tab_hero_metrology",
+            "label": "Bara Tehnică & Parteneri (Subsol Hero)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_hero_equipment",
+            "label": "Echipamente Tehnice (Bara Inferioară)",
+            "name": "hero_equipment",
+            "type": "text",
+            "instructions": "Textul pentru linia de echipamente (stânga)",
+            "required": 0,
+            "default_value": "Echipamente: Silca Futura Edge, Keyline Gymkana 994, Tango Transponder Programmer",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_partners_label",
+            "label": "Etichetă Parteneri Hardware",
+            "name": "hero_partners_label",
+            "type": "text",
+            "instructions": "Text etichetă (dreapta)",
+            "required": 0,
+            "default_value": "PARTENERI HARDWARE:",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_partners_text",
+            "label": "Listă Parteneri Hardware",
+            "name": "hero_partners_text",
+            "type": "text",
+            "instructions": "Lista partenerilor (dreapta)",
+            "required": 0,
+            "default_value": "SILCA • KEYLINE • JMA • ERREBI",
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "front-page.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1790768695
+}

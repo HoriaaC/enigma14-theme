@@ -1,0 +1,12 @@
+{
+  "name": "enigma14-theme",
+  "version": "1.0.0",
+  "description": "Tailwind CSS for ENIGMA 14 Theme",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

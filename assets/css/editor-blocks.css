@@ -1,0 +1,169 @@
+/**
+ * ENIGMA 14 - Gutenberg Editor Styling & Custom Block Distinguishers
+ * Brings frontend design system into WordPress Admin Editor canvas.
+ */
+
+/* ======================================================== */
+/* 1. Editor Canvas Dark Theme & Typography Base            */
+/* ======================================================== */
+
+.editor-styles-wrapper,
+.editor-styles-wrapper .block-editor-writing-flow,
+.editor-styles-wrapper .is-root-container {
+    background-color: #11131a !important;
+    color: #e2e2ec !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Material Symbols in Gutenberg Editor */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ======================================================== */
+/* 2. Visual Block Boundaries & Distinguishers              */
+/* ======================================================== */
+
+/* All ENIGMA Custom Blocks */
+.wp-block[data-type^="acf/enigma-"] {
+    position: relative !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2.5rem !important;
+    border-radius: 8px !important;
+    transition: outline 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    outline: 1px dashed rgba(255, 119, 0, 0.3) !important;
+}
+
+/* Block Hover State */
+.wp-block[data-type^="acf/enigma-"]:hover {
+    outline: 1px dashed rgba(255, 119, 0, 0.8) !important;
+    box-shadow: 0 0 20px rgba(255, 119, 0, 0.15) !important;
+}
+
+/* Block Selected / Active State */
+.wp-block[data-type^="acf/enigma-"].is-selected,
+.wp-block[data-type^="acf/enigma-"].has-child-selected {
+    outline: 2px solid #ff7700 !important;
+    box-shadow: 0 0 30px rgba(255, 119, 0, 0.35) !important;
+}
+
+/* Floating Block Identity Badges */
+.wp-block[data-type^="acf/enigma-"]::before {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    z-index: 60;
+    padding: 3px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: #1d1f27;
+    color: #ffb68d;
+    border: 1px solid rgba(255, 119, 0, 0.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    opacity: 0.92;
+    transition: all 0.2s ease;
+}
+
+/* Badge Highlight on Block Selection */
+.wp-block[data-type^="acf/enigma-"]:hover::before,
+.wp-block[data-type^="acf/enigma-"].is-selected::before {
+    opacity: 1;
+    background: #ff7700;
+    color: #11131a;
+    border-color: #ff7700;
+    box-shadow: 0 0 14px rgba(255, 119, 0, 0.5);
+}
+
+/* Custom Block Specific Badges */
+.wp-block[data-type="acf/enigma-header"]::before {
+    content: "⚡ ENIGMA • Header Principal";
+}
+
+.wp-block[data-type="acf/enigma-hero"]::before {
+    content: "🎯 ENIGMA • Hero Banner Principal";
+}
+
+.wp-block[data-type="acf/enigma-services-grid"]::before {
+    content: "🛠 ENIGMA • Divizii & Servicii Grid";
+}
+
+.wp-block[data-type="acf/enigma-about"]::before {
+    content: "🏭 ENIGMA • Despre Noi & Tehnologie Atelier";
+}
+
+.wp-block[data-type="acf/enigma-quick-assessment"]::before {
+    content: "📋 ENIGMA • Evaluare Rapidă & Diagnoză";
+}
+
+.wp-block[data-type="acf/enigma-footer"]::before {
+    content: "⚓ ENIGMA • Global Footer Subsol";
+}
+
+/* ======================================================== */
+/* 3. Editor Interaction & Usability Tweaks                 */
+/* ======================================================== */
+
+/* Prevent accidental form submit while editing assessment block */
+.editor-styles-wrapper .enigma-assessment-form button[type="submit"] {
+    cursor: default;
+}
+
+/* Full-width Gutenberg block layout alignment */
+.editor-styles-wrapper .wp-block[data-align="full"] {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* ACF Block Settings Form in Edit Mode inside canvas */
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields {
+    background: #191b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #33343c;
+    color: #e2e2ec;
+}
+
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields .acf-label label {
+    color: #ffb68d !important;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields input[type="text"],
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields input[type="url"],
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields input[type="tel"],
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields textarea,
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields select {
+    background: #11131a !important;
+    color: #e2e2ec !important;
+    border: 1px solid #33343c !important;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields input:focus,
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields textarea:focus,
+.wp-block[data-type^="acf/enigma-"] .acf-block-fields select:focus {
+    border-color: #ff7700 !important;
+    box-shadow: 0 0 8px rgba(255, 119, 0, 0.3) !important;
+    outline: none !important;
+}

@@ -1,0 +1,426 @@
+{
+    "key": "group_block_about",
+    "title": "Block: Despre Noi, Tehnologie & Experiență",
+    "fields": [
+        {
+            "key": "field_tab_about_story",
+            "label": "Poveste & Principii (Stânga)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_about_badge_icon",
+            "label": "Iconiță Badge Superior (Material Symbols)",
+            "name": "about_badge_icon",
+            "type": "select",
+            "instructions": "Alege iconița pentru eticheta superioară din dropdown.",
+            "required": 0,
+            "choices": {
+                "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                "speed": "speed (Serviciu rapid / Viteză)",
+                "verified_user": "verified_user (Calitate garantată / Siguranță)",
+                "memory": "memory (Mecatronică / Cip transponder)",
+                "engineering": "engineering (Inginerie mecatronică)",
+                "security": "security (Securitate înaltă)",
+                "shield": "shield (Scut protecție)",
+                "timer": "timer (Cronometru / Viteză)",
+                "bolt": "bolt (Fulger / Rapid)",
+                "verified": "verified (Verificat oficial)",
+                "key": "key (Cheie mecanică)",
+                "vpn_key": "vpn_key (Cheie cu lamă)",
+                "lock": "lock (Lacăt)",
+                "lock_open": "lock_open (Deblocare)",
+                "lock_reset": "lock_reset (Resetare cod)",
+                "build": "build (Unelte mecanic)",
+                "build_circle": "build_circle (Servicii atelier)",
+                "settings": "settings (Reglaj finețe)",
+                "handyman": "handyman (Lăcătușerie)",
+                "car_repair": "car_repair (Service auto)",
+                "directions_car": "directions_car (Chei auto)",
+                "two_wheeler": "two_wheeler (Moto / Scuter)",
+                "door_front": "door_front (Uși blindate)",
+                "fingerprint": "fingerprint (Biometrie / Amprentă)",
+                "contactless": "contactless (Cartelă RFID)",
+                "task_alt": "task_alt (Compatibilitate 100%)",
+                "thumb_up": "thumb_up (Recomandat)",
+                "star": "star (Calitate superioară)"
+            },
+            "default_value": "precision_manufacturing",
+            "ui": 1,
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_badge_text",
+            "label": "Text Badge Superior",
+            "name": "about_badge_text",
+            "type": "text",
+            "default_value": "TEHNOLOGIE, EXPERIENȚĂ & DISCIPLINA PRECIZIEI",
+            "wrapper": {
+                "width": "65"
+            }
+        },
+        {
+            "key": "field_about_title",
+            "label": "Titlu Principal (H2)",
+            "name": "about_title",
+            "type": "text",
+            "default_value": "Peste 10 Ani de Experiență",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_about_subtitle",
+            "label": "Subtitlu Portocaliu",
+            "name": "about_subtitle",
+            "type": "text",
+            "default_value": "Atelier Mecatronic de Elită în Inima Bucureștiului",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_about_text_p1",
+            "label": "Paragraf 1",
+            "name": "about_text_p1",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Fondat pe principiul toleranțelor zero și al decodării exacte, <strong class=\"text-on-surface\">ENIGMA 14</strong> redefinește noțiunea clasică de copiere chei prin fuziunea dintre lăcătușeria tradițională de mare finețe și mecatronica auto de ultimă generație."
+        },
+        {
+            "key": "field_about_text_p2",
+            "label": "Paragraf 2",
+            "name": "about_text_p2",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Folosim mașini CNC laser cu citire optică (Silca Futura, Keyline Liger) care nu multiplică uzura mecanică a cheii vechi, ci reconstruiesc direct profilul original din fabrică după codul bitting al producătorului. Dacă o cheie copiată la noi nu funcționează ireproșabil, o recalibrăm sau o refacem gratuit, pe loc."
+        },
+        {
+            "key": "field_tab_about_features",
+            "label": "Cele 3 Carduri Tehnice",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_about_c1_icon",
+            "label": "Card 1 - Iconiță (Dropdown)",
+            "name": "about_c1_icon",
+            "type": "select",
+            "choices": {
+                "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                "speed": "speed (Serviciu rapid / Viteză)",
+                "verified_user": "verified_user (Calitate garantată / Siguranță)",
+                "memory": "memory (Mecatronică / Cip transponder)",
+                "engineering": "engineering (Inginerie mecatronică)",
+                "security": "security (Securitate înaltă)",
+                "shield": "shield (Scut protecție)",
+                "timer": "timer (Cronometru / Viteză)",
+                "bolt": "bolt (Fulger / Rapid)",
+                "verified": "verified (Verificat oficial)",
+                "key": "key (Cheie mecanică)",
+                "vpn_key": "vpn_key (Cheie cu lamă)",
+                "lock": "lock (Lacăt)",
+                "lock_open": "lock_open (Deblocare)",
+                "lock_reset": "lock_reset (Resetare cod)",
+                "build": "build (Unelte mecanic)",
+                "build_circle": "build_circle (Servicii atelier)",
+                "settings": "settings (Reglaj finețe)",
+                "handyman": "handyman (Lăcătușerie)",
+                "car_repair": "car_repair (Service auto)",
+                "directions_car": "directions_car (Chei auto)",
+                "two_wheeler": "two_wheeler (Moto / Scuter)",
+                "door_front": "door_front (Uși blindate)",
+                "fingerprint": "fingerprint (Biometrie / Amprentă)",
+                "contactless": "contactless (Cartelă RFID)",
+                "task_alt": "task_alt (Compatibilitate 100%)",
+                "thumb_up": "thumb_up (Recomandat)",
+                "star": "star (Calitate superioară)"
+            },
+            "default_value": "speed",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_about_c1_title",
+            "label": "Card 1 - Titlu",
+            "name": "about_c1_title",
+            "type": "text",
+            "default_value": "Serviciu Rapid",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_c1_desc",
+            "label": "Card 1 - Descriere",
+            "name": "about_c1_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Duplicare standard în sub 5 minute. Nu lași cheia, pleci direct cu ea funcțională.",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_c2_icon",
+            "label": "Card 2 - Iconiță (Dropdown)",
+            "name": "about_c2_icon",
+            "type": "select",
+            "choices": {
+                "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                "speed": "speed (Serviciu rapid / Viteză)",
+                "verified_user": "verified_user (Calitate garantată / Siguranță)",
+                "memory": "memory (Mecatronică / Cip transponder)",
+                "engineering": "engineering (Inginerie mecatronică)",
+                "security": "security (Securitate înaltă)",
+                "shield": "shield (Scut protecție)",
+                "timer": "timer (Cronometru / Viteză)",
+                "bolt": "bolt (Fulger / Rapid)",
+                "verified": "verified (Verificat oficial)",
+                "key": "key (Cheie mecanică)",
+                "vpn_key": "vpn_key (Cheie cu lamă)",
+                "lock": "lock (Lacăt)",
+                "lock_open": "lock_open (Deblocare)",
+                "lock_reset": "lock_reset (Resetare cod)",
+                "build": "build (Unelte mecanic)",
+                "build_circle": "build_circle (Servicii atelier)",
+                "settings": "settings (Reglaj finețe)",
+                "handyman": "handyman (Lăcătușerie)",
+                "car_repair": "car_repair (Service auto)",
+                "directions_car": "directions_car (Chei auto)",
+                "two_wheeler": "two_wheeler (Moto / Scuter)",
+                "door_front": "door_front (Uși blindate)",
+                "fingerprint": "fingerprint (Biometrie / Amprentă)",
+                "contactless": "contactless (Cartelă RFID)",
+                "task_alt": "task_alt (Compatibilitate 100%)",
+                "thumb_up": "thumb_up (Recomandat)",
+                "star": "star (Calitate superioară)"
+            },
+            "default_value": "verified_user",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_about_c2_title",
+            "label": "Card 2 - Titlu",
+            "name": "about_c2_title",
+            "type": "text",
+            "default_value": "Calitate Garantată",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_c2_desc",
+            "label": "Card 2 - Descriere",
+            "name": "about_c2_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Blank-uri din aliaj titanat și carcase OEM ce rezistă la peste 50.000 cicluri de rotire.",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_c3_icon",
+            "label": "Card 3 - Iconiță (Dropdown)",
+            "name": "about_c3_icon",
+            "type": "select",
+            "choices": {
+                "precision_manufacturing": "precision_manufacturing (CNC / Frezare laser)",
+                "speed": "speed (Serviciu rapid / Viteză)",
+                "verified_user": "verified_user (Calitate garantată / Siguranță)",
+                "memory": "memory (Mecatronică / Cip transponder)",
+                "engineering": "engineering (Inginerie mecatronică)",
+                "security": "security (Securitate înaltă)",
+                "shield": "shield (Scut protecție)",
+                "timer": "timer (Cronometru / Viteză)",
+                "bolt": "bolt (Fulger / Rapid)",
+                "verified": "verified (Verificat oficial)",
+                "key": "key (Cheie mecanică)",
+                "vpn_key": "vpn_key (Cheie cu lamă)",
+                "lock": "lock (Lacăt)",
+                "lock_open": "lock_open (Deblocare)",
+                "lock_reset": "lock_reset (Resetare cod)",
+                "build": "build (Unelte mecanic)",
+                "build_circle": "build_circle (Servicii atelier)",
+                "settings": "settings (Reglaj finețe)",
+                "handyman": "handyman (Lăcătușerie)",
+                "car_repair": "car_repair (Service auto)",
+                "directions_car": "directions_car (Chei auto)",
+                "two_wheeler": "two_wheeler (Moto / Scuter)",
+                "door_front": "door_front (Uși blindate)",
+                "fingerprint": "fingerprint (Biometrie / Amprentă)",
+                "contactless": "contactless (Cartelă RFID)",
+                "task_alt": "task_alt (Compatibilitate 100%)",
+                "thumb_up": "thumb_up (Recomandat)",
+                "star": "star (Calitate superioară)"
+            },
+            "default_value": "memory",
+            "ui": 1,
+            "wrapper": {
+                "width": "30"
+            }
+        },
+        {
+            "key": "field_about_c3_title",
+            "label": "Card 3 - Titlu",
+            "name": "about_c3_title",
+            "type": "text",
+            "default_value": "Experți Mecatronică",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_about_c3_desc",
+            "label": "Card 3 - Descriere",
+            "name": "about_c3_desc",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Tehnicieni autorizați specializați în decodare transponder și sisteme anti-furt.",
+            "wrapper": {
+                "width": "35"
+            }
+        },
+        {
+            "key": "field_tab_about_workshop",
+            "label": "Atelier & Statistici (Dreapta)",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_about_image",
+            "label": "Imagine Atelier / Stand CNC",
+            "name": "about_image",
+            "type": "image",
+            "instructions": "Încarcă o fotografie reală din atelier sau lasă gol pentru imaginea tehnică implicită.",
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "60"
+            }
+        },
+        {
+            "key": "field_about_image_alt",
+            "label": "Descriere Imagine (Alt Text)",
+            "name": "about_image_alt",
+            "type": "text",
+            "default_value": "Atelier mecatronic ENIGMA 14 masina CNC copiere chei cu laser",
+            "wrapper": {
+                "width": "40"
+            }
+        },
+        {
+            "key": "field_about_audit_label",
+            "label": "Etichetă Card Metric (Stânga)",
+            "name": "about_audit_label",
+            "type": "text",
+            "default_value": "AUDIT TEHNIC ENIGMA 14",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_about_audit_badge",
+            "label": "Badge Puls Verde (Dreapta)",
+            "name": "about_audit_badge",
+            "type": "text",
+            "default_value": "VERIFICAT 2025",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_about_stat1_val",
+            "label": "Statistică 1 - Valoare",
+            "name": "about_stat1_val",
+            "type": "text",
+            "default_value": "99.8%",
+            "wrapper": {
+                "width": "16"
+            }
+        },
+        {
+            "key": "field_about_stat1_label",
+            "label": "Statistică 1 - Etichetă",
+            "name": "about_stat1_label",
+            "type": "text",
+            "default_value": "Rată Succes",
+            "wrapper": {
+                "width": "17"
+            }
+        },
+        {
+            "key": "field_about_stat2_val",
+            "label": "Statistică 2 - Valoare",
+            "name": "about_stat2_val",
+            "type": "text",
+            "default_value": "35k+",
+            "wrapper": {
+                "width": "16"
+            }
+        },
+        {
+            "key": "field_about_stat2_label",
+            "label": "Statistică 2 - Etichetă",
+            "name": "about_stat2_label",
+            "type": "text",
+            "default_value": "Chei Copiate",
+            "wrapper": {
+                "width": "17"
+            }
+        },
+        {
+            "key": "field_about_stat3_val",
+            "label": "Statistică 3 - Valoare",
+            "name": "about_stat3_val",
+            "type": "text",
+            "default_value": "< 5m",
+            "wrapper": {
+                "width": "16"
+            }
+        },
+        {
+            "key": "field_about_stat3_label",
+            "label": "Statistică 3 - Etichetă",
+            "name": "about_stat3_label",
+            "type": "text",
+            "default_value": "Timp Mediu",
+            "wrapper": {
+                "width": "18"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/enigma-about"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Câmpuri pentru blocul Gutenberg Despre Noi, Tehnologie și Experiență ENIGMA 14",
+    "modified": 1727715600
+}
