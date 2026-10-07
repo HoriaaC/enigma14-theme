@@ -311,6 +311,111 @@
             "default_value": "Sisteme agreate conform normelor europene de securitate fizică EN 1303."
         },
         {
+            "key": "field_footer_anpc_enable",
+            "label": "Coloana 3: Afișează Sigle ANPC / SAL / SOL",
+            "name": "footer_anpc_enable",
+            "type": "true_false",
+            "instructions": "Activează sau dezactivează afișarea ecusoanelor legale ANPC în subsol.",
+            "default_value": 1,
+            "ui": 1
+        },
+        {
+            "key": "field_footer_anpc_title",
+            "label": "Coloana 3: Text Titlu ANPC",
+            "name": "footer_anpc_title",
+            "type": "textarea",
+            "instructions": "Textul introductiv (ex: Autoritatea Națională pentru / Protecția Consumatorilor). Fiecare rând va fi afișat separat.",
+            "rows": 2,
+            "default_value": "Autoritatea Națională pentru\nProtecția Consumatorilor",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_footer_anpc_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_footer_anpc_sal_url",
+            "label": "Coloana 3: Link SAL (Soluționarea Alternativă a Litigiilor)",
+            "name": "footer_anpc_sal_url",
+            "type": "url",
+            "default_value": "https://anpc.ro/ce-este-sal/",
+            "wrapper": {
+                "width": "50"
+            },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_footer_anpc_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_footer_anpc_sal_img",
+            "label": "Coloana 3: URL Imagine Banner SAL",
+            "name": "footer_anpc_sal_img",
+            "type": "text",
+            "instructions": "URL direct către imaginea banner SAL (sau din Media Library).",
+            "default_value": "https://duplicari-chei.ro/wp-content/uploads/2024/12/anpc-sal.png.webp",
+            "wrapper": {
+                "width": "50"
+            },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_footer_anpc_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_footer_anpc_sol_url",
+            "label": "Coloana 3: Link SOL (Soluționarea Online a Litigiilor)",
+            "name": "footer_anpc_sol_url",
+            "type": "url",
+            "default_value": "https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO",
+            "wrapper": {
+                "width": "50"
+            },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_footer_anpc_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_footer_anpc_sol_img",
+            "label": "Coloana 3: URL Imagine Banner SOL",
+            "name": "footer_anpc_sol_img",
+            "type": "text",
+            "instructions": "URL direct către imaginea banner SOL (sau din Media Library).",
+            "default_value": "https://duplicari-chei.ro/wp-content/uploads/2024/12/anpc-sol.png.webp",
+            "wrapper": {
+                "width": "50"
+            },
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_footer_anpc_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
             "key": "field_footer_copyright",
             "label": "Subsol: Text Drepturi de Autor",
             "name": "footer_copyright",

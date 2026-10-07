@@ -61,6 +61,35 @@ if (!$cats_title) $cats_title = 'Categorii Servicii';
 
 $cats_note  = function_exists('get_field') ? get_field('footer_cats_note', 'option') : 'Sisteme agreate conform normelor europene de securitate fizică EN 1303.';
 
+// 3b. Coloana 3: ANPC / SAL / SOL Legal Badges
+$anpc_enable = function_exists('get_field') ? get_field('footer_anpc_enable', 'option') : true;
+if ($anpc_enable === null || $anpc_enable === '') $anpc_enable = true;
+
+$anpc_title = function_exists('get_field') ? get_field('footer_anpc_title', 'option') : '';
+if (!$anpc_title) {
+    $anpc_title = "Autoritatea Națională pentru\nProtecția Consumatorilor";
+}
+
+$anpc_sal_url = function_exists('get_field') ? get_field('footer_anpc_sal_url', 'option') : '';
+if (!$anpc_sal_url) {
+    $anpc_sal_url = 'https://anpc.ro/ce-este-sal/';
+}
+
+$anpc_sal_img = function_exists('get_field') ? get_field('footer_anpc_sal_img', 'option') : '';
+if (!$anpc_sal_img) {
+    $anpc_sal_img = 'https://duplicari-chei.ro/wp-content/uploads/2024/12/anpc-sal.png.webp';
+}
+
+$anpc_sol_url = function_exists('get_field') ? get_field('footer_anpc_sol_url', 'option') : '';
+if (!$anpc_sol_url) {
+    $anpc_sol_url = 'https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO';
+}
+
+$anpc_sol_img = function_exists('get_field') ? get_field('footer_anpc_sol_img', 'option') : '';
+if (!$anpc_sol_img) {
+    $anpc_sol_img = 'https://duplicari-chei.ro/wp-content/uploads/2024/12/anpc-sol.png.webp';
+}
+
 // 4. Subsol: Copyright & Legal
 $copyright = function_exists('get_field') ? get_field('footer_copyright', 'option') : '';
 if (!$copyright) {
@@ -170,6 +199,30 @@ $legal_links = function_exists('get_field') ? get_field('footer_legal_links', 'o
                 <?php if ($cats_note): ?>
                 <div class="mt-space-md pt-space-xs border-t border-surface-container-high/60">
                     <span class="font-body-sm text-body-sm text-on-surface-variant/80 block leading-normal"><?php echo esc_html($cats_note); ?></span>
+                </div>
+                <?php endif; ?>
+
+                <?php if ($anpc_enable): ?>
+                <div id="custom_html-3" class="widget_text takehost-widget widget footer-widget widget_custom_html mt-space-sm pt-space-xs border-t border-surface-container-high/60">
+                    <div class="textwidget custom-html-widget text-body-sm text-on-surface-variant flex flex-col gap-1">
+                        <?php 
+                        $anpc_lines = array_filter(array_map('trim', explode("\n", (string) $anpc_title)));
+                        foreach ($anpc_lines as $anpc_line): ?>
+                            <p class="leading-snug text-on-surface-variant/90"><?php echo esc_html($anpc_line); ?></p>
+                        <?php endforeach; ?>
+                        <p class="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1.5">
+                            <?php if ($anpc_sal_url && $anpc_sal_img): ?>
+                            <a href="<?php echo esc_url($anpc_sal_url); ?>" target="_blank" rel="noopener" class="inline-block transition-opacity hover:opacity-80">
+                                <img decoding="async" src="<?php echo esc_url($anpc_sal_img); ?>" alt="ANPC SAL - Soluționarea Alternativă a Litigiilor" width="180" style="width: 180px; max-width: 100%; height: auto;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
+                            </a>
+                            <?php endif; ?>
+                            <?php if ($anpc_sol_url && $anpc_sol_img): ?>
+                            <a href="<?php echo esc_url($anpc_sol_url); ?>" target="_blank" rel="noopener" class="inline-block transition-opacity hover:opacity-80">
+                                <img decoding="async" src="<?php echo esc_url($anpc_sol_img); ?>" alt="ANPC SOL - Soluționarea Online a Litigiilor" width="180" style="width: 180px; max-width: 100%; height: auto;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
+                            </a>
+                            <?php endif; ?>
+                        </p>
+                    </div>
                 </div>
                 <?php endif; ?>
             </div>

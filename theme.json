@@ -398,5 +398,12 @@
         }
       }
     }
-  }
+  },
+  "customTemplates": [
+    {
+      "name": "page-contact",
+      "title": "Contact - ENIGMA 14",
+      "postTypes": [ "page" ]
+    }
+  ]
 }

@@ -117,21 +117,18 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
         <section class="w-full bg-surface-container-lowest border-b border-surface-container-highest/30">
             <div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
                 <nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-body-sm font-body-sm text-outline flex-wrap">
-                    <a class="hover:text-primary transition-colors flex items-center gap-1" href="<?php echo esc_url(home_url('/')); ?>">
-                        <span class="material-symbols-outlined text-[16px]">home</span>
-                        <span>Acasă</span>
-                    </a>
+                    <a class="hover:text-primary transition-colors" href="<?php echo esc_url(home_url('/')); ?>">Acasă</a>
                     <span class="text-surface-container-highest">/</span>
-                    <span class="text-primary font-semibold">Contact &amp; Localizare</span>
+                    <span class="text-primary font-semibold"><?php echo esc_html(get_the_title() ?: 'Contact & Localizare'); ?></span>
                 </nav>
 
                 <?php if ($live_badge): ?>
-                <div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded self-start sm:self-auto shadow-sm">
+                <div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded self-start sm:self-auto">
                     <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
                     </span>
-                    <span class="font-label-badge text-label-badge uppercase text-secondary font-bold tracking-wider">
+                    <span class="font-label-badge text-label-badge uppercase text-primary tracking-wider">
                         <?php echo esc_html($live_badge); ?>
                     </span>
                 </div>

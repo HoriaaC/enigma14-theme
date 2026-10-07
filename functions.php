@@ -441,9 +441,36 @@ function enigma14_under_construction_admin_notice() {
         }
     }
 }
-add_action('admin_notices', 'enigma14_under_construction_admin_notice');
-
-
-
-
-
+/**
+ * Route Block Templates to Theme PHP Template Files
+ */
+add_filter('template_include', function($template) {
+    if (is_front_page()) {
+        $front_file = get_template_directory() . '/front-page.php';
+        if (file_exists($front_file)) {
+            return $front_file;
+        }
+    }
+    if (is_page()) {
+        $slug = get_page_template_slug();
+        if ($slug === 'page-contact' || $slug === 'page-contact.php') {
+            $php_file = get_template_directory() . '/page-contact.php';
+            if (file_exists($php_file)) {
+                return $php_file;
+            }
+        }
+        if ($slug === 'front-page' || $slug === 'front-page.php') {
+            $php_file = get_template_directory() . '/front-page.php';
+            if (file_exists($php_file)) {
+                return $php_file;
+            }
+        }
+        if ($slug === 'template-demo' || $slug === 'template-demo.php') {
+            $php_file = get_template_directory() . '/template-demo.php';
+            if (file_exists($php_file)) {
+                return $php_file;
+            }
+        }
+    }
+    return $template;
+}, 99);

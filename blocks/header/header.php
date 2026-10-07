@@ -115,17 +115,38 @@ if ($header_cta_action === 'popup') {
         <!-- Navigation Menu -->
         <nav class="hidden lg:flex items-center gap-2 xl:gap-4 h-full shrink-0 flex-nowrap whitespace-nowrap">
             <?php 
-            if (has_nav_menu('primary')) {
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container' => false,
-                    'menu_class' => 'flex items-center gap-2 xl:gap-4 h-full',
+            $primary_menu = has_nav_menu('primary') ? 'primary' : '';
+            if (!$primary_menu) {
+                $all_menus = wp_get_nav_menus();
+                if (!empty($all_menus)) {
+                    foreach ($all_menus as $m) {
+                        if ($m->slug === 'main-menu' || stripos($m->name, 'main') !== false || stripos($m->name, 'header') !== false) {
+                            $primary_menu = $m->term_id;
+                            break;
+                        }
+                    }
+                    if (!$primary_menu && !empty($all_menus[0])) {
+                        $primary_menu = $all_menus[0]->term_id;
+                    }
+                }
+            }
+
+            if ($primary_menu) {
+                $nav_args = array(
+                    'container'   => false,
+                    'menu_class'  => 'flex items-center gap-2 xl:gap-4 h-full',
                     'fallback_cb' => false,
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'walker' => new Enigma_Tailwind_Nav_Walker()
-                )); 
+                    'items_wrap'  => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'walker'      => new Enigma_Tailwind_Nav_Walker()
+                );
+                if (is_numeric($primary_menu)) {
+                    $nav_args['menu'] = $primary_menu;
+                } else {
+                    $nav_args['theme_location'] = 'primary';
+                }
+                wp_nav_menu($nav_args); 
             } else {
-                // Fallback exact design if no menu assigned yet
+                // Fallback exact design if no menu created yet
             ?>
                 <a class="h-full flex items-center px-space-2xs uppercase tracking-wider transition-colors duration-150 text-primary-container font-bold border-b-2 border-primary-container text-[12px] whitespace-nowrap shrink-0" href="/">ACASĂ</a>
                 <a class="h-full flex items-center px-space-2xs text-on-surface-variant hover:text-on-surface text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap shrink-0" href="/servicii/">CHEI AUTO &amp; MOTO</a>
@@ -152,17 +173,22 @@ if ($header_cta_action === 'popup') {
             <!-- Mobile Navigation Links -->
             <nav class="flex flex-col gap-1" style="font-family: var(--wp--preset--font-family--montserrat);">
                 <?php 
-                if (has_nav_menu('primary')) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'container'      => false,
-                        'menu_class'     => 'flex flex-col gap-1 w-full',
-                        'fallback_cb'    => false,
-                        'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'walker'         => new Enigma_Tailwind_Mobile_Nav_Walker()
-                    )); 
+                if ($primary_menu) {
+                    $mob_args = array(
+                        'container'   => false,
+                        'menu_class'  => 'flex flex-col gap-1 w-full',
+                        'fallback_cb' => false,
+                        'items_wrap'  => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'walker'      => new Enigma_Tailwind_Mobile_Nav_Walker()
+                    );
+                    if (is_numeric($primary_menu)) {
+                        $mob_args['menu'] = $primary_menu;
+                    } else {
+                        $mob_args['theme_location'] = 'primary';
+                    }
+                    wp_nav_menu($mob_args); 
                 } else {
-                    // Fallback exact design if no menu assigned yet
+                    // Fallback exact design if no menu created yet
                 ?>
                     <a class="flex items-center justify-between py-2.5 px-3 rounded-lg uppercase tracking-wider text-[13px] font-bold text-primary-container bg-surface-container-high border-l-2 border-primary-container" href="<?php echo esc_url(home_url('/')); ?>">
                         <span>ACASĂ</span>

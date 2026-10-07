@@ -81,3 +81,21 @@ img {
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
+
+/* ANPC Legal Badges (Footer Widget) */
+#custom_html-3 img,
+.widget_custom_html img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    #custom_html-3 .textwidget p:has(a),
+    #custom_html-3 .textwidget p:last-child {
+        justify-content: center;
+    }
+}
+
