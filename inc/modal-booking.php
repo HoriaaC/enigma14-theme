@@ -327,16 +327,14 @@ function enigma14_handle_booking_modal_submission() {
     if ($page_title)     $body .= "Trimis de pe pagina: {$page_title} ({$page_url})\n";
     $body .= "Data & Ora: " . current_time('d.m.Y H:i') . "\n";
 
-    // Sender identity (ENIGMA 14)
-    $from_name  = 'ENIGMA 14';
-    $from_email = function_exists('get_field') ? get_field('email', 'option') : '';
-    if (!$from_email || !is_email($from_email)) {
-        $from_email = get_option('admin_email');
-    }
+    // Sender identity for notifications sent to owners
+    $from_name  = 'Client - ENIGMA 14';
+    $from_email = 'client@centruldechei.ro';
 
     $headers = array(
         'Content-Type: text/plain; charset=UTF-8',
         'From: ' . $from_name . ' <' . $from_email . '>',
+        'Reply-To: ' . $from_name . ' <' . $from_email . '>',
     );
 
     // Send email with attachment

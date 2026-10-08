@@ -477,26 +477,20 @@ add_filter('template_include', function($template) {
 
 /**
  * Customize sender name and email address for all outgoing WordPress emails.
- * Replaces default "WordPress <wordpress@domain.com>" with "ENIGMA 14 <contact@...>".
+ * Replaces default "WordPress <wordpress@domain.com>" with "Client - ENIGMA 14 <client@centruldechei.ro>".
  */
 add_filter('wp_mail_from_name', function($name) {
     if (empty($name) || $name === 'WordPress') {
-        return 'ENIGMA 14';
+        return 'Client - ENIGMA 14';
     }
     return $name;
 });
 
 add_filter('wp_mail_from', function($email) {
     if (empty($email) || strpos($email, 'wordpress@') === 0) {
-        $site_email = function_exists('get_field') ? get_field('email', 'option') : '';
-        if ($site_email && is_email($site_email)) {
-            return $site_email;
-        }
-        $admin_email = get_option('admin_email');
-        if ($admin_email && is_email($admin_email)) {
-            return $admin_email;
-        }
+        return 'client@centruldechei.ro';
     }
     return $email;
 });
+
 
