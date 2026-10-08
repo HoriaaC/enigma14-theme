@@ -343,6 +343,19 @@
             }
         },
         {
+            "key": "field_hero_phone_btn_suffix",
+            "label": "Text Suplimentar Buton Telefon (ex: SUPORT TEHNIC)",
+            "name": "hero_phone_btn_suffix",
+            "type": "text",
+            "required": 0,
+            "default_value": "SUPORT TEHNIC",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_tab_hero_metrology",
             "label": "Bara Tehnică & Parteneri (Subsol Hero)",
             "name": "",

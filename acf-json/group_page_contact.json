@@ -114,6 +114,56 @@
             }
         },
         {
+            "key": "field_contact_address_title",
+            "label": "Titlu Secțiune Adresă",
+            "name": "contact_address_title",
+            "type": "text",
+            "default_value": "Adresă Fizică Atelier",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_schedule_title",
+            "label": "Titlu Secțiune Program",
+            "name": "contact_schedule_title",
+            "type": "text",
+            "default_value": "Program de Lucru & Intervenții",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_label_weekdays",
+            "label": "Etichetă Luni - Vineri",
+            "name": "contact_label_weekdays",
+            "type": "text",
+            "default_value": "Luni - Vineri",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_contact_label_saturday",
+            "label": "Etichetă Sâmbătă",
+            "name": "contact_label_saturday",
+            "type": "text",
+            "default_value": "Sâmbătă",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_contact_label_sunday",
+            "label": "Etichetă Duminică",
+            "name": "contact_label_sunday",
+            "type": "text",
+            "default_value": "Duminică",
+            "wrapper": {
+                "width": "34"
+            }
+        },
+        {
             "key": "field_contact_weekdays_override",
             "label": "Program Luni - Vineri (Opțional)",
             "name": "contact_weekdays_override",
@@ -158,6 +208,33 @@
             "name": "contact_facade_caption",
             "type": "text",
             "default_value": "Căutați caseta luminoasă portocalie ENIGMA 14 la intrare."
+        },
+        {
+            "key": "field_contact_facade_title",
+            "label": "Titlu Bloc Fațadă",
+            "name": "contact_facade_title",
+            "type": "text",
+            "default_value": "Identificare Vizuală Fațadă",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_facade_badge",
+            "label": "Badge Fațadă",
+            "name": "contact_facade_badge",
+            "type": "text",
+            "default_value": "Vitrina Sector 1",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_facade_alt",
+            "label": "Text Alternativ Poză Fațadă (SEO / A11y)",
+            "name": "contact_facade_alt",
+            "type": "text",
+            "default_value": "Fațadă Atelier ENIGMA 14 Sector 1"
         },
         {
             "key": "field_contact_facilities_title",
@@ -268,12 +345,62 @@
             "default_value": "Chei Auto & Moto (Duplicare, Cip Transponder, Carcasă)\nChei Rezidențiale / Amprentă / Yale de Înaltă Siguranță\nCartele Interfon & Telecomenzi Porți / Garaj\nReparații Butuci Uși, Carcase Sparte sau Urgențe Deblocări\nÎnlocuire Baterie Cheie Auto & Testare Frecvență RF"
         },
         {
+            "key": "field_contact_mini_card_1_title",
+            "label": "Card Mini 1 - Titlu",
+            "name": "contact_mini_card_1_title",
+            "type": "text",
+            "default_value": "Duplicare CNC",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_mini_card_1_desc",
+            "label": "Card Mini 1 - Descriere",
+            "name": "contact_mini_card_1_desc",
+            "type": "text",
+            "default_value": "Frezare digitală cu toleranță zero pe loc.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_mini_card_2_title",
+            "label": "Card Mini 2 - Titlu",
+            "name": "contact_mini_card_2_title",
+            "type": "text",
+            "default_value": "Clonare Transponder",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_mini_card_2_desc",
+            "label": "Card Mini 2 - Descriere",
+            "name": "contact_mini_card_2_desc",
+            "type": "text",
+            "default_value": "Programare cipuri crypto și telecomenzi.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
             "key": "field_tab_contact_map",
             "label": "Hartă & Ghid Traseu GPS",
             "name": "",
             "type": "tab",
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_contact_map_badge",
+            "label": "Badge Secțiune Hartă",
+            "name": "contact_map_badge",
+            "type": "text",
+            "default_value": "Navigație prin Satelit",
+            "wrapper": {
+                "width": "50"
+            }
         },
         {
             "key": "field_contact_map_title",
@@ -333,6 +460,16 @@
             "library": "all"
         },
         {
+            "key": "field_contact_hud_badge",
+            "label": "Badge Pin GPS (HUD)",
+            "name": "contact_hud_badge",
+            "type": "text",
+            "default_value": "PIN GPS CONFIRMAT",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
             "key": "field_contact_hud_title",
             "label": "Titlu Pin GPS (HUD)",
             "name": "contact_hud_title",
@@ -341,6 +478,13 @@
             "wrapper": {
                 "width": "50"
             }
+        },
+        {
+            "key": "field_contact_hud_desc",
+            "label": "Descriere Atelier Pin GPS (HUD)",
+            "name": "contact_hud_desc",
+            "type": "text",
+            "default_value": "Atelier dotat cu bancuri mecatronice și utilaje CNC computerizate."
         },
         {
             "key": "field_contact_hud_coords",

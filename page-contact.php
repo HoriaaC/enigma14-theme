@@ -67,8 +67,16 @@ $hero_title   = get_field('contact_hero_title', $post_id) ?: 'CONTACT & LOCALIZA
 $hero_desc    = get_field('contact_hero_desc', $post_id) ?: 'Vino direct la centrul nostru tehnic din Sectorul 1 sau trimite-ne o fotografie a cheii tale pentru confirmare pe loc, identificare de profil CNC și estimare de tarif în câteva minute.';
 
 // 2. Atelier Info & Facade
+$address_title  = get_field('contact_address_title', $post_id) ?: 'Adresă Fizică Atelier';
 $address_hint   = get_field('contact_address_hint', $post_id) ?: 'Sector 1, București • Reper: Zonă centrală, acces direct din bulevard cu parcare dedicată clienților.';
+$schedule_title = get_field('contact_schedule_title', $post_id) ?: 'Program de Lucru & Intervenții';
+$label_weekdays = get_field('contact_label_weekdays', $post_id) ?: 'Luni - Vineri';
+$label_saturday = get_field('contact_label_saturday', $post_id) ?: 'Sâmbătă';
+$label_sunday   = get_field('contact_label_sunday', $post_id) ?: 'Duminică';
 $sunday_note    = get_field('contact_sunday_note', $post_id) ?: 'Urgențe Deblocări Non-Stop';
+$facade_title   = get_field('contact_facade_title', $post_id) ?: 'Identificare Vizuală Fațadă';
+$facade_badge   = get_field('contact_facade_badge', $post_id) ?: 'Vitrina Sector 1';
+$facade_alt     = get_field('contact_facade_alt', $post_id) ?: 'Fațadă Atelier ENIGMA 14 Sector 1';
 $facade_caption = get_field('contact_facade_caption', $post_id) ?: 'Căutați caseta luminoasă portocalie ENIGMA 14 la intrare.';
 $facade_img_raw = get_field('contact_facade_image', $post_id);
 $facade_fallback = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdY2FcDehMub4ixVNZnzXwfJ_hd0nH2_rhVcKZEZpErgwAdDrY9WcarCqfPl6ih_9f6n9lTbB5srTre-iFGzy79BnKcUZsm2R8XQYvXf2G9gvDRI3TdmbdWN8leXh-EwsRV-9PcgSzPHb_0TG6C2CKhUrEbL69QTAayHl14eFtor7MbwMECk8-GjhKWzHJKO8UgtfCeKxwm7XLk5L2ygYCPN19YkUUh1xC4d6AGxI';
@@ -115,8 +123,13 @@ if (!empty(trim((string)$services_raw))) {
         'Înlocuire Baterie Cheie Auto & Testare Frecvență RF'
     );
 }
+$mini_1_title   = get_field('contact_mini_card_1_title', $post_id) ?: 'Duplicare CNC';
+$mini_1_desc    = get_field('contact_mini_card_1_desc', $post_id) ?: 'Frezare digitală cu toleranță zero pe loc.';
+$mini_2_title   = get_field('contact_mini_card_2_title', $post_id) ?: 'Clonare Transponder';
+$mini_2_desc    = get_field('contact_mini_card_2_desc', $post_id) ?: 'Programare cipuri crypto și telecomenzi.';
 
 // 4. Map & GPS
+$map_badge      = get_field('contact_map_badge', $post_id) ?: 'Navigație prin Satelit';
 $map_title      = get_field('contact_map_title', $post_id) ?: 'HARTA INTERACTIVĂ & GHID TRASEU GPS';
 $map_desc       = get_field('contact_map_desc', $post_id) ?: 'Punct central în Sectorul 1, conectat rapid prin marile artere rutiere și la doar 4 minute de mers pe jos de la stațiile principale.';
 $gmaps_url      = get_field('contact_google_maps_url', $post_id) ?: 'https://maps.google.com/?q=Calea+Victoriei+14+Bucuresti';
@@ -125,7 +138,9 @@ $map_embed      = get_field('contact_map_embed', $post_id);
 $map_img_raw    = get_field('contact_map_image', $post_id);
 $map_img_fallback = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDEf6PI0L6aL-SuBto_WI87kQpXtRLxaGn7OPG_NgUNsOQms46_SzlQGSGoVOSOk99aKbYzp1vRZOBXdcn-bQO23aFdlZnvUr_OnxbZrM-Q6a5_Y_YGLphpIWWRhA_BlYdiDtEsW5k9y69KUzYPODxHv0K_yt-MquPPD5sRS71LYCE-cNGsH72ivelrkEiVGtazYOiZBibvkEbLzXYoUu3CuvESwz6ftYaCM8zFnFE';
 $map_img        = enigma_contact_img_url($map_img_raw, $map_img_fallback);
+$hud_badge      = get_field('contact_hud_badge', $post_id) ?: 'PIN GPS CONFIRMAT';
 $hud_title      = get_field('contact_hud_title', $post_id) ?: 'ENIGMA 14 SECTOR 1';
+$hud_desc       = get_field('contact_hud_desc', $post_id) ?: 'Atelier dotat cu bancuri mecatronice și utilaje CNC computerizate.';
 $hud_coords     = get_field('contact_hud_coords', $post_id) ?: 'Coordonate: 44.4323° N, 26.0969° E';
 
 // 5. Emergency 24/7 Callout
@@ -226,7 +241,7 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                             <div class="space-y-space-2xs">
                                 <div class="flex items-center gap-space-xs text-primary-container">
                                     <span class="material-symbols-outlined text-[22px]">location_on</span>
-                                    <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold">Adresă Fizică Atelier</span>
+                                    <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold"><?php echo esc_html($address_title); ?></span>
                                 </div>
                                 <p class="text-on-surface font-headline-sm text-headline-sm font-semibold pl-7">
                                     <?php echo esc_html($address_display); ?>
@@ -272,20 +287,20 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                             <div class="space-y-space-xs">
                                 <div class="flex items-center gap-space-xs text-primary-container">
                                     <span class="material-symbols-outlined text-[22px]">calendar_clock</span>
-                                    <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold">Program de Lucru &amp; Intervenții</span>
+                                    <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold"><?php echo esc_html($schedule_title); ?></span>
                                 </div>
                                 <div class="space-y-1.5 pl-7 text-body-md font-body-md">
                                     <div class="flex items-center justify-between py-1 bg-surface-container px-space-xs rounded">
-                                        <span class="text-on-surface font-medium">Luni - Vineri</span>
+                                        <span class="text-on-surface font-medium"><?php echo esc_html($label_weekdays); ?></span>
                                         <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($weekdays_display); ?></span>
                                     </div>
                                     <div class="flex items-center justify-between py-1 bg-surface-container px-space-xs rounded">
-                                        <span class="text-on-surface font-medium">Sâmbătă</span>
+                                        <span class="text-on-surface font-medium"><?php echo esc_html($label_saturday); ?></span>
                                         <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($saturday_display); ?></span>
                                     </div>
                                     <div class="flex items-center justify-between py-1 bg-on-tertiary-fixed-variant px-space-xs rounded text-tertiary-fixed">
                                         <span class="font-semibold flex items-center gap-1">
-                                            <span class="material-symbols-outlined text-[16px]">fmd_bad</span> Duminică
+                                            <span class="material-symbols-outlined text-[16px]">fmd_bad</span> <?php echo esc_html($label_sunday); ?>
                                         </span>
                                         <span class="font-bold tracking-wider uppercase text-[12px]"><?php echo esc_html($sunday_note); ?></span>
                                     </div>
@@ -312,11 +327,11 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                         <!-- Showcase Fațadă Atelier Dark Mode -->
                         <div class="bg-surface-container-low p-space-md rounded shadow-sm space-y-space-xs border border-surface-container-highest/40">
                             <div class="flex items-center justify-between">
-                                <span class="font-label-badge text-label-badge uppercase text-primary font-bold tracking-wider">Identificare Vizuală Fațadă</span>
-                                <span class="font-body-sm text-body-sm text-outline">Vitrina Sector 1</span>
+                                <span class="font-label-badge text-label-badge uppercase text-primary font-bold tracking-wider"><?php echo esc_html($facade_title); ?></span>
+                                <span class="font-body-sm text-body-sm text-outline"><?php echo esc_html($facade_badge); ?></span>
                             </div>
                             <div class="overflow-hidden rounded relative group">
-                                <img class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105" src="<?php echo esc_url($facade_img); ?>" alt="Fațadă Atelier ENIGMA 14 Sector 1" />
+                                <img class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105" src="<?php echo esc_url($facade_img); ?>" alt="<?php echo esc_attr($facade_alt); ?>" />
                                 <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent flex items-end p-space-sm">
                                     <p class="font-body-sm text-body-sm text-on-surface font-medium"><?php echo esc_html($facade_caption); ?></p>
                                 </div>
@@ -486,8 +501,8 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                                     <span class="material-symbols-outlined text-[26px]">precision_manufacturing</span>
                                 </div>
                                 <div>
-                                    <p class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Duplicare CNC</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Frezare digitală cu toleranță zero pe loc.</p>
+                                    <p class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase"><?php echo esc_html($mini_1_title); ?></p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant"><?php echo esc_html($mini_1_desc); ?></p>
                                 </div>
                             </div>
 
@@ -496,8 +511,8 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                                     <span class="material-symbols-outlined text-[26px]">settings_remote</span>
                                 </div>
                                 <div>
-                                    <p class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">Clonare Transponder</p>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Programare cipuri crypto și telecomenzi.</p>
+                                    <p class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase"><?php echo esc_html($mini_2_title); ?></p>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant"><?php echo esc_html($mini_2_desc); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -518,7 +533,7 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                     <div>
                         <div class="flex items-center gap-space-xs">
                             <span class="h-0.5 w-6 bg-primary-container"></span>
-                            <span class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold">Navigație prin Satelit</span>
+                            <span class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold"><?php echo esc_html($map_badge); ?></span>
                         </div>
                         <h2 class="font-headline-xl text-headline-xl text-on-surface uppercase font-bold tracking-wide">
                             <?php echo esc_html($map_title); ?>
@@ -567,14 +582,14 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                     <!-- Dark HUD Map Overlay Indicator -->
                     <div class="absolute top-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md p-space-md rounded max-w-sm shadow-xl space-y-space-xs border border-surface-container-highest/70 z-10 pointer-events-none">
                         <div class="flex items-center justify-between">
-                            <span class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold">PIN GPS CONFIRMAT</span>
+                            <span class="font-label-badge text-label-badge uppercase tracking-wider text-primary font-bold"><?php echo esc_html($hud_badge); ?></span>
                             <span class="h-2 w-2 rounded-full bg-secondary-container animate-pulse"></span>
                         </div>
                         <p class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase">
                             <?php echo esc_html($hud_title); ?>
                         </p>
                         <p class="font-body-sm text-body-sm text-on-surface-variant">
-                            <?php echo esc_html($opt_address); ?>. Atelier dotat cu bancuri mecatronice și utilaje CNC computerizate.
+                            <?php echo esc_html($opt_address); ?>. <?php echo esc_html($hud_desc); ?>
                         </p>
                         <div class="pt-space-2xs flex items-center justify-between text-body-sm font-body-sm text-outline">
                             <span><?php echo esc_html($hud_coords); ?></span>

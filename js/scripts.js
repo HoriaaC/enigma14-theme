@@ -27,17 +27,19 @@ jQuery(document).ready(function($) {
             var hours = parseTime(saturdayStr);
             if (hours && currentMinutes >= hours.start && currentMinutes < hours.end) isOpen = true;
         }
+        var statusOpen = $header.attr('data-status-open') || 'DESCHIS ACUM - Atelier Mecatronic Sector 1';
+        var statusClosed = $header.attr('data-status-closed') || 'ÎNCHIS - Atelier Mecatronic Sector 1';
         var $dotOuter = $header.find('.animate-ping');
         var $dotInner = $header.find('.relative.inline-flex.rounded-full');
         var $text = $header.find('span.font-bold').last();
         if (isOpen) {
             $dotOuter.removeClass('bg-[#ef4444]').addClass('bg-[#10b981]');
             $dotInner.removeClass('bg-[#ef4444] shadow-[0_0_10px_#ef4444]').addClass('bg-[#10b981] shadow-[0_0_10px_#10b981]');
-            $text.text('DESCHIS ACUM - Atelier Mecatronic Sector 1');
+            $text.text(statusOpen);
         } else {
             $dotOuter.removeClass('bg-[#10b981]').addClass('bg-[#ef4444]');
             $dotInner.removeClass('bg-[#10b981] shadow-[0_0_10px_#10b981]').addClass('bg-[#ef4444] shadow-[0_0_10px_#ef4444]');
-            $text.text('ÎNCHIS - Atelier Mecatronic Sector 1');
+            $text.text(statusClosed);
         }
     }
 

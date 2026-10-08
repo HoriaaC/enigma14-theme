@@ -485,11 +485,51 @@
         },
         {
             "key": "field_tab_header_cta",
-            "label": "Buton Header (Top Bar)",
+            "label": "Bara Header (Top Bar & Buton)",
             "name": "",
             "type": "tab",
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_header_live_status_open",
+            "label": "Status Program Deschise (Top Bar)",
+            "name": "header_live_status_open",
+            "type": "text",
+            "default_value": "DESCHIS ACUM - Atelier Mecatronic Sector 1",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_header_live_status_closed",
+            "label": "Status Program Închis (Top Bar)",
+            "name": "header_live_status_closed",
+            "type": "text",
+            "default_value": "ÎNCHIS - Atelier Mecatronic Sector 1",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_header_schedule_label_weekdays",
+            "label": "Etichetă Luni - Vineri (Top Bar)",
+            "name": "header_schedule_label_weekdays",
+            "type": "text",
+            "default_value": "Luni - Vineri",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_header_schedule_label_saturday",
+            "label": "Etichetă Sâmbăta (Top Bar)",
+            "name": "header_schedule_label_saturday",
+            "type": "text",
+            "default_value": "Sâmbăta",
+            "wrapper": {
+                "width": "50"
+            }
         },
         {
             "key": "field_header_cta_enable",

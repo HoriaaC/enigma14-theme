@@ -135,6 +135,26 @@
             }
         },
         {
+            "key": "field_qa_trust_time_text",
+            "label": "Text Timp Răspuns (Sub Butoane)",
+            "name": "qa_trust_time_text",
+            "type": "text",
+            "default_value": "Răspuns: < 15 min",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_qa_trust_location_text",
+            "label": "Text Locație Atelier (Sub Butoane)",
+            "name": "qa_trust_location_text",
+            "type": "text",
+            "default_value": "Sector 1, București",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
             "key": "field_tab_qa_right",
             "label": "Formular Dreapta (Etichete)",
             "name": "",

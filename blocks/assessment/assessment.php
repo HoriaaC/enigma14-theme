@@ -82,7 +82,9 @@ $default_wa_message = ($form_mode === 'residential')
 $wa_direct_url = "https://wa.me/{$whatsapp_clean}?text=" . rawurlencode($default_wa_message);
 
 // Contact quick info
-$display_phone = function_exists('get_field') ? (get_field('phone_1', 'option') ?: '0722 000 114') : '0722 000 114';
+$display_phone       = function_exists('get_field') ? (get_field('phone_1', 'option') ?: '0722 000 114') : '0722 000 114';
+$trust_time_text     = get_field('qa_trust_time_text') ?: (function_exists('get_field') && get_field('response_time', 'option') ? 'Răspuns: ' . get_field('response_time', 'option') : 'Răspuns: < 15 min');
+$trust_location_text = get_field('qa_trust_location_text') ?: 'Sector 1, București';
 
 // 4. Right Form Labels
 $card_title    = get_field('qa_form_card_title') ?: 'Solicită Asistență Rapidă';
@@ -154,7 +156,7 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                     <div class="flex flex-wrap items-center gap-y-space-xs gap-x-space-md pt-space-xs text-body-sm font-body-sm text-outline border-t border-surface-container-highest/60">
                         <div class="flex items-center gap-1.5">
                             <span class="material-symbols-outlined text-primary-container text-[16px]">timer</span>
-                            <span class="text-on-surface font-medium">Răspuns: &lt; 15 min</span>
+                            <span class="text-on-surface font-medium"><?php echo esc_html($trust_time_text); ?></span>
                         </div>
                         <span>•</span>
                         <div class="flex items-center gap-1.5">
@@ -164,7 +166,7 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                         <span>•</span>
                         <div class="flex items-center gap-1.5">
                             <span class="material-symbols-outlined text-primary-container text-[16px]">storefront</span>
-                            <span class="text-on-surface font-medium">Sector 1, București</span>
+                            <span class="text-on-surface font-medium"><?php echo esc_html($trust_location_text); ?></span>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,11 @@ if (!$schedule_weekdays) $schedule_weekdays = '08:30 - 19:30';
 $schedule_saturday = function_exists('get_field') ? get_field('schedule_saturday', 'option') : '09:00 - 15:00';
 if (!$schedule_saturday) $schedule_saturday = '09:00 - 15:00';
 
+$header_live_status_open   = function_exists('get_field') ? (get_field('header_live_status_open', 'option') ?: 'DESCHIS ACUM - Atelier Mecatronic Sector 1') : 'DESCHIS ACUM - Atelier Mecatronic Sector 1';
+$header_live_status_closed = function_exists('get_field') ? (get_field('header_live_status_closed', 'option') ?: 'ÎNCHIS - Atelier Mecatronic Sector 1') : 'ÎNCHIS - Atelier Mecatronic Sector 1';
+$header_schedule_label_weekdays = function_exists('get_field') ? (get_field('header_schedule_label_weekdays', 'option') ?: 'Luni - Vineri') : 'Luni - Vineri';
+$header_schedule_label_saturday = function_exists('get_field') ? (get_field('header_schedule_label_saturday', 'option') ?: 'Sâmbăta') : 'Sâmbăta';
+
 $site_logo = function_exists('get_field') ? get_field('site_logo', 'option') : null; 
 $logo_url = $site_logo ? $site_logo['url'] : '';
 
@@ -71,17 +76,17 @@ if ($header_cta_action === 'popup') {
             
             <!-- Live Status & Schedule -->
             <div class="flex items-center gap-space-sm flex-wrap">
-                <div class="scheduleHeader flex items-center gap-2" data-weekdays="<?php echo esc_attr($schedule_weekdays); ?>" data-saturday="<?php echo esc_attr($schedule_saturday); ?>">
+                <div class="scheduleHeader flex items-center gap-2" data-weekdays="<?php echo esc_attr($schedule_weekdays); ?>" data-saturday="<?php echo esc_attr($schedule_saturday); ?>" data-status-open="<?php echo esc_attr($header_live_status_open); ?>" data-status-closed="<?php echo esc_attr($header_live_status_closed); ?>">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10b981] shadow-[0_0_10px_#10b981]"></span>
                     </span>
-                    <span class="font-bold text-[11px] uppercase tracking-wider text-white" style="font-family: var(--wp--preset--font-family--montserrat);">DESCHIS ACUM - Atelier Mecatronic Sector 1</span>
+                    <span class="font-bold text-[11px] uppercase tracking-wider text-white" style="font-family: var(--wp--preset--font-family--montserrat);"><?php echo esc_html($header_live_status_open); ?></span>
                 </div>
                 <span class="hidden md:inline-block text-outline font-bold">|</span>
                 <span class="hidden md:inline-flex items-center gap-1.5 text-on-surface-variant text-[12px]">
                     <span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
-                    <span>Luni - Vineri: <?php echo esc_html($schedule_weekdays); ?> &nbsp;|&nbsp; Sâmbăta: <?php echo esc_html($schedule_saturday); ?></span>
+                    <span><?php echo esc_html($header_schedule_label_weekdays); ?>: <?php echo esc_html($schedule_weekdays); ?> &nbsp;|&nbsp; <?php echo esc_html($header_schedule_label_saturday); ?>: <?php echo esc_html($schedule_saturday); ?></span>
                 </span>
             </div>
             
