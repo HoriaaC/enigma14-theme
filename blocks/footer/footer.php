@@ -213,12 +213,12 @@ $legal_links = function_exists('get_field') ? get_field('footer_legal_links', 'o
                         <p class="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1.5">
                             <?php if ($anpc_sal_url && $anpc_sal_img): ?>
                             <a href="<?php echo esc_url($anpc_sal_url); ?>" target="_blank" rel="noopener" class="inline-block transition-opacity hover:opacity-80">
-                                <img decoding="async" src="<?php echo esc_url($anpc_sal_img); ?>" alt="ANPC SAL - Soluționarea Alternativă a Litigiilor" width="180" style="width: 180px; max-width: 100%; height: auto;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
+                                <img decoding="async" loading="lazy" src="<?php echo esc_url($anpc_sal_img); ?>" alt="ANPC SAL - Soluționarea Alternativă a Litigiilor" width="180" height="45" style="width: 180px; max-width: 100%; height: auto; aspect-ratio: 500/124;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
                             </a>
                             <?php endif; ?>
                             <?php if ($anpc_sol_url && $anpc_sol_img): ?>
                             <a href="<?php echo esc_url($anpc_sol_url); ?>" target="_blank" rel="noopener" class="inline-block transition-opacity hover:opacity-80">
-                                <img decoding="async" src="<?php echo esc_url($anpc_sol_img); ?>" alt="ANPC SOL - Soluționarea Online a Litigiilor" width="180" style="width: 180px; max-width: 100%; height: auto;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
+                                <img decoding="async" loading="lazy" src="<?php echo esc_url($anpc_sol_img); ?>" alt="ANPC SOL - Soluționarea Online a Litigiilor" width="180" height="45" style="width: 180px; max-width: 100%; height: auto; aspect-ratio: 500/124;" class="w-[180px] max-w-full h-auto object-contain rounded-sm">
                             </a>
                             <?php endif; ?>
                         </p>

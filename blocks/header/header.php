@@ -80,7 +80,7 @@ if ($header_cta_action === 'popup') {
                 </div>
                 <span class="hidden md:inline-block text-outline font-bold">|</span>
                 <span class="hidden md:inline-flex items-center gap-1.5 text-on-surface-variant text-[12px]">
-                    <span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary-container inline-flex items-center justify-center w-4 h-4 shrink-0">schedule</span>
                     <span>Luni - Vineri: <?php echo esc_html($schedule_weekdays); ?> &nbsp;|&nbsp; Sâmbăta: <?php echo esc_html($schedule_saturday); ?></span>
                 </span>
             </div>
@@ -89,7 +89,7 @@ if ($header_cta_action === 'popup') {
             <?php if ($header_cta_enable): ?>
             <div class="flex items-center gap-space-sm shrink-0">
                 <a class="<?php echo esc_attr($cta_class); ?>" href="<?php echo $cta_href; ?>"<?php echo $cta_target; ?> style="font-family: var(--wp--preset--font-family--montserrat);">
-                    <span class="material-symbols-outlined text-[16px]"><?php echo esc_html($header_cta_icon); ?></span>
+                    <span class="material-symbols-outlined text-[16px] inline-flex items-center justify-center w-4 h-4 shrink-0"><?php echo esc_html($header_cta_icon); ?></span>
                     <span><?php echo esc_html($header_cta_text); ?></span>
                 </a>
             </div>
@@ -114,7 +114,7 @@ if ($header_cta_action === 'popup') {
                         <span class="text-[10px] md:text-[11px] uppercase tracking-[0.16em] text-on-surface-variant font-bold" style="font-family: var(--wp--preset--font-family--montserrat);">CENTRUL DE COPIERE CHEI</span>
                     </div>
                 <?php else: ?>
-                    <img alt="<?php echo esc_attr(get_bloginfo('name') ?: 'ENIGMA 14 logo'); ?>" class="h-[95px] max-h-[95px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]" src="<?php echo esc_url($logo_url); ?>" style="height: 95px;">
+                    <img alt="<?php echo esc_attr(get_bloginfo('name') ?: 'ENIGMA 14 logo'); ?>" width="104" height="95" fetchpriority="high" loading="eager" decoding="async" class="h-[95px] max-h-[95px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]" src="<?php echo esc_url($logo_url); ?>" style="height: 95px; width: auto; aspect-ratio: 1600/1461;">
                 <?php endif; ?>
             </a>
         </div>

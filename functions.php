@@ -66,18 +66,19 @@ add_action('after_setup_theme', 'enigma14_setup');
  */
 function enigma14_scripts()
 {
-        // Material Symbols Outlined (display=block prevents FOUT / raw ligature text flashing)
+    // Material Symbols Outlined (Fixed axes 24/400/0/0 reduces font binary from 3.9MB to 323KB; display=block prevents FOUT)
     wp_enqueue_style(
         'enigma14-material-symbols',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block',
         array(),
         null
     );
 
-    // Google Fonts: Montserrat (Headings & Badges) & Inter (Body)
+    // Google Fonts: Montserrat (Headings & Badges: 600..900) & Inter (Body: 400..600)
+    // Trimmed down to only active weights to eliminate unnecessary webfont downloads
     wp_enqueue_style(
         'enigma14-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap',
         array(),
         null
     );
@@ -505,18 +506,20 @@ add_filter('wp_mail_from', function($email) {
  */
 
 /**
- * 1. Resource Hints: Preconnect to Google Fonts and GStatic at top of <head>
+ * 1. Resource Hints: Preconnect to Google Fonts and preload critical font binary
  */
 add_action('wp_head', function() {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    // Preload critical Material Symbols font woff2 directly for instantaneous icon display
+    echo '<link rel="preload" href="https://fonts.gstatic.com/s/materialsymbolsoutlined/v375/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2" as="font" type="font/woff2" crossorigin>' . "\n";
 }, 1);
 
 /**
  * 2. Asynchronously load Google Fonts & Material Symbols without blocking initial render
  */
 add_filter('style_loader_tag', function($html, $handle, $href, $media) {
-    if (in_array($handle, array('enigma14-google-fonts'), true)) {
+    if (in_array($handle, array('enigma14-google-fonts', 'enigma14-material-symbols'), true)) {
         return '<link rel="preload" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
              . '<noscript><link rel="stylesheet" href="' . esc_url($href) . '"></noscript>' . "\n";
     }
