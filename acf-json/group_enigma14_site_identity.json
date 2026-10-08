@@ -67,7 +67,7 @@
             "name": "email",
             "type": "email",
             "instructions": "Adresa oficială unde ajung notificările și cererile transmise prin formularele din site.",
-            "default_value": "contact@enigma14.ro"
+            "default_value": "comenzi@centruldechei.ro"
         },
         {
             "key": "field_whatsapp_number",

@@ -286,9 +286,9 @@ function enigma14_handle_booking_modal_submission() {
     $page_title     = isset($_POST['page_title']) ? sanitize_text_field($_POST['page_title']) : '';
 
     // Recipient email from Site Settings
-    $to_email = function_exists('get_field') ? get_field('email', 'option') : get_option('admin_email');
-    if (empty($to_email)) {
-        $to_email = get_option('admin_email');
+    $to_email = function_exists('get_field') ? get_field('email', 'option') : '';
+    if (empty($to_email) || !is_email($to_email)) {
+        $to_email = 'comenzi@centruldechei.ro';
     }
 
     // WhatsApp number from Site Settings

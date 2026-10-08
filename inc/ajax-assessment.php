@@ -44,8 +44,8 @@ function enigma14_handle_assessment_submission() {
     if (empty($to_email) && function_exists('get_field')) {
         $to_email = get_field('email', 'option');
     }
-    if (empty($to_email)) {
-        $to_email = get_option('admin_email');
+    if (empty($to_email) || !is_email($to_email)) {
+        $to_email = 'comenzi@centruldechei.ro';
     }
 
     // Determine WhatsApp recipient number

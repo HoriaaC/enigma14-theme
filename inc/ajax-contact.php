@@ -49,7 +49,7 @@ function enigma14_handle_contact_form_submission() {
         $to_email = get_field('email', 'option');
     }
     if (empty($to_email) || !is_email($to_email)) {
-        $to_email = get_option('admin_email');
+        $to_email = 'comenzi@centruldechei.ro';
     }
 
     // Determine WhatsApp recipient number
