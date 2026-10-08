@@ -66,10 +66,10 @@ add_action('after_setup_theme', 'enigma14_setup');
  */
 function enigma14_scripts()
 {
-        // Material Symbols Outlined
+        // Material Symbols Outlined (display=block prevents FOUT / raw ligature text flashing)
     wp_enqueue_style(
         'enigma14-material-symbols',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block',
         array(),
         null
     );
@@ -516,7 +516,7 @@ add_action('wp_head', function() {
  * 2. Asynchronously load Google Fonts & Material Symbols without blocking initial render
  */
 add_filter('style_loader_tag', function($html, $handle, $href, $media) {
-    if (in_array($handle, array('enigma14-google-fonts', 'enigma14-material-symbols'), true)) {
+    if (in_array($handle, array('enigma14-google-fonts'), true)) {
         return '<link rel="preload" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
              . '<noscript><link rel="stylesheet" href="' . esc_url($href) . '"></noscript>' . "\n";
     }
