@@ -529,12 +529,13 @@ jQuery(document).ready(function($) {
     var $keyUploadInput = $('#key-upload-input');
     var $contactDropZone = $('#drop-zone');
     var $contactUploadStatus = $('#upload-status');
+    var $dropZoneIdle = $('#drop-zone-idle');
+    var $dropZonePreview = $('#drop-zone-preview');
+    var $previewImg = $('#contact-photo-preview-img');
+    var $previewName = $('#contact-photo-name');
+    var $previewSize = $('#contact-photo-size');
 
-    if ($contactDropZone.length && $keyUploadInput.length) {
-        $contactDropZone.on('click', function(e) {
-            $keyUploadInput.trigger('click');
-        });
-
+    if ($keyUploadInput.length) {
         // Drag & drop visual states
         $contactDropZone.on('dragover dragenter', function(e) {
             e.preventDefault();
@@ -562,7 +563,21 @@ jQuery(document).ready(function($) {
                 alert('Te rugăm să selectezi un fișier de tip imagine (JPG, PNG, WEBP, HEIC).');
                 return;
             }
-            $contactUploadStatus.html('<span class="text-secondary font-semibold">Selectat: ' + file.name + '</span>');
+
+            // Show local preview thumbnail instantly
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                if ($previewImg.length) $previewImg.attr('src', e.target.result);
+                if ($previewName.length) $previewName.text(file.name);
+                var sizeKb = Math.round(file.size / 1024);
+                if ($previewSize.length) $previewSize.text(sizeKb > 1024 ? (sizeKb / 1024).toFixed(1) + ' MB' : sizeKb + ' KB');
+                if ($dropZoneIdle.length) $dropZoneIdle.addClass('hidden');
+                if ($dropZonePreview.length) $dropZonePreview.removeClass('hidden');
+            };
+            reader.readAsDataURL(file);
+
+            $contactUploadStatus.html('<span class="inline-flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[13px] animate-spin">sync</span><span>Se optimizează poza cheii...</span></span>');
+            
             var uploadPromise = uploadQuickPhoto(file, $keyUploadInput, $contactUploadStatus);
             if (uploadPromise) {
                 uploadPromise.done(function(res) {

@@ -27,16 +27,35 @@ if (!function_exists('enigma_contact_img_url')) {
 
 // Global Site Options (Fallback)
 $opt_phone_1    = function_exists('get_field') ? get_field('phone_1', 'option') : '0722 000 114';
-$opt_phone_2    = function_exists('get_field') ? get_field('phone_2', 'option') : '021 9988';
 $opt_email      = function_exists('get_field') ? get_field('email', 'option') : 'contact@enigma14.ro';
 $opt_address    = function_exists('get_field') ? get_field('address', 'option') : 'Calea Victoriei 14 / Str. Atelierului 14';
 $opt_weekdays   = function_exists('get_field') ? get_field('schedule_weekdays', 'option') : '08:30 - 19:30';
 $opt_saturday   = function_exists('get_field') ? get_field('schedule_saturday', 'option') : '09:00 - 15:00';
 $opt_whatsapp   = function_exists('get_field') ? (get_field('whatsapp_number', 'option') ?: $opt_phone_1) : $opt_phone_1;
 
-$clean_phone_1  = preg_replace('/[^0-9]/', '', $opt_phone_1 ?: '0722000114');
-$clean_phone_2  = preg_replace('/[^0-9]/', '', $opt_phone_2 ?: '0219988');
-$clean_wa       = preg_replace('/[^0-9]/', '', $opt_whatsapp ?: '40722000114');
+// Contact info (page overrides if filled, otherwise fallback to site settings)
+$contact_lines_title = get_field('contact_lines_title', $post_id) ?: 'Linii Tehnice Directe';
+$whatsapp_badge      = get_field('contact_whatsapp_badge', $post_id) ?: 'Foto WhatsApp Activ';
+
+$phone_display = get_field('contact_phone_override', $post_id);
+if (!$phone_display) $phone_display = $opt_phone_1;
+if (!$phone_display) $phone_display = '0722 000 114';
+$phone_clean   = preg_replace('/[^0-9+]/', '', $phone_display);
+
+$email_display = get_field('contact_email_override', $post_id);
+if (!$email_display) $email_display = $opt_email;
+if (!$email_display) $email_display = 'contact@enigma14.ro';
+
+$address_display = get_field('contact_address_override', $post_id);
+if (!$address_display) $address_display = $opt_address;
+
+$weekdays_display = get_field('contact_weekdays_override', $post_id);
+if (!$weekdays_display) $weekdays_display = $opt_weekdays;
+
+$saturday_display = get_field('contact_saturday_override', $post_id);
+if (!$saturday_display) $saturday_display = $opt_saturday;
+
+$clean_wa = preg_replace('/[^0-9]/', '', $opt_whatsapp ?: '40722000114');
 if (strlen($clean_wa) === 10 && substr($clean_wa, 0, 2) === '07') {
     $clean_wa = '4' . $clean_wa;
 }
@@ -54,6 +73,30 @@ $facade_caption = get_field('contact_facade_caption', $post_id) ?: 'Căutați ca
 $facade_img_raw = get_field('contact_facade_image', $post_id);
 $facade_fallback = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdY2FcDehMub4ixVNZnzXwfJ_hd0nH2_rhVcKZEZpErgwAdDrY9WcarCqfPl6ih_9f6n9lTbB5srTre-iFGzy79BnKcUZsm2R8XQYvXf2G9gvDRI3TdmbdWN8leXh-EwsRV-9PcgSzPHb_0TG6C2CKhUrEbL69QTAayHl14eFtor7MbwMECk8-GjhKWzHJKO8UgtfCeKxwm7XLk5L2ygYCPN19YkUUh1xC4d6AGxI';
 $facade_img     = enigma_contact_img_url($facade_img_raw, $facade_fallback);
+
+$facilities_title = get_field('contact_facilities_title', $post_id) ?: 'Facilități & Acces Atelier';
+$facilities_raw   = get_field('contact_facilities', $post_id);
+
+$facilities = array();
+if (!empty($facilities_raw) && is_array($facilities_raw)) {
+    foreach ($facilities_raw as $item) {
+        if (!empty($item['text'])) {
+            $facilities[] = array(
+                'icon' => !empty($item['icon']) ? $item['icon'] : 'check_circle',
+                'text' => $item['text'],
+            );
+        }
+    }
+}
+
+if (empty($facilities)) {
+    $facilities = array(
+        array('icon' => 'directions_subway', 'text' => 'Metrou la 4 min'),
+        array('icon' => 'local_parking',     'text' => 'Parcare clienți'),
+        array('icon' => 'accessible',        'text' => 'Rampă acces facil'),
+        array('icon' => 'credit_card',       'text' => 'Plată Card / POS'),
+    );
+}
 
 // 3. Form Config & Service Options
 $form_badge     = get_field('contact_form_badge', $post_id) ?: 'Răspuns Tehnic Garantat < 5 Minute';
@@ -185,7 +228,7 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
                                     <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold">Adresă Fizică Atelier</span>
                                 </div>
                                 <p class="text-on-surface font-headline-sm text-headline-sm font-semibold pl-7">
-                                    <?php echo esc_html($opt_address); ?>
+                                    <?php echo esc_html($address_display); ?>
                                 </p>
                                 <p class="text-on-surface-variant font-body-md text-body-md pl-7">
                                     <?php echo esc_html($address_hint); ?>
@@ -197,39 +240,31 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-space-xs text-primary-container">
                                         <span class="material-symbols-outlined text-[20px]">headset_mic</span>
-                                        <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold">Linii Tehnice Directe</span>
+                                        <span class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface font-bold"><?php echo esc_html($contact_lines_title); ?></span>
                                     </div>
-                                    <span class="font-label-badge text-label-badge text-secondary font-bold uppercase tracking-wider">Foto WhatsApp Activ</span>
+                                    <?php if ($whatsapp_badge): ?>
+                                    <span class="font-label-badge text-label-badge text-secondary font-bold uppercase tracking-wider"><?php echo esc_html($whatsapp_badge); ?></span>
+                                    <?php endif; ?>
                                 </div>
 
                                 <div class="space-y-space-2xs pt-space-2xs">
-                                    <a class="flex items-center justify-between p-space-xs rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors group" href="tel:<?php echo esc_attr($clean_phone_1); ?>">
+                                    <a class="flex items-center justify-between p-space-xs rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors group" href="tel:<?php echo esc_attr($phone_clean); ?>">
                                         <span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-wide group-hover:text-primary transition-colors">
-                                            <?php echo esc_html($opt_phone_1); ?>
+                                            <?php echo esc_html($phone_display); ?>
                                         </span>
                                         <span class="font-label-action text-label-action text-primary-container uppercase flex items-center gap-1 font-bold">
                                             <span>APEL DIRECT</span>
                                             <span class="material-symbols-outlined text-[16px]">phone_forwarded</span>
                                         </span>
                                     </a>
-
-                                    <?php if ($opt_phone_2): ?>
-                                    <a class="flex items-center justify-between p-space-xs rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors group" href="tel:<?php echo esc_attr($clean_phone_2); ?>">
-                                        <span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-wide group-hover:text-primary transition-colors">
-                                            <?php echo esc_html($opt_phone_2); ?>
-                                        </span>
-                                        <span class="font-label-action text-label-action text-on-surface-variant uppercase flex items-center gap-1 font-bold">
-                                            <span>DISPECERAT</span>
-                                            <span class="material-symbols-outlined text-[16px]">call</span>
-                                        </span>
-                                    </a>
-                                    <?php endif; ?>
                                 </div>
 
+                                <?php if ($email_display): ?>
                                 <div class="pt-space-2xs flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
                                     <span class="material-symbols-outlined text-[18px] text-outline">mail</span>
-                                    <a href="mailto:<?php echo esc_attr($opt_email); ?>" class="hover:text-primary transition-colors"><?php echo esc_html($opt_email); ?></a>
+                                    <a href="mailto:<?php echo esc_attr($email_display); ?>" class="hover:text-primary transition-colors"><?php echo esc_html($email_display); ?></a>
                                 </div>
+                                <?php endif; ?>
                             </div>
 
                             <!-- Program de Lucru -->
@@ -241,11 +276,11 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
                                 <div class="space-y-1.5 pl-7 text-body-md font-body-md">
                                     <div class="flex items-center justify-between py-1 bg-surface-container px-space-xs rounded">
                                         <span class="text-on-surface font-medium">Luni - Vineri</span>
-                                        <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($opt_weekdays); ?></span>
+                                        <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($weekdays_display); ?></span>
                                     </div>
                                     <div class="flex items-center justify-between py-1 bg-surface-container px-space-xs rounded">
                                         <span class="text-on-surface font-medium">Sâmbătă</span>
-                                        <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($opt_saturday); ?></span>
+                                        <span class="text-on-surface font-bold tracking-wide"><?php echo esc_html($saturday_display); ?></span>
                                     </div>
                                     <div class="flex items-center justify-between py-1 bg-on-tertiary-fixed-variant px-space-xs rounded text-tertiary-fixed">
                                         <span class="font-semibold flex items-center gap-1">
@@ -258,24 +293,16 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
 
                             <!-- Repere Accesibilitate & Facilități -->
                             <div class="bg-surface-container p-space-md rounded space-y-space-xs border border-surface-container-highest/40">
-                                <span class="font-label-badge text-label-badge uppercase tracking-wider text-outline font-bold">Facilități &amp; Acces Atelier</span>
+                                <span class="font-label-badge text-label-badge uppercase tracking-wider text-outline font-bold">
+                                    <?php echo esc_html($facilities_title); ?>
+                                </span>
                                 <div class="grid grid-cols-2 gap-space-xs text-body-sm font-body-sm">
+                                    <?php foreach ($facilities as $fac): ?>
                                     <div class="flex items-center gap-1.5 text-on-surface">
-                                        <span class="material-symbols-outlined text-[18px] text-primary">directions_subway</span>
-                                        <span>Metrou la 4 min</span>
+                                        <span class="material-symbols-outlined text-[18px] text-primary"><?php echo esc_html($fac['icon']); ?></span>
+                                        <span><?php echo esc_html($fac['text']); ?></span>
                                     </div>
-                                    <div class="flex items-center gap-1.5 text-on-surface">
-                                        <span class="material-symbols-outlined text-[18px] text-primary">local_parking</span>
-                                        <span>Parcare clienți</span>
-                                    </div>
-                                    <div class="flex items-center gap-1.5 text-on-surface">
-                                        <span class="material-symbols-outlined text-[18px] text-primary">accessible</span>
-                                        <span>Rampă acces facil</span>
-                                    </div>
-                                    <div class="flex items-center gap-1.5 text-on-surface">
-                                        <span class="material-symbols-outlined text-[18px] text-primary">credit_card</span>
-                                        <span>Plată Card / POS</span>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
 
@@ -366,20 +393,34 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
                                         <span class="text-primary text-[11px] font-bold tracking-wider">OPȚIONAL DAR RECOMANDAT</span>
                                     </label>
                                     
-                                    <div class="bg-surface-container-lowest border-2 border-dashed border-surface-container-highest hover:border-primary-container/70 p-space-lg rounded flex flex-col items-center justify-center text-center cursor-pointer transition-all group relative overflow-hidden" id="drop-zone">
-                                        <input accept="image/*" class="hidden" id="key-upload-input" name="key_photo" type="file" />
+                                    <div class="bg-surface-container-lowest border-2 border-dashed border-surface-container-highest hover:border-primary-container/70 p-space-lg rounded flex flex-col items-center justify-center text-center transition-all group relative overflow-hidden" id="drop-zone">
+                                        <!-- Overlay input: clicks/taps open native file/camera dialog on desktop and mobile -->
+                                        <input accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="key-upload-input" name="key_photo" type="file" />
                                         
-                                        <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-2xs shadow-inner">
-                                            <span class="material-symbols-outlined text-[28px]">photo_camera</span>
+                                        <!-- Idle State -->
+                                        <div id="drop-zone-idle" class="flex flex-col items-center justify-center pointer-events-none">
+                                            <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors mb-space-2xs shadow-inner">
+                                                <span class="material-symbols-outlined text-[28px]">photo_camera</span>
+                                            </div>
+                                            <p class="text-on-surface font-headline-sm text-headline-sm font-semibold">
+                                                Încarcă poza cheii pentru identificare exactă
+                                            </p>
+                                            <p class="text-on-surface-variant font-body-sm text-body-sm max-w-sm mt-1">
+                                                Trage fișierul aici sau apasă pentru a deschide camera telefonului / galeria. Formate: JPG, PNG, WEBP, HEIC (max. 10MB).
+                                            </p>
                                         </div>
-                                        <p class="text-on-surface font-headline-sm text-headline-sm font-semibold">
-                                            Încarcă poza cheii pentru identificare exactă
-                                        </p>
-                                        <p class="text-on-surface-variant font-body-sm text-body-sm max-w-sm mt-1">
-                                            Trage fișierul aici sau apasă pentru a deschide camera telefonului / galeria. Formate: JPG, PNG, WEBP, HEIC (max. 10MB).
-                                        </p>
+
+                                        <!-- Preview State -->
+                                        <div id="drop-zone-preview" class="hidden flex flex-col items-center justify-center pointer-events-none w-full">
+                                            <div class="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-primary-container shadow-md mb-2 bg-surface-container">
+                                                <img id="contact-photo-preview-img" src="" alt="Previzualizare Cheie" class="w-full h-full object-cover" />
+                                            </div>
+                                            <p id="contact-photo-name" class="font-headline-sm text-headline-sm text-on-surface font-semibold max-w-xs truncate"></p>
+                                            <p id="contact-photo-size" class="text-body-sm font-body-sm text-on-surface-variant"></p>
+                                            <span class="text-[11px] text-primary font-bold uppercase tracking-wider mt-1 underline">Apasă pentru a alege altă fotografie</span>
+                                        </div>
                                         
-                                        <div class="mt-space-xs font-label-badge text-label-badge text-secondary font-bold" id="upload-status"></div>
+                                        <div class="mt-space-xs font-label-badge text-label-badge text-secondary font-bold relative z-0" id="upload-status"></div>
                                     </div>
                                 </div>
 

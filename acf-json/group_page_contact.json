@@ -47,25 +47,101 @@
         },
         {
             "key": "field_tab_contact_info",
-            "label": "Detalii Atelier & Vitrină",
+            "label": "Detalii Atelier & Date de Contact",
             "name": "",
             "type": "tab",
             "placement": "top",
             "endpoint": 0
         },
         {
+            "key": "field_contact_lines_title",
+            "label": "Titlu Secțiune Telefon",
+            "name": "contact_lines_title",
+            "type": "text",
+            "default_value": "Linii Tehnice Directe",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_whatsapp_badge",
+            "label": "Badge WhatsApp (Dreapta sus în bloc telefon)",
+            "name": "contact_whatsapp_badge",
+            "type": "text",
+            "default_value": "Foto WhatsApp Activ",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_phone_override",
+            "label": "Telefon Apel Direct (Opțional)",
+            "name": "contact_phone_override",
+            "type": "text",
+            "instructions": "Lasă gol pentru a prelua automat numărul din Setări Site (Telefon Principal).",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_email_override",
+            "label": "Email Contact (Opțional)",
+            "name": "contact_email_override",
+            "type": "email",
+            "instructions": "Lasă gol pentru a prelua automat adresa de email din Setări Site.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_address_override",
+            "label": "Adresă Atelier (Opțional)",
+            "name": "contact_address_override",
+            "type": "text",
+            "instructions": "Lasă gol pentru a prelua automat adresa din Setări Site.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
             "key": "field_contact_address_hint",
             "label": "Reper / Indicații Acces Clădire",
             "name": "contact_address_hint",
             "type": "text",
-            "default_value": "Sector 1, București • Reper: Zonă centrală, acces direct din bulevard cu parcare dedicată clienților."
+            "default_value": "Sector 1, București • Reper: Zonă centrală, acces direct din bulevard cu parcare dedicată clienților.",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_contact_weekdays_override",
+            "label": "Program Luni - Vineri (Opțional)",
+            "name": "contact_weekdays_override",
+            "type": "text",
+            "instructions": "Lasă gol pentru a prelua automat din Setări Site.",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_contact_saturday_override",
+            "label": "Program Sâmbătă (Opțional)",
+            "name": "contact_saturday_override",
+            "type": "text",
+            "instructions": "Lasă gol pentru a prelua automat din Setări Site.",
+            "wrapper": {
+                "width": "33"
+            }
         },
         {
             "key": "field_contact_sunday_note",
             "label": "Text Notă Duminică (Program)",
             "name": "contact_sunday_note",
             "type": "text",
-            "default_value": "Urgențe Deblocări Non-Stop"
+            "default_value": "Urgențe Deblocări Non-Stop",
+            "wrapper": {
+                "width": "34"
+            }
         },
         {
             "key": "field_contact_facade_image",
@@ -82,6 +158,70 @@
             "name": "contact_facade_caption",
             "type": "text",
             "default_value": "Căutați caseta luminoasă portocalie ENIGMA 14 la intrare."
+        },
+        {
+            "key": "field_contact_facilities_title",
+            "label": "Titlu Bloc Facilități & Acces",
+            "name": "contact_facilities_title",
+            "type": "text",
+            "default_value": "Facilități & Acces Atelier"
+        },
+        {
+            "key": "field_contact_facilities",
+            "label": "Facilități & Acces Atelier (Listă)",
+            "name": "contact_facilities",
+            "type": "repeater",
+            "instructions": "Adaugă facilitățile și reperele de acces la atelier. Dacă lista este goală, vor fi afișate cele 4 repere implicite.",
+            "layout": "table",
+            "button_label": "Adaugă Facilitate",
+            "sub_fields": [
+                {
+                    "key": "field_contact_facility_icon",
+                    "label": "Icon Material Symbols",
+                    "name": "icon",
+                    "type": "select",
+                    "choices": {
+                        "directions_subway": "directions_subway (Metrou)",
+                        "local_parking": "local_parking (Parcare clienți)",
+                        "accessible": "accessible (Rampă acces facil)",
+                        "credit_card": "credit_card (Plată Card / POS)",
+                        "payments": "payments (Plată Numerar / Cash)",
+                        "directions_bus": "directions_bus (Autobuz / Transport Public)",
+                        "directions_car": "directions_car (Acces Auto Direct)",
+                        "location_on": "location_on (Punct Reper / Locație)",
+                        "pin_drop": "pin_drop (Pin GPS)",
+                        "store": "store (Atelier / Vitrină Fizică)",
+                        "schedule": "schedule (Program Prelungit)",
+                        "bolt": "bolt (Serviciu Rapid / Expres)",
+                        "verified": "verified (Garanție Tehnică)",
+                        "shield": "shield (Securitate / Certificare)",
+                        "wifi": "wifi (Wi-Fi Gratuit)",
+                        "call": "call (Suport Telefonic)",
+                        "handshake": "handshake (Consultanță Profesională)",
+                        "check_circle": "check_circle (Bifă / Validat)"
+                    },
+                    "default_value": "check_circle",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "wrapper": {
+                        "width": "40"
+                    }
+                },
+                {
+                    "key": "field_contact_facility_text",
+                    "label": "Text Facilitate",
+                    "name": "text",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "Ex: Parcare clienți",
+                    "wrapper": {
+                        "width": "60"
+                    }
+                }
+            ]
         },
         {
             "key": "field_tab_contact_form",
@@ -282,6 +422,20 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-contact"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "118"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "120"
             }
         ]
     ],
