@@ -549,8 +549,15 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                 <!-- Map Display Container -->
                 <div class="relative w-full rounded overflow-hidden shadow-lg bg-surface-container-lowest border border-surface-container-highest/40">
                     <?php if (!empty($map_embed)): ?>
-                        <div class="w-full h-96 lg:h-[460px] relative z-0 [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:border-0">
-                            <?php echo wp_kses($map_embed, array('iframe' => array('src' => true, 'width' => true, 'height' => true, 'style' => true, 'allowfullscreen' => true, 'loading' => true, 'referrerpolicy' => true))); ?>
+                        <div class="w-full h-96 lg:h-[460px] relative z-0 [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:border-0 enigma-dark-map">
+                            <?php 
+                            $raw_embed = trim($map_embed);
+                            if (strpos($raw_embed, '<iframe') === false && (filter_var($raw_embed, FILTER_VALIDATE_URL) || strpos($raw_embed, 'http') === 0)) {
+                                echo '<iframe src="' . esc_url($raw_embed) . '" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+                            } else {
+                                echo wp_kses($map_embed, array('iframe' => array('src' => true, 'width' => true, 'height' => true, 'style' => true, 'allowfullscreen' => true, 'loading' => true, 'referrerpolicy' => true)));
+                            }
+                            ?>
                         </div>
                     <?php else: ?>
                         <!-- Static Map Graphic with Location Marker Background -->
