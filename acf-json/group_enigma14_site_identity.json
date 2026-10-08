@@ -31,6 +31,15 @@
             "library": "all"
         },
         {
+            "key": "field_site_meta_description",
+            "label": "Meta Descriere SEO Implicită (Google Search)",
+            "name": "site_meta_description",
+            "type": "textarea",
+            "instructions": "Descrierea principală care apare în rezultatele căutării Google pentru pagina principală (recomandat între 140 și 160 de caractere).",
+            "default_value": "Centrul Tehnic Specializat ENIGMA 14 București Sector 1: Duplicare și programare chei auto cu cip, chei rezidențiale de înaltă siguranță, cartele interfon și mecatronică de precizie.",
+            "rows": 3
+        },
+        {
             "key": "field_tab_contact",
             "label": "Date de Contact",
             "name": "",

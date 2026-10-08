@@ -563,5 +563,114 @@ add_filter('script_loader_tag', function($tag, $handle, $src) {
     return $tag;
 }, 10, 3);
 
+/**
+ * 5. Dynamic SEO Meta Description & Social Open Graph Tags
+ * Automatically outputs high-relevance, optimized meta descriptions across all page types,
+ * resolving the Google Lighthouse SEO audit: "Document does not have a meta description".
+ */
+add_action('wp_head', function() {
+    // If a dedicated SEO plugin is installed in the future (Yoast, Rank Math, AIOSEO), let it handle meta tags
+    if (defined('WPSEO_VERSION') || function_exists('rank_math') || defined('AIOSEO_VERSION') || defined('SEOPRESS_VERSION')) {
+        return;
+    }
+
+    $description = '';
+    $site_name   = get_bloginfo('name') ?: 'ENIGMA 14';
+
+    if (is_front_page() || is_home()) {
+        if (function_exists('get_field')) {
+            $description = get_field('site_meta_description', 'option');
+            if (empty($description)) {
+                $description = get_field('hero_subtitle');
+            }
+        }
+        if (empty($description)) {
+            $tagline = get_bloginfo('description');
+            if (!empty($tagline) && stripos($tagline, 'WordPress') === false) {
+                $description = $tagline;
+            } else {
+                $description = 'Centrul Tehnic Specializat ENIGMA 14 București Sector 1: Duplicare și programare chei auto cu cip, chei rezidențiale de înaltă siguranță, cartele interfon și mecatronică de precizie.';
+            }
+        }
+    } elseif (is_singular('serviciu')) {
+        $post_id = get_the_ID();
+        if (function_exists('get_field')) {
+            $description = get_field('service_hero_description', $post_id);
+        }
+        if (empty($description)) {
+            $description = get_the_excerpt($post_id);
+        }
+        if (empty($description)) {
+            $title = get_the_title($post_id);
+            $description = "Servicii profesionale {$title} la centrul tehnic ENIGMA 14 București Sector 1. Echipamente CNC de înaltă precizie, decodare computerizată și execuție pe loc.";
+        }
+    } elseif (is_page('contact') || is_page_template('page-contact.php')) {
+        $post_id = get_the_ID();
+        if (function_exists('get_field')) {
+            $description = get_field('contact_hero_desc', $post_id);
+        }
+        if (empty($description)) {
+            $description = 'Contact & Localizare Atelier Mecatronic ENIGMA 14 în București Sector 1. Vino la atelier sau trimite fotografia cheii pentru diagnoză optică și estimare de preț.';
+        }
+    } elseif (is_tax('categorie_serviciu')) {
+        $term = get_queried_object();
+        if ($term && function_exists('get_field')) {
+            $description = get_field('cat_hero_description', $term);
+        }
+        if (empty($description) && $term && !empty($term->description)) {
+            $description = $term->description;
+        }
+        if (empty($description)) {
+            $term_name = single_term_title('', false);
+            $description = "Servicii mecatronice specializate pentru {$term_name} la ENIGMA 14 București Sector 1. Tehnologie CNC, decodare electronică și garanție tehnică.";
+        }
+    } elseif (is_singular()) {
+        $post_id = get_the_ID();
+        if (has_excerpt($post_id)) {
+            $description = get_the_excerpt($post_id);
+        } else {
+            $content = get_post_field('post_content', $post_id);
+            if (!empty($content)) {
+                $description = wp_strip_all_tags(strip_shortcodes($content));
+            }
+        }
+        if (empty($description)) {
+            $description = get_the_title($post_id) . ' - Centrul Tehnic Specializat ENIGMA 14 București Sector 1.';
+        }
+    } elseif (is_category() || is_tag() || is_archive()) {
+        $description = get_the_archive_description();
+        if (empty($description)) {
+            $description = 'Arhivă ' . get_the_archive_title() . ' - Atelier mecatronic ENIGMA 14 București Sector 1.';
+        }
+    } elseif (is_search()) {
+        $description = 'Rezultate căutare pentru "' . get_search_query() . '" pe site-ul ENIGMA 14 Centrul Tehnic de Copiere Chei.';
+    }
+
+    if (empty($description)) {
+        $description = 'ENIGMA 14 - Centrul Tehnic Specializat de Duplicare și Decodare Chei București Sector 1. Chei auto cu cip, chei rezidențiale, cartele interfon și mecatronică.';
+    }
+
+    // Clean, sanitize, and limit to ideal 155-160 chars for Google SERP snippet
+    $description = wp_strip_all_tags($description);
+    $description = trim(preg_replace('/\s+/', ' ', $description));
+    if (mb_strlen($description) > 160) {
+        $description = mb_substr($description, 0, 157);
+        $description = preg_replace('/\s+?(\S+)?$/', '', $description) . '...';
+    }
+
+    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $page_title  = wp_get_document_title();
+
+    // Output Meta Description & Open Graph Tags
+    echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr($description) . '">' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr($page_title) . '">' . "\n";
+    echo '<meta property="og:type" content="' . (is_singular() ? 'article' : 'website') . '">' . "\n";
+    echo '<meta property="og:url" content="' . esc_url($current_url) . '">' . "\n";
+    echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '">' . "\n";
+    echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr($description) . '">' . "\n";
+}, 2);
+
 
 
