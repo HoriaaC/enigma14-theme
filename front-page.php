@@ -5,20 +5,20 @@
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<?php
+$hero_bg_desktop = get_field('hero_bg_desktop');
+$hero_bg_mobile  = get_field('hero_bg_mobile') ?: $hero_bg_desktop;
+?>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php if ($hero_bg_desktop): ?>
+    <link rel="preload" as="image" href="<?php echo esc_url($hero_bg_desktop); ?>" media="(min-width: 768px)" fetchpriority="high">
+    <?php endif; ?>
+    <?php if ($hero_bg_mobile): ?>
+    <link rel="preload" as="image" href="<?php echo esc_url($hero_bg_mobile); ?>" media="(max-width: 767.98px)" fetchpriority="high">
+    <?php endif; ?>
     <?php wp_head(); ?>
-    <style>
-        .hero-bg {
-            background-image: url('<?php echo esc_url(get_field('hero_bg_mobile') ?: get_field('hero_bg_desktop')); ?>');
-        }
-        @media (min-width: 768px) {
-            .hero-bg {
-                background-image: url('<?php echo esc_url(get_field('hero_bg_desktop') ?: get_field('hero_bg_mobile')); ?>');
-            }
-        }
-    </style>
 </head>
 <body <?php body_class('bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container'); ?>>
 <?php wp_body_open(); ?>
@@ -69,8 +69,18 @@
             <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
             <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-secondary-container/5 blur-3xl pointer-events-none"></div>
             
-            <!-- Workshop Master Photography Background -->
-            <div class="hero-bg absolute inset-0 z-0 opacity-40 bg-cover bg-center transition-all duration-300"></div>
+            <!-- Workshop Master Photography Background (Discoverable LCP Image with fetchpriority=high) -->
+            <picture class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+                <?php if ($hero_bg_desktop): ?>
+                    <source media="(min-width: 768px)" srcset="<?php echo esc_url($hero_bg_desktop); ?>">
+                <?php endif; ?>
+                <img src="<?php echo esc_url($hero_bg_mobile ?: $hero_bg_desktop); ?>" 
+                     alt="<?php echo esc_attr($hero_title ?: 'Atelier Mecatronic ENIGMA 14'); ?>" 
+                     fetchpriority="high" 
+                     loading="eager" 
+                     decoding="async" 
+                     class="hero-bg w-full h-full object-cover object-center opacity-40 transition-all duration-300">
+            </picture>
             
             <div class="relative z-20 max-w-[1280px] mx-auto px-gutter-desktop py-space-3xl flex flex-col justify-between min-h-[620px]">
                 

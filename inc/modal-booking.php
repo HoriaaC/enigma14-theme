@@ -172,28 +172,28 @@ function enigma14_render_booking_modal() {
                     <!-- 2. Two-column Input Fields: Contact Info -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
                         <div>
-                            <label class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_name); ?></label>
-                            <input type="text" name="client_name" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Radu Popescu" />
+                            <label for="modal-booking-name" class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_name); ?></label>
+                            <input id="modal-booking-name" type="text" name="client_name" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Radu Popescu" />
                         </div>
                         <div>
-                            <label class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_phone); ?></label>
-                            <input type="tel" name="phone" required class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
+                            <label for="modal-booking-phone" class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_phone); ?></label>
+                            <input id="modal-booking-phone" type="tel" name="phone" required class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" />
                         </div>
                     </div>
 
                     <!-- 3. Service Type & Time Window -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
                         <div>
-                            <label class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_service); ?></label>
-                            <select name="service_type" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
+                            <label for="modal-booking-service-type" class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_service); ?></label>
+                            <select id="modal-booking-service-type" name="service_type" aria-label="<?php echo esc_attr($label_service); ?>" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
                                 <?php foreach ($services_options as $srv_opt): ?>
                                     <option value="<?php echo esc_attr($srv_opt); ?>"><?php echo esc_html($srv_opt); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                         <div>
-                            <label class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_time); ?></label>
-                            <select name="preferred_time" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
+                            <label for="modal-booking-preferred-time" class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_time); ?></label>
+                            <select id="modal-booking-preferred-time" name="preferred_time" aria-label="<?php echo esc_attr($label_time); ?>" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
                                 <?php foreach ($time_options as $time_opt): ?>
                                     <option value="<?php echo esc_attr($time_opt); ?>"><?php echo esc_html($time_opt); ?></option>
                                 <?php endforeach; ?>
@@ -203,8 +203,8 @@ function enigma14_render_booking_modal() {
 
                     <!-- 4. Notes / Specs Input -->
                     <div>
-                        <label class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_notes); ?></label>
-                        <input type="text" name="notes" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cheie VW Golf 7 an 2018 / Butuc Mottura Champions..." />
+                        <label for="modal-booking-notes" class="block font-label-badge text-label-badge uppercase text-outline mb-1"><?php echo esc_html($label_notes); ?></label>
+                        <input id="modal-booking-notes" type="text" name="notes" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cheie VW Golf 7 an 2018 / Butuc Mottura Champions..." />
                     </div>
 
                     <!-- 5. Action Buttons Grid -->

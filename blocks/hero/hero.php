@@ -32,8 +32,13 @@ $phone_clean = str_replace(' ', '', $phone_1);
     <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-secondary-container/5 blur-3xl pointer-events-none"></div>
     
-    <!-- Workshop Master Photography Background -->
-    <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('<?php echo esc_url($bg_image); ?>')"></div>
+    <!-- Workshop Master Photography Background (Discoverable LCP Image with fetchpriority=high) -->
+    <img src="<?php echo esc_url($bg_image); ?>" 
+         alt="<?php echo esc_attr($title_1 . ' ' . $title_2); ?>" 
+         fetchpriority="high" 
+         loading="eager" 
+         decoding="async" 
+         class="absolute inset-0 w-full h-full object-cover object-center opacity-40 z-0 pointer-events-none select-none">
     
     <div class="relative z-20 max-w-[1280px] mx-auto px-gutter-desktop py-space-3xl flex flex-col justify-between min-h-[620px]">
         

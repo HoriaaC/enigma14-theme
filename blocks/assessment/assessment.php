@@ -230,24 +230,24 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                             <?php if ($form_mode === 'residential'): ?>
                                 <!-- Residential Fields -->
                                 <div>
-                                    <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Cheie / Producător Yală</label>
-                                    <input name="field_1" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cheie cu amprentă, Cisa, Mottura, Cartelă interfon..." type="text" />
+                                    <label for="qa-residential-field-1" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Cheie / Producător Yală</label>
+                                    <input id="qa-residential-field-1" name="field_1" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cheie cu amprentă, Cisa, Mottura, Cartelă interfon..." type="text" />
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
                                     <div>
-                                        <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Cartelă / Serie Cod</label>
-                                        <input name="field_2" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cu cartelă de cod / Fără" type="text" />
+                                        <label for="qa-residential-field-2" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Cartelă / Serie Cod</label>
+                                        <input id="qa-residential-field-2" name="field_2" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: Cu cartelă de cod / Fără" type="text" />
                                     </div>
                                     <div>
-                                        <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Telefon de Contact *</label>
-                                        <input name="phone" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" required type="tel" />
+                                        <label for="qa-residential-phone" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Telefon de Contact *</label>
+                                        <input id="qa-residential-phone" name="phone" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" required type="tel" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Serviciu Necesar</label>
-                                    <select name="service_type" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
+                                    <label for="qa-residential-service-type" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Serviciu Necesar</label>
+                                    <select id="qa-residential-service-type" name="service_type" aria-label="Tip Serviciu Necesar" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
                                         <option value="Duplicare cheie de înaltă securitate (amprentă)">Duplicare cheie de înaltă securitate (amprentă)</option>
                                         <option value="Duplicare pe bază de cartelă de proprietate">Duplicare pe bază de cartelă de proprietate</option>
                                         <option value="Copiere cheie clasică / dințată de locuință">Copiere cheie clasică / dințată de locuință</option>
@@ -260,24 +260,24 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                             <?php else: ?>
                                 <!-- Auto & Moto Fields -->
                                 <div>
-                                    <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Marca &amp; Modelul Mașinii</label>
-                                    <input name="field_1" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: VW Golf 7 / Dacia Duster / Yamaha MT-07" type="text" />
+                                    <label for="qa-auto-field-1" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Marca &amp; Modelul Mașinii</label>
+                                    <input id="qa-auto-field-1" name="field_1" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: VW Golf 7 / Dacia Duster / Yamaha MT-07" type="text" />
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
                                     <div>
-                                        <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">An Fabricație</label>
-                                        <input name="field_2" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: 2018" type="text" />
+                                        <label for="qa-auto-field-2" class="block font-label-badge text-label-badge uppercase text-outline mb-1">An Fabricație</label>
+                                        <input id="qa-auto-field-2" name="field_2" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="ex: 2018" type="text" />
                                     </div>
                                     <div>
-                                        <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Telefon de Contact *</label>
-                                        <input name="phone" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" required type="tel" />
+                                        <label for="qa-auto-phone" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Telefon de Contact *</label>
+                                        <input id="qa-auto-phone" name="phone" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors" placeholder="07xx xxx xxx" required type="tel" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Serviciu Necesar</label>
-                                    <select name="service_type" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
+                                    <label for="qa-auto-service-type" class="block font-label-badge text-label-badge uppercase text-outline mb-1">Tip Serviciu Necesar</label>
+                                    <select id="qa-auto-service-type" name="service_type" aria-label="Tip Serviciu Necesar" class="w-full bg-surface p-space-xs text-on-surface text-body-md rounded border border-surface-container-highest focus:border-primary-container focus:outline-none transition-colors">
                                         <option value="Cheie completă cu cip & telecomandă">Cheie completă cu cip &amp; telecomandă</option>
                                         <option value="Doar carcasă nouă & tăiere lamă">Doar carcasă nouă &amp; tăiere lamă</option>
                                         <option value="Duplicare cheie mecanică simplă">Duplicare cheie mecanică simplă</option>
