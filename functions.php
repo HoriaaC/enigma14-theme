@@ -66,10 +66,10 @@ add_action('after_setup_theme', 'enigma14_setup');
  */
 function enigma14_scripts()
 {
-    // Material Symbols Outlined (Fixed axes 24/400/0/0 reduces font binary from 3.9MB to 323KB; display=block prevents FOUT)
+    // Material Symbols Outlined (Fixed axes 24/400/0/0 reduces font binary from 3.9MB to 323KB; display=swap satisfies Lighthouse font-display audit)
     wp_enqueue_style(
         'enigma14-material-symbols',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap',
         array(),
         null
     );

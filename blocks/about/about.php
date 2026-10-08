@@ -31,8 +31,8 @@ $c3_desc     = get_field('about_c3_desc') ?: 'Tehnicieni autoriza»õi specializa»
 
 // Right Column: Image & Realtime Stats
 $image_url   = get_field('about_image');
-if (empty($image_url)) {
-    $image_url = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlw1gbXJN692Mi4z8r5_w-OzQ3Gu4Whr3opX34QbdB0Ej1UvrXtMX6vSTO1Y-9zsOrdN3jlC-Th2s9Lpwr1rKDzDV1wYlSf5fMSiyNxGAIfawz-rwhfQDwUpVVznnz51tKeu5Zi1OznalWIY4tLdeu3rs04qv2DcUyboXAUVkcLaVErt12l7BB-cc5oSR8aqBBlAl8X3dUwMpYzUoq30ttk0tX2CEFshQFtf4jH5j8uJ7LgGWwcArk';
+if (empty($image_url) || strpos($image_url, 'lh3.googleusercontent.com') !== false) {
+    $image_url = get_template_directory_uri() . '/assets/images/about-cnc.webp';
 }
 $image_alt   = get_field('about_image_alt') ?: 'Atelier mecatronic ENIGMA 14 masina CNC copiere chei cu laser';
 $audit_label = get_field('about_audit_label') ?: 'AUDIT TEHNIC ENIGMA 14';
@@ -131,7 +131,7 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
             <!-- Right Column: Visual Workshop Frame & Realtime Stats -->
             <div class="lg:col-span-5 relative">
                 <div class="relative rounded-xl overflow-hidden shadow-2xl bg-surface-container">
-                    <div class="w-full h-[460px] bg-cover bg-center" style="background-image: url('<?php echo esc_url($image_url); ?>')" role="img" aria-label="<?php echo esc_attr($image_alt); ?>"></div>
+                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="540" height="460" loading="lazy" decoding="async" class="w-full h-[460px] object-cover object-center">
                     <!-- Dark Gradient Scrim -->
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent pointer-events-none"></div>
                     
