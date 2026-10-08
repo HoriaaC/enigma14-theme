@@ -330,12 +330,76 @@
             }
         },
         {
+            "key": "field_hero_btn1_icon",
+            "label": "Iconiță Buton Principal (Servicii)",
+            "name": "hero_btn1_icon",
+            "type": "select",
+            "instructions": "Alege iconița Material Symbols pentru butonul principal.",
+            "required": 0,
+            "choices": {
+                "arrow_forward": "arrow_forward (Săgeată Înainte)",
+                "precision_manufacturing": "precision_manufacturing (CNC / Echipament)",
+                "verified": "verified (Verificat)",
+                "speed": "speed (Serviciu Rapid)",
+                "calendar_month": "calendar_month (Programare)",
+                "lock_reset": "lock_reset (Deblocare)",
+                "key": "key (Cheie)",
+                "build": "build (Unelte)",
+                "call": "call (Telefon)",
+                "chat": "chat (WhatsApp)",
+                "emergency": "emergency (Cruce Urgență)",
+                "bolt": "bolt (Fulgere)"
+            },
+            "default_value": "arrow_forward",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_hero_btn2",
             "label": "Secondary Button (Urgențe)",
             "name": "hero_button_secondary",
             "type": "link",
             "required": 0,
             "return_format": "array",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_hero_btn2_icon",
+            "label": "Iconiță Buton Secundar (Urgențe)",
+            "name": "hero_btn2_icon",
+            "type": "select",
+            "instructions": "Alege iconița Material Symbols pentru butonul secundar.",
+            "required": 0,
+            "choices": {
+                "emergency": "emergency (Cruce Urgență)",
+                "bolt": "bolt (Fulgere)",
+                "lock_reset": "lock_reset (Deblocare)",
+                "phone_in_talk": "phone_in_talk (Apel Telefon)",
+                "call": "call (Telefon)",
+                "chat": "chat (WhatsApp)",
+                "verified": "verified (Verificat)",
+                "directions_car": "directions_car (Auto)",
+                "home_repair_service": "home_repair_service (Service)",
+                "arrow_forward": "arrow_forward (Săgeată Înainte)"
+            },
+            "default_value": "emergency",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
             "wrapper": {
                 "width": "50",
                 "class": "",

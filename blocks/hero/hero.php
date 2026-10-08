@@ -36,6 +36,7 @@ $box3_sub       = get_field('hero_box3_subtitle') ?: '5.000+ Blank-uri';
 $btn1_arr       = get_field('hero_button_primary');
 $btn_1_text     = !empty($btn1_arr['title']) ? $btn1_arr['title'] : (get_field('hero_btn_1_text') ?: 'CERE O OFERTĂ ACUM');
 $btn_1_link     = !empty($btn1_arr['url']) ? $btn1_arr['url'] : (get_field('hero_btn_1_link') ?: '#solicita-oferta');
+$hero_btn1_icon = get_field('hero_btn1_icon') ?: 'arrow_forward';
 
 $phone_btn_suffix = get_field('hero_phone_btn_suffix') ?: 'SUPORT TEHNIC';
 
@@ -127,7 +128,7 @@ $phone_clean = str_replace(' ', '', $phone_1);
             <div class="flex flex-wrap items-center gap-space-sm pt-space-sm">
                 <a class="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-secondary-container text-on-primary-container font-bold text-[13px] px-8 py-3 rounded uppercase tracking-wider transition-all duration-200 enigma-glow-primary" href="<?php echo esc_url($btn_1_link); ?>">
                     <span><?php echo esc_html($btn_1_text); ?></span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    <span class="material-symbols-outlined text-[18px]"><?php echo esc_html($hero_btn1_icon); ?></span>
                 </a>
                 <a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-bright text-on-surface font-bold text-[13px] px-6 py-3 rounded uppercase tracking-wider transition-all duration-200 shadow-md" href="tel:<?php echo esc_attr($phone_clean); ?>">
                     <span class="material-symbols-outlined text-primary-container text-[20px]">phone_in_talk</span>

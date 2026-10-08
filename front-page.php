@@ -54,7 +54,9 @@ $hero_bg_mobile  = get_field('hero_bg_mobile') ?: $hero_bg_desktop;
         $has_hero_boxes = !empty($hero_box1_title) || !empty($hero_box2_title) || !empty($hero_box3_title);
 
         $hero_btn1 = get_field('hero_button_primary');
+        $hero_btn1_icon = get_field('hero_btn1_icon') ?: 'arrow_forward';
         $hero_btn2 = get_field('hero_button_secondary');
+        $hero_btn2_icon = get_field('hero_btn2_icon') ?: 'emergency';
 
         // Metrology Line (Bottom)
         $hero_equipment = get_field('hero_equipment');
@@ -174,13 +176,13 @@ $hero_bg_mobile  = get_field('hero_bg_mobile') ?: $hero_bg_desktop;
                         <?php if($hero_btn1): ?>
                         <a href="<?php echo esc_url($hero_btn1['url']); ?>" target="<?php echo esc_attr(!empty($hero_btn1['target']) ? $hero_btn1['target'] : '_self'); ?>" class="group flex items-center justify-center gap-2 bg-primary-container hover:bg-secondary-container text-on-primary-container font-label-action text-label-action uppercase tracking-wider px-space-lg py-space-sm rounded transition-all duration-300 shadow-[0_0_24px_rgba(255,119,0,0.3)] hover:shadow-[0_0_32px_rgba(255,165,4,0.4)]">
                             <?php echo esc_html($hero_btn1['title']); ?>
-                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"><?php echo esc_html($hero_btn1_icon); ?></span>
                         </a>
                         <?php endif; ?>
                         
                         <?php if($hero_btn2): ?>
                         <a href="<?php echo esc_url($hero_btn2['url']); ?>" target="<?php echo esc_attr(!empty($hero_btn2['target']) ? $hero_btn2['target'] : '_self'); ?>" class="flex items-center justify-center gap-2 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-action text-label-action uppercase tracking-wider px-space-lg py-space-sm rounded transition-all duration-300 border border-surface-container-highest">
-                            <span class="material-symbols-outlined text-[18px] text-error">emergency</span>
+                            <span class="material-symbols-outlined text-[18px] text-error"><?php echo esc_html($hero_btn2_icon); ?></span>
                             <?php echo esc_html($hero_btn2['title']); ?>
                         </a>
                         <?php endif; ?>
