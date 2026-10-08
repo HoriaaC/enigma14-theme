@@ -82,13 +82,25 @@ function enigma14_scripts()
         null
     );
 
-    // Main Theme Stylesheet
-    wp_enqueue_style(
-        'enigma14-style',
-        get_stylesheet_uri(),
-        array(),
-        wp_get_theme()->get('Version')
-    );
+    // Inline Main Theme Styles (Compiled Tailwind CSS + style.css)
+    // Inlining eliminates external render-blocking HTTP requests (600ms+ latency)
+    $tailwind_file = get_template_directory() . '/assets/css/tailwind.css';
+    $style_file    = get_stylesheet_directory() . '/style.css';
+
+    wp_register_style('enigma14-theme-styles', false);
+    wp_enqueue_style('enigma14-theme-styles');
+
+    $combined_css = '';
+    if (file_exists($tailwind_file)) {
+        $combined_css .= file_get_contents($tailwind_file) . "\n";
+    }
+    if (file_exists($style_file)) {
+        $combined_css .= file_get_contents($style_file) . "\n";
+    }
+
+    if (!empty($combined_css)) {
+        wp_add_inline_style('enigma14-theme-styles', $combined_css);
+    }
 
     // Main scripts
     wp_enqueue_script('enigma14-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true);
@@ -183,15 +195,7 @@ require_once get_template_directory() . '/inc/nav-walker.php';
 
 
 
-/**
- * Add Tailwind CDN to wp_head
- */
 
-
-
-add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style('enigma14-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0');
-});
 
 /**
  * Enqueue styles and fonts for the Gutenberg Block Editor canvas
@@ -492,5 +496,72 @@ add_filter('wp_mail_from', function($email) {
     }
     return $email;
 });
+
+/**
+ * =========================================================================
+ * CORE WEB VITALS & SPEED OPTIMIZATIONS (Preconnect, Async Fonts, Defer JS)
+ * =========================================================================
+ */
+
+/**
+ * 1. Resource Hints: Preconnect to Google Fonts and GStatic at top of <head>
+ */
+add_action('wp_head', function() {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}, 1);
+
+/**
+ * 2. Asynchronously load Google Fonts & Material Symbols without blocking initial render
+ */
+add_filter('style_loader_tag', function($html, $handle, $href, $media) {
+    if (in_array($handle, array('enigma14-google-fonts', 'enigma14-material-symbols'), true)) {
+        return '<link rel="preload" href="' . esc_url($href) . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
+             . '<noscript><link rel="stylesheet" href="' . esc_url($href) . '"></noscript>' . "\n";
+    }
+    return $html;
+}, 10, 4);
+
+/**
+ * 3. Remove jQuery Migrate from frontend to eliminate unnecessary render-blocking script
+ */
+add_action('wp_default_scripts', function($scripts) {
+    if (!is_admin() && isset($scripts->registered['jquery'])) {
+        $script = $scripts->registered['jquery'];
+        if ($script->deps) {
+            $script->deps = array_diff($script->deps, array('jquery-migrate'));
+        }
+    }
+});
+
+/**
+ * 4. Defer non-critical scripts (jQuery, Cookie Law Info, enigma14-scripts) on frontend
+ */
+add_filter('script_loader_tag', function($tag, $handle, $src) {
+    if (is_admin()) {
+        return $tag;
+    }
+
+    $defer_handles = array(
+        'jquery',
+        'jquery-core',
+        'enigma14-scripts',
+        'cookie-law-info',
+        'cli-style-script',
+    );
+
+    $should_defer = in_array($handle, $defer_handles, true)
+        || (is_string($handle) && strpos($handle, 'cookie-law-info') !== false)
+        || (is_string($src) && strpos($src, 'cookie-law-info') !== false);
+
+    if ($should_defer) {
+        if (strpos($tag, ' defer') === false && strpos($tag, ' async') === false) {
+            $tag = str_replace('<script ', '<script defer ', $tag);
+        }
+    }
+
+    return $tag;
+}, 10, 3);
+
 
 

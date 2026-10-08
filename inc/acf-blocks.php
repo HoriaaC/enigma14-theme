@@ -27,8 +27,7 @@ function enigma14_register_acf_blocks() {
             'mode' => true,
             'jsx' => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 
     // 2. Header Block
@@ -45,8 +44,7 @@ function enigma14_register_acf_blocks() {
             'mode' => false, // Prevents switching to edit mode so it's always rendered
             'jsx' => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 
     // 3. Services Grid Block (Divizii Mecatronice)
@@ -63,8 +61,7 @@ function enigma14_register_acf_blocks() {
             'mode' => true,
             'jsx' => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 
     // 4. About & Workshop Block (Experiență & Mecatronică)
@@ -81,8 +78,7 @@ function enigma14_register_acf_blocks() {
             'mode' => true,
             'jsx' => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 
     // 5. Global Footer Block
@@ -99,8 +95,7 @@ function enigma14_register_acf_blocks() {
             'mode'  => false,
             'jsx'   => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 
     // 6. Quick Assessment & Diagnostic Form Block
@@ -117,8 +112,7 @@ function enigma14_register_acf_blocks() {
             'mode'  => true,
             'jsx'   => true
         ),
-        'align'         => 'full',
-        'enqueue_style' => get_template_directory_uri() . '/assets/css/tailwind.css'
+        'align'         => 'full'
     ));
 }
 add_action('acf/init', 'enigma14_register_acf_blocks');
