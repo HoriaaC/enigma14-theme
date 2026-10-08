@@ -120,4 +120,59 @@ img {
     color: #000000 !important;
 }
 
+/* ========================================================
+   Mobile Menu Accordion & Viewport Scrolling
+   ======================================================== */
+#enigma-mobile-menu {
+    max-height: calc(100dvh - 80px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 119, 0, 0.4) rgba(25, 26, 28, 0.8);
+}
+
+#enigma-mobile-menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+#enigma-mobile-menu::-webkit-scrollbar-track {
+    background: rgba(25, 26, 28, 0.6);
+}
+
+#enigma-mobile-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 119, 0, 0.4);
+    border-radius: 4px;
+}
+
+#enigma-mobile-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 119, 0, 0.7);
+}
+
+/* Sub-menus closed by default on mobile */
+#enigma-mobile-menu .sub-menu {
+    display: none;
+}
+
+#enigma-mobile-menu .sub-menu.enigma-submenu-open {
+    display: flex;
+}
+
+/* Touch-friendly hitbox & rotation for mobile chevron toggle */
+#enigma-mobile-menu li:has(.sub-menu) > a .material-symbols-outlined,
+#enigma-mobile-menu a:has(+ .sub-menu) .material-symbols-outlined {
+    padding: 10px 14px;
+    margin: -10px -14px;
+    cursor: pointer;
+    transition: transform 0.25s ease, color 0.2s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#enigma-mobile-menu li.enigma-item-open > a .material-symbols-outlined,
+#enigma-mobile-menu .material-symbols-outlined.rotate-90 {
+    transform: rotate(90deg);
+    color: var(--wp--preset--color--primary-container, #ff7700) !important;
+}
+
 

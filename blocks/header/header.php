@@ -167,7 +167,7 @@ if ($header_cta_action === 'popup') {
     </div>
 
     <!-- Mobile Menu Drawer / Dropdown Panel -->
-    <div id="enigma-mobile-menu" class="lg:hidden hidden border-t border-surface-container-highest bg-surface-container-lowest/98 backdrop-blur-xl shadow-2xl transition-all duration-300 max-h-[calc(100vh-80px)] overflow-y-auto">
+    <div id="enigma-mobile-menu" class="lg:hidden hidden border-t border-surface-container-highest bg-surface-container-lowest/98 backdrop-blur-xl shadow-2xl transition-all duration-300 max-h-[calc(100dvh-80px)] max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain">
         <div class="max-w-[1280px] mx-auto px-space-md py-space-md flex flex-col gap-space-md">
             
             <!-- Mobile Navigation Links -->

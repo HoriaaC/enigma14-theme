@@ -496,9 +496,52 @@ jQuery(document).ready(function($) {
         toggleMobileMenu();
     });
 
-    // Close when clicking any menu link
-    $mobileMenu.on('click', 'a', function() {
-        toggleMobileMenu(false);
+    // ====================================================
+    // Mobile Submenu Accordion (One at a time)
+    // ====================================================
+    $mobileMenu.on('click', '.material-symbols-outlined', function(e) {
+        var $icon = $(this);
+        var $link = $icon.closest('a');
+        var $parentLi = $link.closest('li');
+        var $submenu = $parentLi.children('.sub-menu');
+
+        if ($submenu.length) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var isOpen = $submenu.hasClass('enigma-submenu-open');
+
+            // Close all other open submenus (Accordion: strictly 1 open at a time)
+            $mobileMenu.find('.sub-menu.enigma-submenu-open').not($submenu).slideUp(200, function() {
+                $(this).removeClass('enigma-submenu-open');
+            });
+            $mobileMenu.find('li.enigma-item-open').not($parentLi).removeClass('enigma-item-open');
+            $mobileMenu.find('.material-symbols-outlined.rotate-90').not($icon).removeClass('rotate-90 text-primary-container');
+
+            if (isOpen) {
+                $submenu.slideUp(200, function() {
+                    $(this).removeClass('enigma-submenu-open');
+                });
+                $parentLi.removeClass('enigma-item-open');
+                $icon.removeClass('rotate-90 text-primary-container');
+            } else {
+                $submenu.addClass('enigma-submenu-open').hide().slideDown(200);
+                $parentLi.addClass('enigma-item-open');
+                $icon.addClass('rotate-90 text-primary-container');
+            }
+        }
+    });
+
+    // Close mobile menu drawer when clicking actual navigation leaf links
+    $mobileMenu.on('click', 'a', function(e) {
+        // If the click is on the chevron toggle for a submenu, do not close the drawer
+        if ($(e.target).closest('.material-symbols-outlined').length && $(this).siblings('.sub-menu').length) {
+            return;
+        }
+        // If clicking a link inside a sub-menu or any link without a sub-menu, close the drawer
+        if (!$(this).siblings('.sub-menu').length || $(this).closest('.sub-menu').length) {
+            toggleMobileMenu(false);
+        }
     });
 
     // Close when clicking outside of header
