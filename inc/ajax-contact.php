@@ -29,6 +29,10 @@ function enigma14_handle_contact_form_submission() {
     $notes        = isset($_POST['contact_notes']) ? sanitize_textarea_field($_POST['contact_notes']) : '';
     $photo_url    = isset($_POST['uploaded_photo_url']) ? esc_url_raw($_POST['uploaded_photo_url']) : '';
     $page_url     = isset($_POST['page_url']) ? esc_url_raw($_POST['page_url']) : '';
+    $page_title   = isset($_POST['page_title']) ? sanitize_text_field($_POST['page_title']) : '';
+    if (empty($page_title)) {
+        $page_title = 'Contact & Localizare Atelier ENIGMA 14';
+    }
 
     // Handle direct file upload if present and not previously uploaded
     $attachments = array();
@@ -83,8 +87,11 @@ function enigma14_handle_contact_form_submission() {
         $message_body .= "Fotografie Cheie Atașată: {$photo_url}\n";
     }
     $message_body .= "--------------------------------------------------\n";
+    if ($page_title) {
+        $message_body .= "Titlu Pagină Sursă: {$page_title}\n";
+    }
     if ($page_url) {
-        $message_body .= "Pagină sursă: {$page_url}\n";
+        $message_body .= "Link Pagină Sursă: {$page_url}\n";
     }
     $message_body .= "Data & Ora recepției: " . current_time('d.m.Y H:i') . "\n";
 

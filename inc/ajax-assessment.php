@@ -72,7 +72,10 @@ function enigma14_handle_assessment_submission() {
     $message_body .= "Tip Serviciu Solicitat: " . ($service_type ?: 'Nespecificat') . "\n";
     $message_body .= "--------------------------------------------------\n";
     if ($page_title) {
-        $message_body .= "Trimis de pe pagina: {$page_title} ({$page_url})\n";
+        $message_body .= "Titlu Pagină Sursă: {$page_title}\n";
+    }
+    if ($page_url) {
+        $message_body .= "Link Pagină Sursă: {$page_url}\n";
     }
     $message_body .= "Data & Ora: " . current_time('d.m.Y H:i') . "\n";
 

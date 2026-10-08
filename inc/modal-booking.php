@@ -324,7 +324,12 @@ function enigma14_handle_booking_modal_submission() {
     if ($notes)          $body .= "Detalii / Note: {$notes}\n";
     if ($uploaded_file_url) $body .= "Foto Atașată: {$uploaded_file_url}\n";
     $body .= "--------------------------------------------------\n";
-    if ($page_title)     $body .= "Trimis de pe pagina: {$page_title} ({$page_url})\n";
+    if ($page_title) {
+        $body .= "Titlu Pagină Sursă: {$page_title}\n";
+    }
+    if ($page_url) {
+        $body .= "Link Pagină Sursă: {$page_url}\n";
+    }
     $body .= "Data & Ora: " . current_time('d.m.Y H:i') . "\n";
 
     // Sender identity for notifications sent to owners

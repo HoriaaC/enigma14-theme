@@ -136,7 +136,8 @@ $em_phone       = get_field('contact_em_phone', $post_id) ?: $opt_phone_1;
 $em_note        = get_field('contact_em_note', $post_id) ?: 'Disponibil 24/7 • Sosire medie în 20-30 minute';
 $clean_em_phone = preg_replace('/[^0-9]/', '', $em_phone ?: '0722000114');
 
-$current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$current_page_url   = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_title('', false) : get_bloginfo('name'));
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -345,6 +346,7 @@ $current_page_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'h
                             <form id="enigma-contact-page-form" class="space-y-space-md" enctype="multipart/form-data">
                                 <?php wp_nonce_field('enigma14_contact_action', 'contact_nonce'); ?>
                                 <input type="hidden" name="page_url" value="<?php echo esc_url($current_page_url); ?>">
+                                <input type="hidden" name="page_title" value="<?php echo esc_attr($current_page_title); ?>">
                                 <input type="hidden" name="uploaded_photo_url" id="uploaded-photo-url" value="">
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
