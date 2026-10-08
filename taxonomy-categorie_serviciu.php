@@ -77,7 +77,7 @@ $guarantee_sub   = enigma_get_term_field('cat_guarantee_subtitle', $current_term
 
 <?php echo do_blocks('<!-- wp:template-part {"slug":"header"} /-->'); ?>
 
-<main class="w-full bg-surface min-h-[calc(100vh-80px)] pt-28">
+<main class="w-full bg-surface min-h-[calc(100vh-110px)] pt-36 md:pt-[145px]">
     <div class="flex flex-col w-full">
 
         <!-- ========================================== -->

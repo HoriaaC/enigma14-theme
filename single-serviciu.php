@@ -184,7 +184,7 @@ $products_count = count($products_list);
 
 <?php echo do_blocks('<!-- wp:template-part {"slug":"header"} /-->'); ?>
 
-<main class="w-full pt-28 bg-surface-container-lowest min-h-screen">
+<main class="w-full pt-36 md:pt-[145px] bg-surface-container-lowest min-h-screen">
     <div class="flex flex-col w-full">
 
         <!-- ========================================== -->

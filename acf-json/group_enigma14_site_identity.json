@@ -21,6 +21,23 @@
             "library": "all"
         },
         {
+            "key": "field_header_branding_display",
+            "label": "Afișare Antet (Logo vs Text)",
+            "name": "header_branding_display",
+            "type": "radio",
+            "instructions": "Alege ce element dorești să apară în stânga antetului (nu vor apărea ambele simultan).",
+            "required": 0,
+            "choices": {
+                "logo": "Doar Imagine Logo (înălțime 95px)",
+                "text": "Doar Text Stilizat (ENIGMA 14 - Centrul de Copiere Chei)"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "logo",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_site_logo_dark",
             "label": "Logo Site (Variantă Întunecată)",
             "name": "site_logo_dark",

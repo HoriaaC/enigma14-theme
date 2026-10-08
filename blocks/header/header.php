@@ -18,6 +18,11 @@ if (!$schedule_saturday) $schedule_saturday = '09:00 - 15:00';
 $site_logo = function_exists('get_field') ? get_field('site_logo', 'option') : null; 
 $logo_url = $site_logo ? $site_logo['url'] : '';
 
+$header_branding_display = function_exists('get_field') ? get_field('header_branding_display', 'option') : 'logo';
+if (empty($header_branding_display)) {
+    $header_branding_display = 'logo';
+}
+
 // Header Top Bar CTA Button Options
 $header_cta_enable = function_exists('get_field') ? get_field('header_cta_enable', 'option') : true;
 if ($header_cta_enable === null) $header_cta_enable = true;
@@ -93,22 +98,24 @@ if ($header_cta_action === 'popup') {
     </div>
     
     <!-- Main Navbar -->
-    <div class="h-20 max-w-[1280px] mx-auto px-space-md lg:px-space-xl flex items-center justify-between gap-2 lg:gap-space-sm flex-nowrap">
+    <div class="min-h-[110px] h-[110px] max-w-[1280px] mx-auto px-space-md lg:px-space-xl flex items-center justify-between gap-2 lg:gap-space-sm flex-nowrap">
         
         <!-- Logo Area -->
-        <div class="flex items-center gap-space-xs shrink-0">
+        <div class="flex items-center gap-space-xs shrink-0 py-1">
             <a class="flex items-center gap-space-xs group" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php if($logo_url): ?>
-                    <img alt="ENIGMA 14 logo" class="h-9 w-auto object-contain" src="<?php echo esc_url($logo_url); ?>">
+                <?php if ($header_branding_display === 'text' || (!$logo_url && $header_branding_display === 'logo')): ?>
+                    <?php if (!$logo_url && $header_branding_display === 'logo'): ?>
+                        <div class="h-10 w-10 bg-primary-container rounded flex items-center justify-center text-on-primary-container font-bold text-xl shrink-0">E</div>
+                    <?php endif; ?>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-[18px] md:text-[20px] uppercase tracking-wider text-on-surface flex items-center gap-0.5" style="font-family: var(--wp--preset--font-family--montserrat);">
+                            EN<span class="text-primary-container">I</span>GMA <span class="text-primary-container ml-0.5">14</span>
+                        </span>
+                        <span class="text-[10px] md:text-[11px] uppercase tracking-[0.16em] text-on-surface-variant font-bold" style="font-family: var(--wp--preset--font-family--montserrat);">CENTRUL DE COPIERE CHEI</span>
+                    </div>
                 <?php else: ?>
-                    <div class="h-9 w-9 bg-primary-container rounded flex items-center justify-center text-on-primary-container font-bold text-xl">E</div>
+                    <img alt="<?php echo esc_attr(get_bloginfo('name') ?: 'ENIGMA 14 logo'); ?>" class="h-[95px] max-h-[95px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]" src="<?php echo esc_url($logo_url); ?>" style="height: 95px;">
                 <?php endif; ?>
-                <div class="flex flex-col">
-                    <span class="font-bold text-[16px] uppercase tracking-wider text-on-surface flex items-center gap-0.5" style="font-family: var(--wp--preset--font-family--montserrat);">
-                        EN<span class="text-primary-container">I</span>GMA <span class="text-primary-container ml-0.5">14</span>
-                    </span>
-                    <span class="text-[10px] uppercase tracking-[0.14em] text-on-surface-variant font-bold" style="font-family: var(--wp--preset--font-family--montserrat);">CENTRUL DE COPIERE CHEI</span>
-                </div>
             </a>
         </div>
         
@@ -167,7 +174,7 @@ if ($header_cta_action === 'popup') {
     </div>
 
     <!-- Mobile Menu Drawer / Dropdown Panel -->
-    <div id="enigma-mobile-menu" class="lg:hidden hidden border-t border-surface-container-highest bg-surface-container-lowest/98 backdrop-blur-xl shadow-2xl transition-all duration-300 max-h-[calc(100dvh-80px)] max-h-[calc(100vh-80px)] overflow-y-auto overscroll-contain">
+    <div id="enigma-mobile-menu" class="lg:hidden hidden border-t border-surface-container-highest bg-surface-container-lowest/98 backdrop-blur-xl shadow-2xl transition-all duration-300 max-h-[calc(100dvh-110px)] max-h-[calc(100vh-110px)] overflow-y-auto overscroll-contain">
         <div class="max-w-[1280px] mx-auto px-space-md py-space-md flex flex-col gap-space-md">
             
             <!-- Mobile Navigation Links -->

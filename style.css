@@ -124,7 +124,7 @@ img {
    Mobile Menu Accordion & Viewport Scrolling
    ======================================================== */
 #enigma-mobile-menu {
-    max-height: calc(100dvh - 80px) !important;
+    max-height: calc(100dvh - 110px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;

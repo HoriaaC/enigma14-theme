@@ -152,7 +152,7 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
 <!-- Original Theme FSE Header Part -->
 <?php echo do_blocks('<!-- wp:template-part {"slug":"header"} /-->'); ?>
 
-<main class="w-full bg-surface min-h-[calc(100vh-80px)] pt-28">
+<main class="w-full bg-surface min-h-[calc(100vh-110px)] pt-36 md:pt-[145px]">
     <div class="flex flex-col w-full text-on-surface">
 
         <!-- ========================================== -->
