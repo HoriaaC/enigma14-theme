@@ -80,7 +80,7 @@ if ($header_cta_action === 'popup') {
                 </div>
                 <span class="hidden md:inline-block text-outline font-bold">|</span>
                 <span class="hidden md:inline-flex items-center gap-1.5 text-on-surface-variant text-[12px]">
-                    <span class="material-symbols-outlined text-[16px] text-primary-container inline-flex items-center justify-center w-4 h-4 shrink-0">schedule</span>
+                    <span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
                     <span>Luni - Vineri: <?php echo esc_html($schedule_weekdays); ?> &nbsp;|&nbsp; Sâmbăta: <?php echo esc_html($schedule_saturday); ?></span>
                 </span>
             </div>
@@ -89,7 +89,7 @@ if ($header_cta_action === 'popup') {
             <?php if ($header_cta_enable): ?>
             <div class="flex items-center gap-space-sm shrink-0">
                 <a class="<?php echo esc_attr($cta_class); ?>" href="<?php echo $cta_href; ?>"<?php echo $cta_target; ?> style="font-family: var(--wp--preset--font-family--montserrat);">
-                    <span class="material-symbols-outlined text-[16px] inline-flex items-center justify-center w-4 h-4 shrink-0"><?php echo esc_html($header_cta_icon); ?></span>
+                    <span class="material-symbols-outlined text-[16px]"><?php echo esc_html($header_cta_icon); ?></span>
                     <span><?php echo esc_html($header_cta_text); ?></span>
                 </a>
             </div>

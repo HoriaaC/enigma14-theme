@@ -59,7 +59,7 @@ $showcase_badge_2 = get_field('showcase_badge_2') ?: 'TESTABILĂ PE LOC';
             <div class="space-y-space-2xs">
                 <?php if ($section_badge): ?>
                 <div class="flex items-center gap-space-2xs text-primary-container font-label-badge text-label-badge uppercase tracking-widest">
-                    <span class="material-symbols-outlined text-[16px] inline-flex items-center justify-center w-4 h-4 shrink-0">grid_view</span>
+                    <span class="material-symbols-outlined text-[16px]">grid_view</span>
                     <?php echo esc_html($section_badge); ?>
                 </div>
                 <?php endif; ?>
