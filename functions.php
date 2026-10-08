@@ -103,7 +103,7 @@ function enigma14_scripts()
     }
 
     // Main scripts
-    wp_enqueue_script('enigma14-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.1', true);
+    wp_enqueue_script('enigma14-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.2', true);
 
     wp_localize_script('enigma14-scripts', 'enigma14_ajax', array(
         'ajax_url'      => admin_url('admin-ajax.php'),
