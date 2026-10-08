@@ -169,6 +169,7 @@ require_once get_template_directory() . '/inc/acf-site-identity.php';
  * Register Servicii CPT
  */
 require_once get_template_directory() . '/inc/cpt-servicii.php';
+require_once get_template_directory() . '/inc/catalog-importer.php';
 require_once get_template_directory() . '/inc/ajax-assessment.php';
 require_once get_template_directory() . '/inc/ajax-contact.php';
 require_once get_template_directory() . '/inc/modal-booking.php';
