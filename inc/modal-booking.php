@@ -217,7 +217,7 @@ function enigma14_render_booking_modal() {
                         </button>
 
                         <!-- Direct WhatsApp Jump Button -->
-                        <a href="<?php echo esc_url($wa_direct_jump); ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action py-space-sm px-space-md rounded uppercase tracking-wider font-bold transition-all shadow-md shadow-[#25D366]/20">
+                        <a href="<?php echo esc_url($wa_direct_jump); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action py-space-sm px-space-md rounded uppercase tracking-wider font-extrabold transition-all shadow-md shadow-[#25D366]/20">
                             <span class="material-symbols-outlined text-[18px]">chat</span>
                             <span class="whitespace-nowrap"><?php echo esc_html($whatsapp_btn_text); ?></span>
                         </a>
@@ -247,7 +247,7 @@ function enigma14_render_booking_modal() {
                     </p>
 
                     <div class="pt-space-xs flex flex-col sm:flex-row items-center justify-center gap-space-xs max-w-md mx-auto">
-                        <a id="enigma-success-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action uppercase tracking-wider font-bold transition-all shadow-lg shadow-[#25D366]/30">
+                        <a id="enigma-success-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action uppercase tracking-wider font-extrabold transition-all shadow-lg shadow-[#25D366]/30">
                             <span class="material-symbols-outlined text-[18px]">chat</span>
                             <span>Deschide și pe WhatsApp</span>
                         </a>

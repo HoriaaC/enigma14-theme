@@ -196,11 +196,13 @@ $whatsapp_url   = "https://wa.me/{$whatsapp_clean}?text=" . rawurlencode('Buna z
         }
         .btn-wa {
             background-color: #25D366;
-            color: #ffffff;
+            color: #072410;
+            font-weight: 800;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
         }
         .btn-wa:hover {
             background-color: #20ba59;
+            color: #000000;
             transform: translateY(-2px);
             box-shadow: 0 4px 28px rgba(37, 211, 102, 0.45);
         }

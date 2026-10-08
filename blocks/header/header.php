@@ -233,7 +233,7 @@ if ($header_cta_action === 'popup') {
                         <span class="material-symbols-outlined text-primary-container text-[16px]">call</span>
                         <span>APELEAZĂ</span>
                     </a>
-                    <a href="https://wa.me/<?php echo esc_attr($whatsapp_clean); ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-[#25D366] hover:bg-[#20ba59] text-white text-[11px] font-bold uppercase tracking-wider transition-colors">
+                    <a href="https://wa.me/<?php echo esc_attr($whatsapp_clean); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black text-[11px] font-extrabold uppercase tracking-wider transition-colors">
                         <span class="material-symbols-outlined text-[16px]">chat</span>
                         <span>WHATSAPP</span>
                     </a>

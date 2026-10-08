@@ -99,3 +99,25 @@ img {
     }
 }
 
+/* ========================================================
+   Accessible WhatsApp Brand Buttons (WCAG AAA Contrast >= 7:1)
+   ======================================================== */
+.enigma-wa-btn,
+.btn-wa {
+    color: #072410 !important;
+    font-weight: 800 !important;
+}
+.enigma-wa-btn:hover,
+.btn-wa:hover {
+    color: #000000 !important;
+}
+.enigma-wa-btn .material-symbols-outlined,
+.btn-wa .material-symbols-outlined {
+    color: #072410 !important;
+}
+.enigma-wa-btn:hover .material-symbols-outlined,
+.btn-wa:hover .material-symbols-outlined {
+    color: #000000 !important;
+}
+
+

@@ -448,7 +448,7 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                                     </button>
 
                                     <!-- Quick WhatsApp Direct Action Link -->
-                                    <a class="w-full py-2.5 px-space-md rounded bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/40 text-[#25D366] font-label-action text-label-action uppercase tracking-wider font-bold transition-all flex items-center justify-center gap-2 group" href="https://wa.me/<?php echo esc_attr($clean_wa); ?>?text=<?php echo rawurlencode('Buna ziua, doresc o evaluare rapida de cheie la atelierul ENIGMA 14'); ?>" target="_blank" rel="noopener noreferrer">
+                                    <a class="enigma-wa-btn w-full py-2.5 px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action uppercase tracking-wider font-extrabold transition-all flex items-center justify-center gap-2 group shadow-md shadow-[#25D366]/20" href="https://wa.me/<?php echo esc_attr($clean_wa); ?>?text=<?php echo rawurlencode('Buna ziua, doresc o evaluare rapida de cheie la atelierul ENIGMA 14'); ?>" target="_blank" rel="noopener noreferrer">
                                         <span class="material-symbols-outlined text-[18px]">chat</span>
                                         <span>SAU TRIMITE PE WHATSAPP CU UN CLIC</span>
                                     </a>
@@ -470,7 +470,7 @@ $current_page_title = is_singular() ? get_the_title() : (is_tax() ? single_term_
                                     Un tehnician ENIGMA 14 analizează profilul cheii și te va apela în cel mai scurt timp pentru confirmarea disponibilității și ofertei exacte.
                                 </p>
                                 <div class="pt-space-2xs">
-                                    <a id="contact-success-wa-link" href="https://wa.me/<?php echo esc_attr($clean_wa); ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full max-w-sm mx-auto py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action uppercase tracking-wider font-bold transition-all shadow-lg hover:shadow-[#25D366]/30">
+                                    <a id="contact-success-wa-link" href="https://wa.me/<?php echo esc_attr($clean_wa); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 w-full max-w-sm mx-auto py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action uppercase tracking-wider font-extrabold transition-all shadow-lg hover:shadow-[#25D366]/30">
                                         <span class="material-symbols-outlined text-[18px]">chat</span>
                                         <span>Deschide și conversația WhatsApp</span>
                                     </a>

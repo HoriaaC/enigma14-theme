@@ -201,7 +201,7 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                                     <span class="material-symbols-outlined text-primary-container text-[14px]">lock_reset</span>
                                     <span><?php echo esc_html($photo_security); ?></span>
                                 </span>
-                                <a href="<?php echo esc_url($wa_direct_url); ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action uppercase tracking-wider font-bold transition-all shadow-md mt-1">
+                                <a href="<?php echo esc_url($wa_direct_url); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 w-full py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action uppercase tracking-wider font-extrabold transition-all shadow-md mt-1">
                                     <span class="material-symbols-outlined text-[18px]">chat</span>
                                     <span><?php echo esc_html($photo_btn_text); ?></span>
                                 </a>
@@ -293,7 +293,7 @@ $custom_class = !empty($block['className']) ? ' ' . $block['className'] : '';
                                     <span class="material-symbols-outlined text-[18px] btn-icon">send</span>
                                     <span class="btn-text"><?php echo esc_html($btn_submit); ?></span>
                                 </button>
-                                <a href="<?php echo esc_url($wa_direct_url); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action py-space-sm px-space-md rounded uppercase tracking-wider font-bold transition-all shadow-md shadow-[#25D366]/20">
+                                <a href="<?php echo esc_url($wa_direct_url); ?>" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action py-space-sm px-space-md rounded uppercase tracking-wider font-extrabold transition-all shadow-md shadow-[#25D366]/20">
                                     <span class="material-symbols-outlined text-[18px]">chat</span>
                                     <span class="whitespace-nowrap">WhatsApp</span>
                                 </a>

@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
                             '<h4 class="font-headline-sm uppercase text-on-surface font-bold text-[16px] tracking-wide">Solicitare Transmisă cu Succes!</h4>' +
                             '<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">' + (res.data.message || 'Un tehnician ENIGMA 14 te va contacta în sub 15 minute.') + '</p>' +
                             '<div class="pt-space-2xs">' +
-                                '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-white font-label-action text-label-action uppercase tracking-wider font-bold transition-all shadow-lg hover:shadow-[#25D366]/30">' +
+                                '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="enigma-wa-btn inline-flex items-center justify-center gap-2 w-full py-space-sm px-space-md rounded bg-[#25D366] hover:bg-[#20ba59] text-[#072410] hover:text-black font-label-action text-label-action uppercase tracking-wider font-extrabold transition-all shadow-lg hover:shadow-[#25D366]/30">' +
                                     '<span class="material-symbols-outlined text-[18px]">chat</span>' +
                                     '<span>Deschide și pe WhatsApp</span>' +
                                 '</a>' +
